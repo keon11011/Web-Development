@@ -63,7 +63,49 @@
             font-weight: bold;
             font-size: x-large;
         }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         
+        label {
+            display: inline-block;
+            width: 150px; /* Adjust the width as needed */
+            text-align: right;
+            margin-right: 20px;
+        }
+        
+        input, select {
+            width: calc(100% - 200px); /* Adjust the width as needed */
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            margin: auto;
+        }
+        .c-radio{
+            width: 10px;
+        }
+        .lb-radio{
+            width: 70px;
+            margin-right: 20px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -175,5 +217,47 @@
     </table>
 
     <a name="Cau8">Câu 8</a>
+    
+    
+    <form action="/action_page.php" target ="_blank" method="post">
+        <fieldset>
+            <h2 style="color: blue; text-align: center;">Ban nghi gi ve website cua chung toi?</h2>
+            <label for="fname">Ten cua ban:</label>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="fmail">Email:</label>
+            <input type="text" id="fmail" name="fmail"><br>
+            <label for="source">Ban tim thay site cua chung toi tu:</label>
+            <select id="source" name="source">
+                <option value="yahoo">Yahoo</option>
+                <option value="google">Google</option>
+                <option value="msn">MSN</option>
+            </select>
+            <br>
+            <label for="age">Tuoi cua ban:</label> 
+            <br>
+            <br>
+            <div style="margin-left: 50px;">
+                <input type="radio" id="Duoi-18" class = "c-radio" name="age" value="Duoi 18">
+                <label for="Duoi-18" class = "lb-radio">Duoi 18</label>
+                <input type="radio" id="18-30" class = "c-radio" name="age" value="18-30">
+                <label for="18-30" class = "lb-radio">18-30</label>
+                <input type="radio" id="30-40" class = "c-radio" name="age" value="30-40">
+                <label for="30-40" class = "lb-radio">30-40</label>
+                <input type="radio" id="Tren-40" class = "c-radio" name="age" value="Tren-40">
+                <label for="Tren-40" class = "lb-radio">Tren 40</label>
+            </div>
+            <br>
+            <label for="feedback">Nhan xet:</label>
+            <textarea name="feedback" style="width: calc(100% - 200px);">
+            </textarea>
+            <br>
+            <br>
+            <button type="submit">Gui</button>
+        </fieldset>
+    </form>
+
+    <a name="Cau8">Câu 8</a>
+    <iframe src="http://bit.ueh.edu.vn/dao-tao/" width="100%" height="700"></iframe>
+
 </body>
 </html>
