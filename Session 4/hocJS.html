@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0 500px;
+        }
+    </style>
+    <script>
+        function centerWindow(){
+            var winW = 400; winH = 400;
+            //resize window's size
+            //alert(winW);
+
+            //window.moveTo(winW,winH);    
+            //Các trình duyệt mới đã khoá chức năng này
+            var x = window.navigator;
+            document.write("Tên trình duyệt: " + x.appName + "<br>");
+            document.write("Tên trình duyệt: " + x.language);
+        }
+        function goBack(){
+            window.history.go(-1);
+        }
+        function changeTitle(){
+            window.document.getElementById("header1").innerHTML = "Nghỉ Tết <br> hoi!!!";
+        }
+        function checkFrm(){
+            var userName = window.document.getElementById("fUserName");
+            var password = window.document.getElementById("fPassword");
+            if ((userName.value == "") || (password.value == "")) 
+            {
+                alert("Vui lòng nhập đủ User name và password");    
+                userName.focus();
+                return;
+            }
+            alert("Username = "+userName.value+ " - Password = " + password.value);
+        }
+        function changeTitleBySelectedValue(){
+            var selectedValue = document.getElementById("select1");
+            window.document.getElementById("header1").innerHTML = "Bạn đã chọn "+ selectedValue.options[selectedValue.selectedIndex].text;
+
+        }
+        function AddToList(){
+            var selectedValue = document.getElementById("select1");
+            document.getElementById("textarea1").innerHTML += "\n"+ selectedValue.options[selectedValue.selectedIndex].text;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header1">Di chuyển vào giữa màn hình</h1>
+    <input type="button" value="Di chuyển màn hình" onclick="centerWindow()">
+    <input type="button" value="Back" onclick="goBack()">
+    <input type="button" value="Đổi tiêu đề" onclick="changeTitle()">
+
+    <form target ="_blank" method="post">
+        <h2 style="color: blue; text-align: center;">Đăng nhập</h2>
+        <label for="fUserName">User name</label>
+        <input type="text" id="fUserName" name="fUserName">
+        <br>
+        <br>
+        <label for="fPassword">Password</label>
+        <input type="password" id="fPassword" name="fPassword">
+        <br>
+        <br>
+        <button type="button" value="Submit" onclick="checkFrm()">Đăng nhập</button>
+        <br>
+        <br>
+        <select name="select1" onchange="changeTitleBySelectedValue()" id="select1">
+            <option value="" >Đi chơi</option>
+            <option value="">Đi ngủ</option>
+            <option value="">Làm bài</option>
+        </select>
+        <button type="button" value="Submit" onclick="AddToList()">Thêm vào DS</button>
+        <br>
+        <textarea name="" id="textarea1" cols="30" rows="10">
+        
+        </textarea>
+
+            <!-- <label for="source">Ban tim thay site cua chung toi tu:</label>
+            <select id="source" name="source">
+                <option value="yahoo">Yahoo</option>
+                <option value="google">Google</option>
+                <option value="msn">MSN</option>
+            </select>
+            <br>
+            <label for="age">Tuoi cua ban:</label> 
+            <br>
+            <br>
+            <div style="margin-left: 50px;">
+                <input type="radio" id="Duoi-18" class = "c-radio" name="age" value="Duoi 18">
+                <label for="Duoi-18" class = "lb-radio">Duoi 18</label>
+                <input type="radio" id="18-30" class = "c-radio" name="age" value="18-30">
+                <label for="18-30" class = "lb-radio">18-30</label>
+                <input type="radio" id="30-40" class = "c-radio" name="age" value="30-40">
+                <label for="30-40" class = "lb-radio">30-40</label>
+                <input type="radio" id="Tren-40" class = "c-radio" name="age" value="Tren-40">
+                <label for="Tren-40" class = "lb-radio">Tren 40</label>
+            </div>
+            <br>
+            <label for="feedback">Nhan xet:</label>
+            <textarea name="feedback" style="width: calc(100% - 200px);">
+            </textarea>
+            <br>
+            <br>-->
+    </form></body>
+</html>
