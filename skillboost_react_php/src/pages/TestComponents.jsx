@@ -1,11 +1,16 @@
-import Button from '../components/ui/Button';
-import SvgArrowCircleDown from '../components/icons/Arrow/ArrowCircleDown';
+import Button from '../components/ui/button/Button';
+import ArrowCircleDown from '../components/icons/Arrow/ArrowCircleDown';
+import ArrowUndoUpLeft from '../components/icons/Arrow/ArrowUndoUpLeft';
+import ButtonFloat from '../components/ui/button/ButtonFloat';
+import ActionItems from '../components/ui/button/ActionIcon';
+import ActionPersonDetail from '../components/ui/button/ActionPersonDetail';
+import EditPencil01 from '../components/icons/Edit/EditPencil01'; 
+import UserClose from '../components/icons/User/UserClose';
+import TrashFull from '../components/icons/Interface/TrashFull';
+import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
 
 const TestComponents = () => (
     <main className="relative bg-background-primary">
-      {/* Nav
-      <SearchMagnifyingGlass color='#000'/> */}
-
       <div className='display-large'>
         Display Large
       </div>
@@ -88,55 +93,72 @@ const TestComponents = () => (
 
       <div className='flex'>
         <div className='bg-sematic-red text-text-white p-4 m-4'>
-          sematic-background-red
+          sematic-red
         </div>
         <div className='bg-sematic-blue text-text-white p-4 m-4'>
-          sematic-background-blue
+          sematic-blue
         </div>
         <div className='bg-sematic-yellow text-text-white p-4 m-4'>
-          sematic-background-yellow
+          sematic-yellow
         </div>
         <div className='bg-sematic-green text-text-white p-4 m-4'>
-          sematic-background-green
+          sematic-green
         </div>
       </div>
 
       <div className='flex space-x-4 p-2'>
-        <Button size="Big" variant="Primary">Primary</Button>
-        <Button size="Big" variant="Secondary">Secondary</Button>
-        <Button size="Big" variant="Outlined">Outlined</Button>
-        <Button size="Big" variant="Plain">Plain</Button>
-        <Button size="Big" variant="Neutral">Neutral</Button>
-        <Button size="Big" variant="Destructive" onClick={() => alert('Đang xóa ư?')}>Destructive</Button>
-        <Button size="Big " variant="Destructive-plain">Destructive P</Button>
-        <Button size="Big" variant="Loading">Loading</Button>
+        <Button size="Big" variant="Primary" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Primary</Button>
+        <Button size="Big" variant="Secondary" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Secondary</Button>
+        <Button size="Big" variant="Outlined" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Outlined</Button>
+        <Button size="Big" variant="Plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Plain</Button>
+        <Button size="Big" variant="Neutral" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Neutral</Button>
+        <Button size="Big" variant="Destructive" onClick={() => alert('Đang xóa ư?')} leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive</Button>
+        <Button size="Big " variant="Destructive-plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive Plain</Button>
+        <Button size="Big" variant="Loading" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Loading</Button>
       </div>
       <div className='flex space-x-4 p-2'>
-        <Button size="Medium" variant="Primary">Primary</Button>
-        <Button size="Medium" variant="Secondary">Secondary</Button>
-        <Button size="Medium" variant="Outlined">Outlined</Button>
-        <Button size="Medium" variant="Plain">Plain</Button>
-        <Button size="Medium" variant="Neutral">Neutral</Button>
-        <Button size="Medium" variant="Destructive" onClick={() => alert('Đang xóa ư?')}>Destructive</Button>
-        <Button size="Medium" variant="Destructive-plain">Destructive P</Button>
-        <Button size="Medium" variant="Loading">Loading</Button>
+        <Button size="Medium" variant="Primary" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Primary</Button>
+        <Button size="Medium" variant="Secondary" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Secondary</Button>
+        <Button size="Medium" variant="Outlined" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Outlined</Button>
+        <Button size="Medium" variant="Plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Plain</Button>
+        <Button size="Medium" variant="Neutral" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Neutral</Button>
+        <Button size="Medium" variant="Destructive" onClick={() => alert('Đang xóa ư?')} leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive</Button>
+        <Button size="Medium" variant="Destructive-plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive Plain</Button>
+        <Button size="Medium" variant="Loading" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Loading</Button>
       </div>
-      <div className='flex space-x-4 p-2'>
-        <Button size="Small" variant="Primary" state="disabled">Primary</Button>
-        <Button size="Small" variant="Secondary">Secondary</Button>
-        <Button size="Small" variant="Outlined">Outlined</Button>
-        <Button size="Small" variant="Plain">Plain</Button>
-        <Button size="Small" variant="Neutral">Neutral</Button>
-        <Button size="Small" variant="Destructive" onClick={() => alert('Đang xóa ư?')}>Destructive</Button>
-        <Button size="Small" variant="Destructive-plain">Destructive P</Button>
-        <Button size="Small" variant="Loading">Loading</Button>
+      <div className='flex space-x-4 p-2'>   
+        <Button size="Small" variant="Primary" state="disabled" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Primary</Button> 
+        <Button size="Small" variant="Secondary" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Secondary</Button>
+        <Button size="Small" variant="Outlined" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Outlined</Button>
+        <Button size="Small" variant="Plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Plain</Button>
+        <Button size="Small" variant="Neutral" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Neutral</Button>
+        <Button size="Small" variant="Destructive" onClick={() => alert('Đang xóa ư?')} leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive</Button>
+        <Button size="Small" variant="Destructive-plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive Plain</Button>
+        <Button size="Small" variant="Loading" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Loading</Button>
+      </div>
+
+      <div className='flex m-4'>
+      <ButtonFloat leftIcon={<ArrowUndoUpLeft width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Trở về trang chủ</ButtonFloat>
+      </div>
+
+      <ActionItems icon={<ArrowUndoUpLeft width="1.5rem" height="1.5rem"/>} />
+      <div className='space-x-4'>
+        <ActionPersonDetail variant="Edit" icon={<EditPencil01 width="1.5rem" height="1.5rem"/>}/>
+        <ActionPersonDetail variant="Unfollow" icon={<UserClose width="1.5rem" height="1.5rem"/>}/>
+        <ActionPersonDetail variant="Delete" icon={<TrashFull width="1.5rem" height="1.5rem"/>}/>
+      </div>
+
+      <div className='flex'>
+        <div className='bg-red-500' style={{ width: '232px', height: '500px' }}></div>
+        <div className='bg-emerald-500 text-right' style={{ width: '1686px', height: '500px' }}>đây là text</div>
       </div>
 
       <div>
-        <SvgArrowCircleDown width="2rem" height="2rem" stroke="red" strokeWidth={1}/>
+        <img src={SkillboostLogo} alt="Logo" />
       </div>
 
-      
+
+
     </main>
   );
   
