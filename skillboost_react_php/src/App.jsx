@@ -1,11 +1,12 @@
 //import {} from './components'
 import './font.css'
 import TestComponents from './pages/TestComponents'
-import LeadListFilter from './components/ui/SelectItems/LeadListFilter.jsx'
+import CourseSelector from './components/ui/SelectItems/CourseSelector';
+import LeadListFilter from './components/ui/SelectItems/LeadListFilter';
 const App = () => (
   <main className="relative">
-      
-      <LeadListFilter/>  
+      <CourseSelector/>
+      <LeadListFilter/>
       <TestComponents/>
   </main>
 )
