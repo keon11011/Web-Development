@@ -6,10 +6,13 @@ import SidebarNV from '../src/components/ui/sidebar/SidebarNV'
 import SidebarQL from '../src/components/ui/sidebar/SidebarQL'
 import LeadInfoTab from './components/ui/tabs/LeadInfoTab'
 import Pagnitation from './components/ui/pagnitation/pagnitation';
+// import TestComponents from './pages/TestComponents'
+import TestCard from './pages/TestCard'
 
 const App = () => (
   <main className="relative">
-      <Pagnitation />
+  {/* <TestComponents/> */}
+      <TestCard />
   </main>
 )
 
