@@ -1,4 +1,5 @@
 //import {} from './components'
+import CourseSelector from './components/ui/SelectItems/CourseSelector';
 import './font.css'
 import TestComponents from './pages/TestComponents'
 import SidebarNV from '../src/components/ui/sidebar/SidebarNV'
