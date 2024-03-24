@@ -6,13 +6,14 @@ const SvgChevronDown = (props) => (
     height="1em"
     fill="none"
     viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
     {...props}
   >
     <path
-      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={2}
+
       d="m19 9-7 7-7-7"
     />
   </svg>

@@ -4,7 +4,7 @@ import bi from '../../../assets/img/bi.png'
 import productowner from '../../../assets/img/productowner.png'
 import sqladvanced from '../../../assets/img/sqladvanced.png'
 import da from '../../../assets/img/da.png'
-import Button from '../../../components/ui/Button'
+import Button from '../button/Button'
 const CourseSelector = () => {
   return (
 <div class="flex flex-wrap -mx-3 mb-5">
