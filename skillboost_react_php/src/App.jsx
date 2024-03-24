@@ -1,11 +1,11 @@
 //import {} from './components'
-import CourseSelector from './components/ui/SelectItems/CourseSelector';
 import './font.css'
 import TestComponents from './pages/TestComponents'
-
+import LeadListFilter from './components/ui/SelectItems/LeadListFilter.jsx'
 const App = () => (
   <main className="relative">
-      <CourseSelector/>
+      
+      <LeadListFilter/>  
       <TestComponents/>
   </main>
 )
