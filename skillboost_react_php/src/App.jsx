@@ -12,11 +12,9 @@ import LeadListFilter from './components/ui/SelectItems/LeadListFilter';
 import CourseListFilter from './components/ui/SelectItems/CourseListFilter';
 const App = () => (
   <main className="relative">
-      <CourseListFilter/>
+      
       <TestComponents/>
-      <CourseSelector>
-      </CourseSelector>
-      <LeadListFilter></LeadListFilter>
+      
   </main>
 )
 
