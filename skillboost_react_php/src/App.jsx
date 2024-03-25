@@ -9,12 +9,11 @@ import Pagnitation from './components/ui/pagnitation/pagnitation';
 import TestCard from './pages/TestCard'
 import CourseSelector from './components/ui/SelectItems/CourseSelector';
 import LeadListFilter from './components/ui/SelectItems/LeadListFilter';
-import CourseListFilter from './components/ui/SelectItems/CourseListFilter';
+import LeadQuotationListFilter from './components/ui/SelectItems/LeadQuotationListFilter'
 const App = () => (
   <main className="relative">
-      
+      <LeadQuotationListFilter/>
       <TestComponents/>
-      
   </main>
 )
 
