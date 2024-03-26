@@ -1,7 +1,7 @@
 import React from 'react'
 import ChevronDown from '../../icons/Arrow/ChevronDown'
 
-const Pagnitation = () => {
+const Pagination = () => {
   return (
     <div className="relative w-full flex flex-row items-center justify-center gap-[12px] text-left text-sm text-text-secondary">
     <div className="relative">Trang</div>
@@ -16,4 +16,4 @@ const Pagnitation = () => {
   )
 }
 
-export default Pagnitation
+export default Pagination
