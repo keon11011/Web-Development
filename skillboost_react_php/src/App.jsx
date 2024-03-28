@@ -8,11 +8,14 @@ import LeadInfoTab from './components/ui/tabs/LeadInfoTab'
 import Pagnitation from './components/ui/pagnitation/pagnitation';
 import CourseSelector from './components/ui/SelectItems/CourseSelector';
 import LeadListFilter from './components/ui/SelectItems/LeadListFilter';
-import LeadActivityListFilter from './components/ui/SelectItems/LeadActivityListFilter';
-import CustomerListFilter from './components/ui/SelectItems/CustomerListFilter';
-import DiscountListFilter from './components/ui/SelectItems/DiscountListFilter';
+import LeadQuotationListFilter from './components/ui/SelectItems/LeadQuotationListFilter'
 
-
+//---Import PHP vào
+// import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+// import './App.css';
+// import CreateUser from './components/CRUD/CreateUser';
+// import EditUser from './components/CRUD/EditUser';
+// import ListUser from './components/CRUD/ListUser';
 
 const App = () => (
   <main className="relative">
@@ -20,6 +23,27 @@ const App = () => (
     <CustomerListFilter />
     <DiscountListFilter/>
   </main>
+//   <div className="App">
+//   <h5>React CRUD operations using PHP API and MySQL</h5>
+
+//   <BrowserRouter>
+//     <nav>
+//       <ul>
+//         <li>
+//           <Link to="/">List Users</Link>
+//         </li>
+//         <li>
+//           <Link to="user/create">Create User</Link>
+//         </li>
+//       </ul>
+//     </nav>
+//     <Routes>
+//       <Route index element={<ListUser />} />
+//       <Route path="user/create" element={<CreateUser />} />
+//       <Route path="user/:id/edit" element={<EditUser />} />
+//     </Routes>
+//   </BrowserRouter>
+//  </div>
 )
 
 export default App;
