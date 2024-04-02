@@ -8,6 +8,9 @@ import EditPencil01 from '../components/icons/Edit/EditPencil01';
 import UserClose from '../components/icons/User/UserClose';
 import TrashFull from '../components/icons/Interface/TrashFull';
 import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
+import TextInput from '../components/ui/placeholder/TextInput'
+import TextArea from '../components/ui/placeholder/TextArea'
+import SearchBar from '../components/ui/placeholder/SearchBar'
 
 const TestComponents = () => (
     <main className="relative bg-background-primary">
@@ -157,7 +160,61 @@ const TestComponents = () => (
         <img src={SkillboostLogo} alt="Logo" />
       </div>
 
+      <div className='space-y-10 my-20'>
+        <div className='flex flex-row space-x-10'>
+          <TextInput
+            title="Tiêu đề"
+            previewText="Nhập tiêu đề"
+            note="Vui lòng nhập tiêu đề của bạn"
+            leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}
+            rightIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}
+          />
+          <TextInput
+            variant="ReadOnly"
+            title="Tiêu đề (bị disabled)"
+            previewText="Nhập tiêu đề"
+            note="Vui lòng nhập tiêu đề của bạn"
+            leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}
+            rightIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}
+          />
+          <TextInput
+            variant="Error"
+            title="Tiêu đề"
+            previewText="Nhập tiêu đề"
+            note="Vui lòng nhập tiêu đề của bạn"
+            leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}
+            rightIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}
+          />
+        </div>
 
+        <div className='flex space-x-10 w-full'>
+          <TextArea
+            title="Mô tả"
+            previewText="Nhập mô tả"
+            note="Vui lòng nhập mô tả của bạn"
+          />
+          <TextArea
+            variant="ReadOnly"
+            title="Mô tả (bị disabled)"
+            previewText="Nhập mô tả"
+            note="Vui lòng nhập mô tả của bạn"
+            />
+          <TextArea
+            variant="Error"
+            title="Mô tả"
+            previewText="Nhập mô tả"
+            note="Vui lòng nhập mô tả của bạn"
+            />
+        </div>
+
+        <div className='flex flex-row space-x-10'>
+          <SearchBar
+            title="Mô tả"
+            previewText="Tìm kiếm"
+            note="Vui lòng nhập mô tả của bạn"
+          />
+        </div>
+      </div>
 
     </main>
   );

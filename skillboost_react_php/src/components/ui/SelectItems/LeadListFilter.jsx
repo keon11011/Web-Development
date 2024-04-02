@@ -25,11 +25,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-0"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-0"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -52,7 +52,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-0"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -66,11 +66,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-1"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-1"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -93,7 +93,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-1"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -107,11 +107,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-2"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-2"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -134,7 +134,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-2"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -148,11 +148,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-3"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-3"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -175,7 +175,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-3"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -189,11 +189,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-4"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-4"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -216,7 +216,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-4"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -230,11 +230,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-5"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-5"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -257,7 +257,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-5"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -271,11 +271,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-6"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-6"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -298,7 +298,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-6"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -312,11 +312,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-7"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-7"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -339,7 +339,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-7"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -353,11 +353,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-8"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-8"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -380,7 +380,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-8"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -401,11 +401,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-9"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-9"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -428,7 +428,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-9"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -440,11 +440,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-10"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-10"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -467,7 +467,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-10"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -479,11 +479,11 @@ const LeadListFilter = () => {
                     <div class="inline-flex items-center pl-5">
                       <label
                         class="relative flex cursor-pointer items-center rounded-full"
-                        for="ripple-on"
+                        for="ripple-on-11"
                         data-ripple-dark="true"
                       >
                         <input
-                          id="ripple-on"
+                          id="ripple-on-11"
                           type="checkbox"
                           class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-purple-600 checked:bg-purple-600 checked:before:bg-purple-600 hover:before:opacity-10"
                         />
@@ -506,7 +506,7 @@ const LeadListFilter = () => {
                       </label>
                       <label
                         class="mt-px cursor-pointer select-none font-light text-gray-700"
-                        for="ripple-on"
+                        for="ripple-on-11"
                       >
                         <div class="pl-3 flex items-center">
                           <div class="flex-col justify-start mb-1 duration-200 ease-in-out body-medium text-text-primary">
@@ -518,13 +518,13 @@ const LeadListFilter = () => {
             </div>
             </div>
 
-            <div class="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-[#5200FF]"></div>
+            <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-[#5200FF]"></div>
             
-            <div class="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
-              <div class=' relative bg-background-primary space-x-4 p-2 float-left'  >
+            <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
+              <div className=' relative bg-background-primary space-x-4 p-2 float-left'  >
                 <Button size="Small" variant="Secondary">Đặt lại</Button>
               </div>
-              <div class=' relative bg-background-primary space-x-4 p-2 float-right'  >
+              <div className=' relative bg-background-primary space-x-4 p-2 float-right'  >
                 <Button size="Small" variant="Primary">Xóa</Button>
               </div>
               <div className='relative bg-background-primary space-x-4 p-2 float-right'  >
