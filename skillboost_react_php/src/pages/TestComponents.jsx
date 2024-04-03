@@ -11,6 +11,13 @@ import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import SearchBar from '../components/ui/placeholder/SearchBar'
+import InformSuccess from '../components/ui/inform/InformSuccess';
+import InformFailure from '../components/ui/inform/InformFailure';
+import AlertCaution from '../components/ui/inform/AlertCaution';
+import AlertInfo from '../components/ui/inform/AlertInfo';
+import AlertDanger from '../components/ui/inform/AlertDanger';
+import Email from '../components/ui/email/Email';
+
 
 const TestComponents = () => (
     <main className="relative bg-background-primary">
@@ -214,6 +221,26 @@ const TestComponents = () => (
             note="Vui lòng nhập mô tả của bạn"
           />
         </div>
+      </div>
+
+      <div className='py-5'>
+        <InformSuccess />
+      </div>
+
+      <br></br>
+
+      <div className='py-5'>
+        <InformFailure />
+      </div>
+
+      <div className='my-5'>
+        <AlertInfo />
+        <AlertCaution />
+        <AlertDanger />
+      </div>
+
+      <div>
+        <Email />
       </div>
 
     </main>
