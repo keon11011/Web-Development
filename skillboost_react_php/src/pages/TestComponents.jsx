@@ -2,18 +2,22 @@ import Button from '../components/ui/button/Button';
 import ArrowCircleDown from '../components/icons/Arrow/ArrowCircleDown';
 import ArrowUndoUpLeft from '../components/icons/Arrow/ArrowUndoUpLeft';
 import ButtonFloat from '../components/ui/button/ButtonFloat';
-import ActionItems from '../components/ui/button/ActionIcon';
+import ActionIcon from '../components/ui/button/ActionIcon';
 import ActionPersonDetail from '../components/ui/button/ActionPersonDetail';
 import EditPencil01 from '../components/icons/Edit/EditPencil01'; 
 import UserClose from '../components/icons/User/UserClose';
 import TrashFull from '../components/icons/Interface/TrashFull';
 import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
-import TextInput from '../components/ui/placeholder/TextInput';
-import TextArea from '../components/ui/placeholder/TextArea';
-import SearchBar from '../components/ui/placeholder/SearchBar';
-import LeadTableStatus from '../components/ui/chips/LeadTableStatus';
-import CourseTableStatus from '../components/ui/chips/CourseTableStatus';
-import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus';
+import TextInput from '../components/ui/placeholder/TextInput'
+import TextArea from '../components/ui/placeholder/TextArea'
+import SearchBar from '../components/ui/placeholder/SearchBar'
+import InformSuccess from '../components/ui/inform/InformSuccess';
+import InformFailure from '../components/ui/inform/InformFailure';
+import AlertCaution from '../components/ui/inform/AlertCaution';
+import AlertInfo from '../components/ui/inform/AlertInfo';
+import AlertDanger from '../components/ui/inform/AlertDanger';
+import Email from '../components/ui/email/Email';
+
 
 const TestComponents = () => (
     <main className="relative bg-background-primary">
@@ -147,7 +151,7 @@ const TestComponents = () => (
       <ButtonFloat leftIcon={<ArrowUndoUpLeft width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Trở về trang chủ</ButtonFloat>
       </div>
 
-      <ActionItems icon={<ArrowUndoUpLeft width="1.5rem" height="1.5rem"/>} />
+      <ActionIcon icon={<ArrowUndoUpLeft width="1.5rem" height="1.5rem"/>} />
       <div className='space-x-4'>
         <ActionPersonDetail variant="Edit" icon={<EditPencil01 width="1.5rem" height="1.5rem"/>}/>
         <ActionPersonDetail variant="Unfollow" icon={<UserClose width="1.5rem" height="1.5rem"/>}/>
@@ -219,23 +223,24 @@ const TestComponents = () => (
         </div>
       </div>
 
-      <br/>
-      <div className='flex flex-row justify-start items-center space-x-4'>
-        <LeadTableStatus variant='DangTuVan'/>
-        <LeadTableStatus variant='NgungTheoDoi'/>
-        <LeadTableStatus variant='DaThanhToan'/>
+      <div className='py-5'>
+        <InformSuccess />
       </div>
-      <br />
-      <div className='flex flex-row justify-start items-center space-x-4'>
-        <CourseTableStatus variant='DangVanHanh'/>
-        <CourseTableStatus variant='DangChieuSinh'/>
-        <CourseTableStatus variant='VoHieuHoa'/>
+
+      <br></br>
+
+      <div className='py-5'>
+        <InformFailure />
       </div>
-      <br />
-      <div className='flex flex-col justify-start items-start space-y-4'>
-        <LeadProgressStatus variant='DangTuVan'/>
-        <LeadProgressStatus variant='HuyTheoDoi'/>
-        <LeadProgressStatus variant='DaThanhToan'/>
+
+      <div className='my-5'>
+        <AlertInfo />
+        <AlertCaution />
+        <AlertDanger />
+      </div>
+
+      <div>
+        <Email />
       </div>
 
     </main>
