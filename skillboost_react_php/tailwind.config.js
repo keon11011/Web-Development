@@ -1,3 +1,4 @@
+import { url } from "inspector";
 // tailwind.config.js
 export default {
   content: [
@@ -14,13 +15,13 @@ export default {
         brand: {
           'lightest': '#F7F3FF',
           'lighter': '#915CFF',
-          'default': '#5200FF', 
+          'default': '#5200FF',
           'darker': '#4B0CCF'
         },
         background: {
           'primary': '#FFFFFF',
           'secondary': '#FAFAFA',
-          'third': '#F6F6F6', 
+          'third': '#F6F6F6',
           'green': '#D0FFE9',
           'red': '#FFF3F3',
           'cyan': '#EBFBFF',
@@ -34,7 +35,7 @@ export default {
         outline: {
           'placeholder': '#DFDFDF',
           'card': '#F8F8F8',
-          'button': '#F0F0F0', 
+          'button': '#F0F0F0',
           'table': '#EFEFEF',
           'divider': '#E6E6E6',
           'card-holder': '#D7D7D7',
@@ -42,11 +43,11 @@ export default {
         sematic: {
           'red': '#FF4141',
           'yellow': '#F0BD0A',
-          'green': '#27AE60', 
+          'green': '#27AE60',
           'blue': '#008EFF',
         },
-      }
-    },
+      },
+    }
   },
   plugins: [],
 };

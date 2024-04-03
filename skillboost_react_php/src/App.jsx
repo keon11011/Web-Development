@@ -1,25 +1,26 @@
 //import {} from './components'
 import './font.css'
-import TestComponents from './pages/TestComponents'
-import CommentCard from './components/ui/card/CommentCard';
-import SidebarNV from '../src/components/ui/sidebar/SidebarNV'
-import SidebarQL from '../src/components/ui/sidebar/SidebarQL'
-import LeadInfoTab from './components/ui/tabs/LeadInfoTab'
-import Pagnitation from './components/ui/pagnitation/pagnitation';
-import CourseSelector from './components/ui/SelectItems/CourseSelector';
-import LeadListFilter from './components/ui/SelectItems/LeadListFilter';
-import Tableview from './components/ui/table/Tableview'
-import Tablecourse from './components/ui/table/Tablecourse'
-import Header from './components/ui/header_footer/customer/Header'
-import Footer from './components/ui/header_footer/customer/Footer'
-import Notificationnew from './components/ui/header_footer/admin/notification/Notificationnew'
-import Notification from './components/ui/header_footer/admin/notification/Notification'
-import TestHeaderAdmin from './pages/TestHeaderAdmin'
-import Thanhtoan from './components/ui/header_footer/admin/progressbar/Thanhtoan'
-import Baogia from './components/ui/header_footer/admin/progressbar/Baogia'
-import Nhantuvan from './components/ui/header_footer/admin/progressbar/Nhantuvan'
-import Hoanthanh from './components/ui/header_footer/admin/progressbar/Hoanthanh'
-import LeadQuotationListFilter from './components/ui/SelectItems/LeadQuotationListFilter'
+// import TestComponents from './pages/TestComponents'
+// import CommentCard from './components/ui/card/CommentCard';
+// import SidebarNV from '../src/components/ui/sidebar/SidebarNV'
+// import SidebarQL from '../src/components/ui/sidebar/SidebarQL'
+// import LeadInfoTab from './components/ui/tabs/LeadInfoTab'
+// import Pagnitation from './components/ui/pagination/Pagination';
+// import CourseSelector from './components/ui/SelectItems/CourseSelector';
+// import LeadListFilter from './components/ui/SelectItems/LeadListFilter';
+// import Tableview from './components/ui/table/Tableview'
+// import Tablecourse from './components/ui/table/Tablecourse'
+// import Header from './components/ui/header_footer/customer/Header'
+// import Footer from './components/ui/header_footer/customer/Footer'
+// import Notificationnew from './components/ui/header_footer/admin/notification/Notificationnew'
+// import Notification from './components/ui/header_footer/admin/notification/Notification'
+// import TestHeaderAdmin from './pages/TestHeaderAdmin'
+// import Thanhtoan from './components/ui/header_footer/admin/progressbar/Thanhtoan'
+// import Baogia from './components/ui/header_footer/admin/progressbar/Baogia'
+// import Nhantuvan from './components/ui/header_footer/admin/progressbar/Nhantuvan'
+// import Hoanthanh from './components/ui/header_footer/admin/progressbar/Hoanthanh'
+import Thanh_toan from './pages/Thanh_toan'
+// import LeadQuotationListFilter from './components/ui/SelectItems/LeadQuotationListFilter'
 
 
 //---Import PHP vào
@@ -31,7 +32,8 @@ import LeadQuotationListFilter from './components/ui/SelectItems/LeadQuotationLi
 
 const App = () => (
   <main className="relative">
-      <Tableview/>
+    <Thanh_toan/>
+      {/* <Tableview/>
       <Tablecourse/>
       <Header/>
       <Footer/>
@@ -41,14 +43,14 @@ const App = () => (
       <Nhantuvan/>
       <Baogia/>
       <Thanhtoan/>
-      <Hoanthanh/>
+      <Hoanthanh/> */}
       
       {/* <CourseSelector/>
       <LeadListFilter/>
       <TestComponents/> */}
-      <LeadActivityListFilter />
+      {/* <LeadActivityListFilter />
       <CustomerListFilter />
-      <DiscountListFilter/>
+      <DiscountListFilter/> */}
   </main>
 //   <div className="App">
 //   <h5>React CRUD operations using PHP API and MySQL</h5>
