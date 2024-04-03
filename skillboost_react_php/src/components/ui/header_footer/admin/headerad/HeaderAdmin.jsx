@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 import Notification from '../notification/Notification';
 import avatar from '../../../../../assets/logo/avatar.svg'
-import Nhantuvan from '../progressbar/Nhantuvan'
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -12,37 +11,31 @@ const HeaderContainer = styled.div`
   height: 48px;
 `;
 
-
 const PageTitle = styled.h1`
   font-size: 1.5rem;
   margin: 0;
 `;
 
-
 const UserInfo = styled.div`
   display: flex;
   align-items: center;
-  
 `;
-
 
 const Avatar = styled.span`
 `;
 
-
 // Header component
-const HeaderAdmin = ({children}) => {
+const HeaderAdmin = ({children, progressBar}) => {
   const getCurrentDate = () => {
     const currentDate = new Date();
     return currentDate.toDateString();
   };
 
-
   return (
     <HeaderContainer>
       <PageTitle className='headline-medium'>{children}</PageTitle>
       <div>
-        <Nhantuvan/>
+        {progressBar}
       </div>
       <div>
         <UserInfo>

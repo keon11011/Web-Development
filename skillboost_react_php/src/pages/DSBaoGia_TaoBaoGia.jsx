@@ -6,22 +6,22 @@ import Button from '../components/ui/button/Button'
 import AddPlus from '../components/icons/Edit/AddPlus'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import TextInput from '../components/ui/placeholder/TextInput'
-import Baogia from '../components/ui/header_footer/admin/progressbar/Baogia'
-import Hoanthanh from '../components/ui/header_footer/admin/progressbar/Hoanthanh'
+import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'
 import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuvan'
-import Thanhtoan from '../components/ui/header_footer/admin/progressbar/Thanhtoan'
+
 
 const DSBaoGia_TaoBaoGia = () => (
     <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
-        <div id='Sidebar' className=''>
+        <div id='Sidebar' className='sticky top-0 h-screen'>
           <SidebarNV/>
         </div>
-        <div id='ContentContainer' className='w-full px-[64px] py-[32px] space-y-[24px]'>
-          <div id='Header'>
-            <HeaderAdmin>Phan Văn Trị</HeaderAdmin>
+        <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+          <div id='Header' >
+            <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
           </div>
-          <div id='LeadInfoNavigation'>
-            <LeadInfoTab/>
+          <div id='LeadInfoNavigation' className='flex space-x-[24px]'>
+            <div className='grow'><LeadInfoTab/></div>
+            <LeadProgressStatus variant='DangTuVan' />
           </div>
           <div id='ContentInside' className="w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex items-center space-x-[16px]'>
@@ -32,8 +32,33 @@ const DSBaoGia_TaoBaoGia = () => (
               <div>
                 <TextInput  title='Tên báo giá' previewText='Nhập tên báo giá'></TextInput>
               </div>
-              <div>
-              <div className='title-medium text-text-primary'>Khóa học</div>
+              <div className='space-y-[16px]'>
+                <div className='title-medium text-text-primary'>Khóa học</div>
+                <div id='Table' className="overflow-x-auto rounded-lg border border-outline-table">
+                  <table className="table-auto w-full">
+                    <thead className='title-small text-text-secondary text-left'>
+                      <tr>
+                        <th className="w-[649px] px-[16px] py-[24px]">Tên khóa học</th>
+                        <th className="w-[649px] px-[16px] py-[24px]">Giảng viên</th>
+                        <th className="w-[214px] px-[16px] py-[24px]">Giá tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody className='body-medium text-text-primary'>
+                      <tr className="hover:bg-background-secondary border-b border-t">
+                        <td className="px-[16px] py-[24px]">IT Business Analyst</td>
+                        <td className="px-[16px] py-[24px]">Ryan Nguyễn</td>
+                        <td className="w-[214px] px-[16px] py-[24px]">4.000.000đ</td>
+                      </tr>
+                      <tr className='border-b'>
+                        <td colspan="2" className="px-[16px] py-[24px] label-medium text-text-primary">Tổng tiền:</td>
+                        <td className="px-[16px] py-[24px] label-medium text-brand-default">4.000.000đ</td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" className='px-[16px] py-[16px]'><Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Thêm khóa học</Button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div className='space-y-[16px]'>
                 <div className='title-medium text-text-primary'>Khuyến mãi</div>
@@ -42,6 +67,10 @@ const DSBaoGia_TaoBaoGia = () => (
               <div className='space-y-[16px]'>
                 <div className='title-medium text-text-primary'>Email báo giá</div>
                 <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Tạo email</Button>
+              </div>
+              <div className='flex w-full space-x-[12px] items-center justify-end'>
+                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
               </div>
             </div>
           </div>
