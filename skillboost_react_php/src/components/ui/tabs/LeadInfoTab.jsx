@@ -26,14 +26,7 @@ const LeadInfoTab = () => {
                 <div className="relative text-text-third hover:text-brand-default">Hoạt động</div>
             </div>
         </div> 
-            </a>
-            <a href="#" className=" transition flex gap-[16px]">
-        <div className="relative after:absolute after:bottom-0 after:left-0  after:bg-brand-default after:h-0.5 after:w-0 hover:after:w-full py-0 px-6">
-            <div className="flex flex-row items-center justify-center py-4 px-0">
-                <div className="relative text-text-third hover:text-brand-default">Mã giảm giá</div>
-            </div>
-        </div> 
-            </a>          
+            </a>         
     </div>
   )
 }
