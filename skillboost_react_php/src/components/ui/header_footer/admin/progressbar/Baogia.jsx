@@ -6,7 +6,7 @@ const Baogia = () => {
         <div class="mb-2 flex ">
             <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
             <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-text-third"></span>
+            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-outline-table"></span>
         </div>
         <div className='flex body-small text-text-third '>
             <div className='text-brand-default'>

@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import Notification from '../notification/Notification';
 import avatar from '../../../../../assets/logo/avatar.svg'
+import Nhantuvan from '../progressbar/Nhantuvan'
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -40,6 +41,9 @@ const HeaderAdmin = ({children}) => {
   return (
     <HeaderContainer>
       <PageTitle className='headline-medium'>{children}</PageTitle>
+      <div>
+        <Nhantuvan/>
+      </div>
       <div>
         <UserInfo>
         <span className='title-medium text-text-secondary'>{getCurrentDate()}</span> {/* Current Date */}
