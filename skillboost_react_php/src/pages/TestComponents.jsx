@@ -2,7 +2,7 @@ import Button from '../components/ui/button/Button';
 import ArrowCircleDown from '../components/icons/Arrow/ArrowCircleDown';
 import ArrowUndoUpLeft from '../components/icons/Arrow/ArrowUndoUpLeft';
 import ButtonFloat from '../components/ui/button/ButtonFloat';
-import ActionItems from '../components/ui/button/ActionIcon';
+import ActionIcon from '../components/ui/button/ActionIcon';
 import ActionPersonDetail from '../components/ui/button/ActionPersonDetail';
 import EditPencil01 from '../components/icons/Edit/EditPencil01'; 
 import UserClose from '../components/icons/User/UserClose';
@@ -144,7 +144,7 @@ const TestComponents = () => (
       <ButtonFloat leftIcon={<ArrowUndoUpLeft width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Trở về trang chủ</ButtonFloat>
       </div>
 
-      <ActionItems icon={<ArrowUndoUpLeft width="1.5rem" height="1.5rem"/>} />
+      <ActionIcon icon={<ArrowUndoUpLeft width="1.5rem" height="1.5rem"/>} />
       <div className='space-x-4'>
         <ActionPersonDetail variant="Edit" icon={<EditPencil01 width="1.5rem" height="1.5rem"/>}/>
         <ActionPersonDetail variant="Unfollow" icon={<UserClose width="1.5rem" height="1.5rem"/>}/>
