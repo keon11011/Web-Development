@@ -2,11 +2,11 @@ import React from 'react'
 
 const Baogia = () => {
   return (
-    <div>
-        <div class="mb-2 flex ">
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-text-third"></span>
+    <div className='space-y-[10px]'>
+        <div class="flex ">
+            <span class="h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
+            <span class="h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
+            <span class="h-[6px] w-[231px]  rounded-xl bg-outline-table"></span>
         </div>
         <div className='flex body-small text-text-third '>
             <div className='text-brand-default'>

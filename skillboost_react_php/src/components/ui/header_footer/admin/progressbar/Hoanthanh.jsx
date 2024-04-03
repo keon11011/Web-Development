@@ -3,11 +3,11 @@ import  CircleCheck  from '../../../../icons/Warning/CircleCheck'
 
 const Hoanthanh = () => {
   return (
-    <div>
-        <div class="mb-2 flex items-center">
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
-            <span class="mb-2 h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
+    <div className='space-y-[2px]'>
+        <div class="flex items-center">
+            <span class="h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
+            <span class="h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
+            <span class="h-[6px] w-[231px]  rounded-xl bg-brand-default"></span>
             <span className='bg-brand-default text-text-white rounded-full '><CircleCheck width="24px" height="24px"/></span>
         </div>
         <div className='flex body-small text-text-third '>
