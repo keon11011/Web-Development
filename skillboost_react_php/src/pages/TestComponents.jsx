@@ -8,9 +8,12 @@ import EditPencil01 from '../components/icons/Edit/EditPencil01';
 import UserClose from '../components/icons/User/UserClose';
 import TrashFull from '../components/icons/Interface/TrashFull';
 import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
-import TextInput from '../components/ui/placeholder/TextInput'
-import TextArea from '../components/ui/placeholder/TextArea'
-import SearchBar from '../components/ui/placeholder/SearchBar'
+import TextInput from '../components/ui/placeholder/TextInput';
+import TextArea from '../components/ui/placeholder/TextArea';
+import SearchBar from '../components/ui/placeholder/SearchBar';
+import LeadTableStatus from '../components/ui/chips/LeadTableStatus';
+import CourseTableStatus from '../components/ui/chips/CourseTableStatus';
+import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus';
 
 const TestComponents = () => (
     <main className="relative bg-background-primary">
@@ -214,6 +217,25 @@ const TestComponents = () => (
             note="Vui lòng nhập mô tả của bạn"
           />
         </div>
+      </div>
+
+      <br/>
+      <div className='flex flex-row justify-start items-center space-x-4'>
+        <LeadTableStatus variant='DangTuVan'/>
+        <LeadTableStatus variant='NgungTheoDoi'/>
+        <LeadTableStatus variant='DaThanhToan'/>
+      </div>
+      <br />
+      <div className='flex flex-row justify-start items-center space-x-4'>
+        <CourseTableStatus variant='DangVanHanh'/>
+        <CourseTableStatus variant='DangChieuSinh'/>
+        <CourseTableStatus variant='VoHieuHoa'/>
+      </div>
+      <br />
+      <div className='flex flex-col justify-start items-start space-y-4'>
+        <LeadProgressStatus variant='DangTuVan'/>
+        <LeadProgressStatus variant='HuyTheoDoi'/>
+        <LeadProgressStatus variant='DaThanhToan'/>
       </div>
 
     </main>
