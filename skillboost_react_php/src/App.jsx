@@ -28,7 +28,7 @@ import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia';
 import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia';
 const App = () => (
   <main className="relative">
-
+      <DSBaoGia_TaoBaoGia/>
       {/* <HeaderAdmin/> */}
       {/* <SidebarNV/> */}
       {/* <CourseSelector/>

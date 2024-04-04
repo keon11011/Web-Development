@@ -31,6 +31,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
         <HeaderAdmin>Quy định giảm giá</HeaderAdmin>
       </div>
       <div className='w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col items-start justify-between p-6 gap-[24px] '>
+        <form>
           <div className='pb-5 flex justify-between'>
             <div id='Header' className='flex items-center space-x-[16px]'>
               <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
@@ -42,29 +43,29 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
           
           <div className='flex flex-col pb-2 '>
             <div className='pb-2 title-medium text-text-secondary'>Mô tả loại giảm giá <text className='text-red-600'>*</text></div>
-            <TextInput/>
+            <TextInput previewText="Mô tả loại giảm giá" />
           </div>
         
             <div className="flex w-full space-x-4">
               <div className='w-1/2 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Số lượng khóa học đăng kí <text className='text-red-600'>*</text></div>
-                <TextInput/>
+                <TextInput previewText="Số lượng khóa học đăng kí" />
               </div>
               
               <div className='w-1/2 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Nghề nghiệp <text className='text-red-600'>*</text></div>
-                <TextInput/>
+                <TextInput  previewText="Nghề nghiệp" />
               </div>
             </div>
 
             <div className="flex w-full space-x-4">
               <div className='w-1/4 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Phần trăm giảm giá mặc định <text className='text-red-600'>*</text></div>
-                <TextInput/>
+                <TextInput previewText="Phần trăm giảm giá mặc định" />
               </div>
               <div className='w-1/4 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Phần trăm giảm giá tối đa <text className='text-red-600'>*</text></div>
-                <TextInput/>
+                <TextInput previewText="Phần trăm giảm giá mặc định" />
               </div>
               <div className='w-1/4 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Ngày bắt đầu<text className='text-red-600'>*</text></div>
@@ -78,6 +79,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
 
          
         </div>
+        
       </div>
       <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
               <div className=' relative bg-background-primary space-x-4 p-2 float-right'  >
@@ -87,6 +89,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
                 <Button size="Medium" variant="Destructive-plain">Hủy tạo</Button>
               </div>
           </div>
+          </form>
       </div>
       
     </div>
