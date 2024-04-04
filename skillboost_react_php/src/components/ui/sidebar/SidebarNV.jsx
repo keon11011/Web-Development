@@ -10,9 +10,9 @@ function Sidebar () {
   const activeMenu = true;
   return (
     <main>
-      <div className='bg-background-secondary box-border h-screen w-[15%] border-solid border-whitesmoke'>
-          <div className="w-[full] py-5 px-2 flex flex-row items-center justify-center gap-[12px]">
-          <img className="w-full relative max-w-full overflow-hidden" alt="Logo" src={SkillboostLogo} />
+      <div className='box-border w-[232px] h-screen border-solid border-r border-outline-table'>
+          <div className="w-[full] py-5 px-2 flex flex-row gap-[12px]">
+          <img className="relative h-[2.125rem]" alt="Logo" src={SkillboostLogo} />
         </div>
         <ul role="list">
           <li>

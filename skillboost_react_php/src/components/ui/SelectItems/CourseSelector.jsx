@@ -9,7 +9,7 @@ import Button from '../button/Button'
 const CourseSelector = () => {
   return (
 <div class="flex flex-wrap -mx-3 mb-5">
-  <div class="w-full max-w-full px-3 mb-6  mx-auto">
+  <div class="w-full max-w-full px-3 mb-6 mx-auto">
     <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
       <div class="relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
         {/* <!-- card header --> */}

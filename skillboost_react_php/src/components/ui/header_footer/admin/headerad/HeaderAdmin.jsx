@@ -1,10 +1,6 @@
-
 import styled from 'styled-components';
 import Notification from '../notification/Notification';
 import avatar from '../../../../../assets/logo/avatar.svg'
-
-
-
 
 
 
@@ -13,8 +9,9 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #fff; /* Adjust background color */
-  border-bottom: 1px solid #e0e0e0; /* Adjust border color */
+  background-color: transperant; /* Adjust background color */;
+  height: 48px;
+  
 `;
 
 
