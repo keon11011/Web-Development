@@ -17,7 +17,7 @@ import AlertCaution from '../components/ui/inform/AlertCaution';
 import AlertInfo from '../components/ui/inform/AlertInfo';
 import AlertDanger from '../components/ui/inform/AlertDanger';
 import Email from '../components/ui/email/Email';
-
+import DropDown from '../components/ui/placeholder/DropDown';
 
 const TestComponents = () => (
     <main className="relative bg-background-primary">
@@ -241,6 +241,17 @@ const TestComponents = () => (
 
       <div>
         <Email />
+      </div>
+
+      <div className='flex space-x-10 pb-[300px]'>
+        <DropDown
+          title="Select an option"  
+          options={["Option 1", "Option 2", "đasadadasdasdadasdasasd"]}
+        />
+        <DropDown
+          title="Select an option"  
+          options={["Option 1", "Option 2", "Option 3"]}
+        />
       </div>
 
     </main>
