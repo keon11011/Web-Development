@@ -25,14 +25,16 @@ import SidebarNV from './components/ui/sidebar/SidebarNV';
 import HeaderAdmin from './components/ui/header_footer/admin/headerad/HeaderAdmin';
 import DSBaoGia_TaoBaoGia from './pages/DSBaoGia_TaoBaoGia'
 import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia';
+import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia';
 const App = () => (
   <main className="relative">
-      <DSQuyDinhGiamGia/>
+
       {/* <HeaderAdmin/> */}
       {/* <SidebarNV/> */}
       {/* <CourseSelector/>
       <LeadListFilter/>
-      <TestComponents/> */}
+      <TestComponents/>
+       */}
     
   </main>
 )
