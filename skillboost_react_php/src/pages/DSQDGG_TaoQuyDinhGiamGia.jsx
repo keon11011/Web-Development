@@ -46,7 +46,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
             <TextInput previewText="Mô tả loại giảm giá" />
           </div>
         
-            <div className="flex w-full space-x-4">
+            <div className="pt-4 flex w-full space-x-4">
               <div className='w-1/2 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Số lượng khóa học đăng kí <text className='text-red-600'>*</text></div>
                 <TextInput previewText="Số lượng khóa học đăng kí" />
@@ -58,7 +58,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
               </div>
             </div>
 
-            <div className="flex w-full space-x-4">
+            <div className="pt-4 flex w-full space-x-4">
               <div className='w-1/4 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Phần trăm giảm giá mặc định <text className='text-red-600'>*</text></div>
                 <TextInput previewText="Phần trăm giảm giá mặc định" />
