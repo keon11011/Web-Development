@@ -18,6 +18,7 @@ const DropdownButtonWrapper = styled.div`
   height: auto;
   border-radius: 0.5rem;
   background-color: #FAFAFA;
+  color: #5E6A6E;
   padding: 0.875rem 1rem;
   font-size: 1rem;
   border: 1px solid ${(props) =>
@@ -35,7 +36,7 @@ const DropdownButtonWrapper = styled.div`
 
 const DropdownButtonComponent = styled.button`
   flex: 1;
-  background: none;
+  background: #FAFAFA;
   outline: none;
   border: none;
   width: 100%;

@@ -3,7 +3,7 @@ import ChevronDown from '../../icons/Arrow/ChevronDown'
 
 const Pagination = () => {
   return (
-    <div className="relative w-full flex flex-row items-center justify-center gap-[12px] text-left text-sm text-text-secondary">
+    <div className="relative w-auto flex flex-row items-center justify-center gap-[12px] text-left text-sm text-text-secondary">
     <div className="relative">Trang</div>
         <div className="rounded flex flex-row items-center justify-center py-1.5 px-2 gap-[11px] label-small border-[1px] border-solid border-text-secondary">
         <div className="relative">1</div>
