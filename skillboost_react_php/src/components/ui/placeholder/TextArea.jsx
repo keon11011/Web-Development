@@ -6,6 +6,7 @@ const TextAreaContainer = styled.div`
   flex-direction: column;
   align-items: left;
   gap: 0.5rem;
+  height: 100%;
 `;
 
 const TextAreaWrapper = styled.div`
@@ -17,6 +18,7 @@ const TextAreaWrapper = styled.div`
   border-radius: 0.5rem;
   background-color: #FAFAFA;
   min-height: 100px;
+  height: 100%;
   padding: 0.875rem 1rem;
   font-size: 1rem;
   border: 1px solid ${(props) =>

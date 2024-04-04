@@ -6,11 +6,11 @@ const SvgArrowDownUp = (props) => (
     height="1em"
     fill="none"
     viewBox="0 0 24 24"
+    stroke="currentColor"
     strokeWidth={1.5}
     {...props}
   >
     <path
-      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       d="m11 16-3 3m0 0-3-3m3 3V5m5 3 3-3m0 0 3 3m-3-3v14"

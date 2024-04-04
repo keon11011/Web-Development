@@ -1,13 +1,13 @@
 import Check from '../../icons/Interface/Check';
 
-const InformSuccess = () => {
+const InformSuccess = ({children}) => {
   return (
-    <div className="bg-sematic-green justify-center items-center gap-2 px-7 py-4 border label-large text-lg text-white leading-none rounded-[8px] p-10 ml-10 inline-flex shadow-2xl">
+    <div className="flex w-auto bg-sematic-green justify-center items-center gap-2 px-7 py-4 border body-large  text-white rounded-[8px] p-10 shadow-2xl">
       <Check 
         width="24px"
         height="24px"
       />
-      Gửi yêu cầu tư vấn thành công
+      {children}
     </div>
   )
 }
