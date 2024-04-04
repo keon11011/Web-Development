@@ -14,7 +14,7 @@ import CourseSelector from '../components/ui/SelectItems/CourseSelector'
 import AddPlus from '../components/icons/Edit/AddPlus'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 
-const DSBaoGia_TaoBaoGia = () => {
+const DSBaoGia_ChinhSuaBaoGia = () => {
   const [showCourseSelector, setShowCourseSelector] = useState(false);
   const [showPromotionInputs, setShowPromotionInputs] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -43,11 +43,11 @@ const DSBaoGia_TaoBaoGia = () => {
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
           <div id='Header' className='flex items-center space-x-[16px]'>
             <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
-            <div className='text-text-primary title-large'>Tạo báo giá</div>
+            <div className='text-text-primary title-large'>Báo giá khóa học IT Business Analyst</div>
           </div>
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div>
-              <TextInput title='Tên báo giá' previewText='Nhập tên báo giá'></TextInput>
+              <TextInput title='Tên báo giá' previewText='Nhập tên báo giá'>Báo giá khóa học IT Business Analyst</TextInput>
             </div>
             <div className='space-y-[16px]'>
               <div className='title-medium text-text-primary'>Khóa học</div>
@@ -130,4 +130,4 @@ const DSBaoGia_TaoBaoGia = () => {
   );
 };
 
-export default DSBaoGia_TaoBaoGia;
+export default DSBaoGia_ChinhSuaBaoGia;

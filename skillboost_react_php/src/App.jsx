@@ -1,8 +1,10 @@
-import DSBaoGia_TaoBaoGia from './pages/DSBaoGia_TaoBaoGia'
+import './font.css'
+
+import DangNhap from './pages/DangNhap'
 
 const App = () => (
   <main className="relative">
-    <DSBaoGia_TaoBaoGia/>
+    <DangNhap/>
   </main>
 )
 

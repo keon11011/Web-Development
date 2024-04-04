@@ -14,6 +14,7 @@ const ButtonComponent = styled.button`
   font-weight: 500;
   border-radius: 0.5rem;
   padding: 16px;
+  width: 100%;
   height: ${(props) => 
     props.size === "Big" ? "48px" : 
     props.size === "Medium" ? "40px" : 

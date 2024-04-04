@@ -8,13 +8,13 @@ const DropdownButtonContainer = styled.div`
   justify-content: left;
   text-align: left;
   gap: 0.5rem;
+  width: 100%;
 `;
 
 const DropdownButtonWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 100%;
-  min-width: 488px;
+  min-width: 350px;
   height: auto;
   border-radius: 0.5rem;
   background-color: #FAFAFA;
@@ -43,7 +43,6 @@ const DropdownButtonComponent = styled.button`
   font-size: 1rem;
   cursor: pointer;
   text-align: left;
-  overflow: hidden;
   text-overflow: ellipsis;
 `;
 
@@ -81,9 +80,8 @@ const Note = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#5E6A6E'};
 `;
 
-const DropDown = ({ variant, title, note, options, onChange, readOnly, ...rest }) => {
+const DropDown = ({ variant, title, note, options, onChange, readOnly, previewText, selectedOption,setSelectedOption, ...rest }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
   const buttonRef = useRef(null);
   const [buttonWidth, setButtonWidth] = useState(null);
   const [buttonPosition, setButtonPosition] = useState({ top: 0, left: 0 });
@@ -92,7 +90,9 @@ const DropDown = ({ variant, title, note, options, onChange, readOnly, ...rest }
     if (buttonRef.current) {
       setButtonWidth(buttonRef.current.offsetWidth);
       const rect = buttonRef.current.getBoundingClientRect();
-      setButtonPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      setButtonPosition({ top: rect.bottom + scrollTop, left: rect.left + scrollLeft });
     }
   }, [buttonRef]);
 
@@ -115,7 +115,7 @@ const DropDown = ({ variant, title, note, options, onChange, readOnly, ...rest }
           readOnly={variant === 'ReadOnly'}
           {...rest} 
         >
-          {selectedOption || 'Choose an option'}
+          {selectedOption || previewText}
         </DropdownButtonComponent>
         <ChevronDown/>
       </DropdownButtonWrapper>
