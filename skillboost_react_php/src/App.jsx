@@ -1,11 +1,12 @@
-
 import './font.css'
-import DSBaoGia_TaoBaoGia from './pages/DSBaoGia_TaoBaoGia'
+import TrangChu from './pages/TrangChu.jsx'
 
-const App = () => (
-  <main className="relative">
-    <DSBaoGia_TaoBaoGia/>
-  </main>
-)
+const App = () => {
+  return (
+    <main className="relative">
+      <TrangChu />
+    </main>
+  )
+}
 
-export default App;
+export default App; 

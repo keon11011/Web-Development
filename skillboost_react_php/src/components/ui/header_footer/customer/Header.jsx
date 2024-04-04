@@ -1,20 +1,38 @@
 import SkillboostLogo from '../../../../assets/logo/SkillboostLogo.svg'
 
+import {Routes, Route, Link} from 'react-router-dom'
+import TrangChu from '../../../../pages/TrangChu.jsx'
 
-const Header = () => {
+
+
+function Header() {
   return (
-    <div className=' bg-background-third px-[200px] py-[56px] text text-text-secondary flex flex-row space-x-auto w-full justify-between'>
-      <div className='w-[238px] h-[46px]'>
+    <div className='bg-background-third xl:px-40 px-2/5 py-4 text-text-secondary space-x-auto flex w-full justify-between '>
+      <div className='w-[238px] h-[46px] max-w-max min-w-max'>
         <img src={SkillboostLogo} alt="Logo" />
       </div>
-      <div className="flex flex-row title-large text-text-secondary gap-12">
-        <a href="#" className="hover:text-brand-default  py-2 px-2 ">Trang chủ</a>
-        <a href="#" className="hover:text-brand-default  py-2 px-2 ">Khóa học</a>
-        <a href="#" className="hover:text-brand-default  py-2 px-2 ">Liên hệ</a>
-      </div>
+      <nav className="flex flex-row title-medium text-text-secondary gap-12">
+        <ul className=' py-2 px-2 '>
+          <li>
+            <Link to="/trangchu" className="hover:text-brand-default">Trang chủ</Link>
+          </li>
+        </ul>
+        <ul className=' py-2 px-2 '>
+          <li>
+            <Link to="/trangchukhoahoc" className="hover:text-brand-default">Khóa học</Link>
+          </li>
+        </ul>
+        <ul className=' py-2 px-2 '>
+          <li>
+            <Link to="/lienhe" className="hover:text-brand-default">Liên hệ</Link>
+          </li>
+        </ul>
+      </nav>
+     
+      
+     
     </div>
+
   )
 }
-
-
 export default Header
