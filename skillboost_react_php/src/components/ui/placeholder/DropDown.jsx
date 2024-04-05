@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ChevronDown from '../../icons/Arrow/ChevronDown';
 
 const DropdownButtonContainer = styled.div`
@@ -71,6 +71,15 @@ const Title = styled.div`
   font-weight: medium;
   font-size: 1rem;
   color: #5e6a6e;
+  ${(props) =>
+    props.showRedAsterisk &&
+    css`
+      &:after {
+        content: '*';
+        color: #ff4141;
+        margin-left: 0.25rem;
+      }
+    `}
 `;
 
 const Note = styled.div`
@@ -80,7 +89,19 @@ const Note = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#5E6A6E'};
 `;
 
-const DropDown = ({ variant, title, note, options, onChange, readOnly, previewText, selectedOption,setSelectedOption, ...rest }) => {
+const DropDown = ({
+  variant,
+  title,
+  note,
+  options,
+  onChange,
+  readOnly,
+  previewText,
+  selectedOption,
+  setSelectedOption,
+  showRedAsterisk, // New prop to trigger showing the red asterisk
+  ...rest
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
   const [buttonWidth, setButtonWidth] = useState(null);
@@ -108,7 +129,9 @@ const DropDown = ({ variant, title, note, options, onChange, readOnly, previewTe
 
   return (
     <DropdownButtonContainer>
-      {title && <Title>{title}</Title>}
+      {title && (
+        <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
+      )}
       <DropdownButtonWrapper variant={variant} onClick={toggleOptions} ref={buttonRef}>
         <DropdownButtonComponent
           type="button"

@@ -18,7 +18,9 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 const DSBaoGia_TaoBaoGia = () => {
   const [showCourseSelector, setShowCourseSelector] = useState(false);
   const [showPromotionInputs, setShowPromotionInputs] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  
+  const [selectedDoiTuongUuTien, setselectedDoiTuongUuTien] = useState(null);
+  const [selectedDipDacBiet, setselectedDipDacBiet] = useState(null);
 
   const handleCourseSelectorClick = () => {
     setShowCourseSelector(!showCourseSelector);
@@ -89,13 +91,15 @@ const DSBaoGia_TaoBaoGia = () => {
                     title="Đối tượng ưu tiên"
                     previewText="Chọn đối tượng ưu tiên"
                     options={["Học sinh - Sinh Viên", "Giảng viên đại học", "Không có"]}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
+                    selectedOption={selectedDoiTuongUuTien}
+                    setSelectedOption={setselectedDoiTuongUuTien}
                   />
                   <DropDown
                     title="Dịp đặc biệt"
                     previewText="Chọn dịp đặc biệt"
                     options={["Ngày lễ", "Không có"]}
+                    selectedOption={selectedDipDacBiet}
+                    setSelectedOption={setselectedDipDacBiet}
                   />
                 </div>
                 <div className='flex w-1/3 pr-[16px]'>
