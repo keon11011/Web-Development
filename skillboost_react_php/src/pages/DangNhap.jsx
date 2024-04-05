@@ -16,13 +16,7 @@ const DangNhap = () => {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-url[(BackgroundGradient)] relative">
-      <img
-        src={BackgroundGradient}
-        alt="Background"
-        className="absolute inset-0 z-0 bg-cover"
-      />
-      
+    <main className="min-h-screen flex flex-col items-center justify-center bg-url[('assets/logo/Background.svg')] relative">
       <img
         src={SkillboostLogo}
         alt="SkillboostLogo"

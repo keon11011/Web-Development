@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
-import LeadInfoTab from '../components/ui/tabs/LeadInfoTab'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
 import DropDown from '../components/ui/placeholder/DropDown'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import CourseSelector from '../components/ui/SelectItems/CourseSelector'
+import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
 
 import AddPlus from '../components/icons/Edit/AddPlus'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
@@ -51,7 +51,7 @@ const DSKhachHang_TaoKH = () => {
                         selectedOption={selectedGioiTinh}
                         setSelectedOption={setselectedGioiTinh}
                     />
-                    <TextInput title='Họ tên' previewText='Họ tên'></TextInput>
+                    <CustomDatePicker title='Ngày sinh' previewText='Ngày sinh'></CustomDatePicker>
                 </div>
                 <div className='flex space-x-[24px]'>
                     <TextInput title='Số điện thoại' previewText='Số điện thoại' showRedAsterisk></TextInput>
@@ -65,7 +65,7 @@ const DSKhachHang_TaoKH = () => {
                         setSelectedOption={setselectedNgheNghiep}
                     />
                 </div>
-                <div className='w-[468px] space-x-[24px]'>
+                <div className='w-1/3 space-x-[24px]'>
                     <DropDown
                         title="Nguồn"
                         previewText="Nguồn"
