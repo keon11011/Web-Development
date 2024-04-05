@@ -89,7 +89,7 @@ const LeadListFilter = () => {
 
                 <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
                     <div className=' relative bg-background-primary space-x-4 p-2 float-left'  >
-                        <Button><input type="reset"/></Button>
+                        <Button variant="Secondary" size='small'><input type="reset"/></Button>
                     </div>
                     <div className=' relative bg-background-primary space-x-4 p-2 float-right'  >
                         <Button size="Small" variant="Primary">Xóa</Button>

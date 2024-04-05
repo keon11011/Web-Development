@@ -1,12 +1,11 @@
 import './font.css'
-import TrangChu from './pages/TrangChu.jsx'
 
-const App = () => {
-  return (
-    <main className="relative">
-      <TrangChu />
-    </main>
-  )
-}
+import DangNhap from './pages/DangNhap'
+
+const App = () => (
+  <main className="relative">
+    <DangNhap/>
+  </main>
+)
 
 export default App; 

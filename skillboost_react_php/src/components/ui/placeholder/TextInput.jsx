@@ -7,12 +7,13 @@ const TextInputContainer = styled.div`
   justify-content: left;
   text-align: left;
   gap: 0.5rem;
+  width: 100%;
 `;
 
 const TextInputWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 100%; //này hình như ai mới thêm nè
   min-width: 350px;
   height: auto;
   border-radius: 0.5rem;
@@ -47,8 +48,6 @@ const IconWrapperLeft = styled.span`
 const TextInputComponent = styled.input`
   flex: 1;
   background: #FAFAFA;
-  background: ${(props) =>
-    props.variant === 'ThanhToan' ? '#FFFFFF' : '#FAFAFA'};
   outline: none;
   border: none;
   width: 100%;
