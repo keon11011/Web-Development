@@ -48,6 +48,7 @@ const IconWrapperLeft = styled.span`
 const TextInputComponent = styled.input`
   flex: 1;
   background: #FAFAFA;
+ 
   outline: none;
   border: none;
   width: 100%;
