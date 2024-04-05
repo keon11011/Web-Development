@@ -1,7 +1,6 @@
 import Button from "../button/Button";
 import Flag from "../../icons/Navigation/Flag";
 import Mail from "../../icons/Communication/Mail";
-import Carret_Down_MD from "../../icons/Arrow/CaretDownMd"
 import Close_MD from "../../icons/Menu/CloseMd"
 
 const Email = () => {
@@ -42,25 +41,17 @@ const Email = () => {
 
       </div>
 
-        <div className="flex">
+        <div className="flex justify-between">
           <Button size="Small" variant="Plain" className="text-[#5E6A6E]"
             leftIcon={<Flag width="1.25rem" height="1.25rem" strokeWidth={1.5} className="text-[#1A1F23]"/>}
             onClick={() => console.log("Error reported")}>
             <span className="text-[#5E6A6E]">Báo cáo lỗi</span>
           </Button>
 
-          <div className="pl-[50%] pr-0">
-          <Button size="Small" variant="Secondary"
-            leftIcon={<Mail width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
-            onClick={() => console.log("Mail sent")}>
-            Gửi mail
-          </Button></div>
-
-          <div className="pl-1 pr-0"></div>
           <Button size="Small" variant="Primary"
             leftIcon={<Mail width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
             onClick={() => console.log("Mail sent")}>
-            Gửi mail
+            Gửi email
           </Button>
         </div>
 
