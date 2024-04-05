@@ -16,11 +16,11 @@ import SQLAdvanced_course from '../assets/img/SQLAdvanced_course.svg'
 
 
 const TrangChu_DSKhoaHoc = () => (
-    <main>
+    <main className="">
         <div name="Header">
             <Header />
         </div>
-        <div name="body" className='px-40 pb-20'>
+        <div name="body" className='px-40 pb-20 '>
             <div className='relative flex flex-col xl:w-full items-start w-full pt-28 gap-10'>
                 <div className='items-center inline-flex justify-between w-full'>
                     <span className='headline-medium text-gray-500'>Khóa học tại Skillboost</span>

@@ -13,11 +13,11 @@ import Illustration from '../assets/img/Illustration.svg'
 
 const TrangChu = () => (
 
-    <main className=''>
+    <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
         <div name="Header">
             <Header />
         </div>
-        <div name="body" className='px-40'>
+        <div name="body" className="px-40 ">
             <div className='relative flex flex-row xl:w-full justify-center items-start w-full pt-28'>
                 <div className='flex flex-col'>
                     <span className='display-large'>Khám phá tri thức - </span>
