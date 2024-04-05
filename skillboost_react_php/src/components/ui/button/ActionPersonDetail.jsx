@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import EditPencil01 from '../../icons/Edit/EditPencil01'; 
+import UserClose from '../../icons/User/UserClose';
+import TrashFull from '../../icons/Interface/TrashFull';
+
 const ButtonComponent = styled.button`
   position: relative;
   display: inline-flex;
@@ -52,7 +56,21 @@ const IconWrapper = styled.span`
   align-items: center;
 `;
 
-const ActionPersonDetail = ({type, className, id, onClick, variant, icon}) => {
+const ActionPersonDetail = ({type, className, id, onClick, variant, iconComponent}) => {
+  switch (variant) {
+    case "Edit":
+      iconComponent = <EditPencil01 width="1.5rem" height="1.25rem" />;
+      break;
+    case "Unfollow":
+      iconComponent = <UserClose width="1.5rem" height="1.25rem"/>;
+      break;
+    case "Delete":
+      iconComponent = <TrashFull width="1.5rem" height="1.25rem"/>;
+      break;
+    default:
+      iconComponent = <EditPencil01 width="1.5rem" height="1.25rem"/>;
+  }
+  
   return (
     <ButtonComponent
       type={type ? type : "button"}
@@ -61,7 +79,7 @@ const ActionPersonDetail = ({type, className, id, onClick, variant, icon}) => {
       onClick={onClick}
       variant={variant}
     >
-      {icon && <IconWrapper>{icon}</IconWrapper>}
+      <IconWrapper>{iconComponent}</IconWrapper>
     </ButtonComponent>
   );
 };

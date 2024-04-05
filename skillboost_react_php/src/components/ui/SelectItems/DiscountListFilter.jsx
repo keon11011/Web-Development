@@ -17,7 +17,7 @@ const DiscountListFilter = () => {
     return (
 
         <form className="w-full relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
-            <div className=" w-1/3 relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
+            <div className=" w-auto relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
                 <div className="p-6 pb-3 w-fit flex gap-6">
                     <div>
                         <div className=" title-medium text-text-secondary">Phần trăm giảm giá mặc định</div>
@@ -66,7 +66,7 @@ const DiscountListFilter = () => {
                         )}
                     </div>
                 </div>
-                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-gray-300"></div>
+                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
 
                 <div className="p-6 pb-3 w-fit">
@@ -75,7 +75,7 @@ const DiscountListFilter = () => {
                         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} isClearable showIcon />
                     </div>
                 </div>
-                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-gray-300"></div>
+                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
                 <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
                     <div className=' relative bg-background-primary space-x-4 p-2 float-left'  >

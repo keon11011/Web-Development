@@ -10,13 +10,13 @@ const LeadListFilter = () => {
   return (
 
         <div class="w-full relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
-          <div class=" w-1/3 relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">   
+          <div class=" w-auto relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">   
             <div class="p-2 pl-8 w-fit">
               <div class="pl- pt-5 pb-2 title-medium text-text-secondary">Thời gian cập nhật</div>
               <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} showIcon />
             </div>
               
-            <div class="p-2 w-11/12 mx-auto  border-t border-1 border-[#5200FF]"></div>
+            <div class="p-2 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
             <div class="p-2 pt-0   w-fit">
             <div class="pl-6 title-medium text-text-secondary">Khóa học quan tâm</div>
@@ -393,7 +393,7 @@ const LeadListFilter = () => {
               </div>
             </div>
 
-            <div class="p-2 w-11/12 mx-auto  border-t border-1 border-[#5200FF]"></div>
+            <div class="p-2 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
             <div class="p-2 pt-0 w-fit">
             <div class="pl-6 title-medium text-text-secondary">Trạng thái</div>
@@ -518,7 +518,7 @@ const LeadListFilter = () => {
             </div>
             </div>
 
-            <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-[#5200FF]"></div>
+            <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
             
             <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
               <div className=' relative bg-background-primary space-x-4 p-2 float-left'  >

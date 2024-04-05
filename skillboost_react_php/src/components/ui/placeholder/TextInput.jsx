@@ -13,7 +13,7 @@ const TextInputWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-width: 488px;
+  min-width: 350px;
   height: auto;
   border-radius: 0.5rem;
   background-color: #FAFAFA;
@@ -47,9 +47,14 @@ const IconWrapperLeft = styled.span`
 const TextInputComponent = styled.input`
   flex: 1;
   background: #FAFAFA;
+  background: ${(props) =>
+    props.variant === 'ThanhToan' ? '#FFFFFF' : '#FAFAFA'};
   outline: none;
   border: none;
   width: 100%;
+  color: #1A1F23;
+  &::placeholder {
+    visibility: ${(props) => (props.children ? 'hidden' : 'visible')};
 `;
 
 const Title = styled.div`
@@ -65,7 +70,7 @@ const Note = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#5E6A6E'};
 `;
 
-const TextInput = ({ variant, previewText, title, note, name, onChange, leftIcon, rightIcon, readOnly, ...rest }) => {
+const TextInput = ({ variant, previewText, title, note, name, onChange, leftIcon, rightIcon, readOnly, children, ...rest }) => {
   return (
     <TextInputContainer>
       {title && <Title>{title}</Title>}
@@ -74,6 +79,7 @@ const TextInput = ({ variant, previewText, title, note, name, onChange, leftIcon
         <TextInputComponent
           type="text"
           placeholder={previewText}
+          value={children}
           name={name}
           onChange={onChange}
           readOnly={variant === 'ReadOnly'} // Set readOnly prop based on variant

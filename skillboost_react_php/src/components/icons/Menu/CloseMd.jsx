@@ -6,13 +6,13 @@ const SvgCloseMd = (props) => (
     height="1em"
     fill="none"
     viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
     {...props}
   >
     <path
-      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={2}
       d="m18 18-6-6m0 0L6 6m6 6 6-6m-6 6-6 6"
     />
   </svg>
