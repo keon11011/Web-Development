@@ -1,6 +1,5 @@
 import Button from "../button/Button";
 import Flag from "../../icons/Navigation/Flag";
-import Mail from "../../icons/Communication/Mail";
 import Close_MD from "../../icons/Menu/CloseMd"
 
 const Email = () => {
@@ -48,10 +47,8 @@ const Email = () => {
             <span className="text-[#5E6A6E]">Báo cáo lỗi</span>
           </Button>
 
-          <Button size="Small" variant="Primary"
-            leftIcon={<Mail width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
-            onClick={() => console.log("Mail sent")}>
-            Gửi email
+          <Button size="Small" variant="Plain">
+            <span className="text-[#BEBEBE]">Đã gửi email</span>
           </Button>
         </div>
 
