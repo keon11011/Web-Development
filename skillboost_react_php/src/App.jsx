@@ -2,6 +2,8 @@ import './font.css'
 
 import DangNhap from './pages/DangNhap'
 
+import DangNhap from './pages/DangNhap'
+
 const App = () => (
   <main className="relative">
     <DangNhap/>
@@ -9,3 +11,5 @@ const App = () => (
 )
 
 export default App; 
+
+
