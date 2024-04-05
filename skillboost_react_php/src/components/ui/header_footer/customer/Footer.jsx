@@ -8,7 +8,7 @@ import Mail from '../../../icons/Communication/Mail'
 
 const Footer = () => {
   return (
-        <div className=' bg-background-third px-[200px] py-[40px] text text-text-secondary'>
+        <div className=' bg-background-third px-40 py-[40px] text text-text-secondary'>
             <div >
                 <div className='flex flex-row space-x-auto justify-between' >
                     <div className='w-[462px] ' >
