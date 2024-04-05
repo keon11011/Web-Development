@@ -10,7 +10,7 @@ import payment from '../assets/logo/payment.svg'
 
 
 
-const Thanh_toan = () => {
+const Thanh_toan2 = () => {
   return (
     
     <div className=''> 
@@ -59,7 +59,7 @@ const Thanh_toan = () => {
         </div>
 
 
-        <div className='flex justify-center space-x-[24px] mt-10'>
+        <div className='flex justify-center space-x-[24px] mt-10 w-max self-center'>
           <Button variant='Outlined'> Trở về trang chủ</Button>
         </div>
       </div>
@@ -70,4 +70,4 @@ const Thanh_toan = () => {
   )
 }
 
-export default Thanh_toan
+export default Thanh_toan2
