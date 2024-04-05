@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import Pagination from '../components/ui/pagination/Pagination';
@@ -9,8 +9,14 @@ import Filter from '../components/icons/Interface/Filter'
 import  ArrowDownUp from '../components/icons/Arrow/ArrowDownUp';
 import avatar from '../assets/logo/avatar.svg'
 import ChervonRightMD from '../components/icons/Arrow/ChevronRightMd'
+import DiscountListFilter from '../components/ui/SelectItems/DiscountListFilter';
 
 const DSQuyDinhGiamGia = () => {
+  const [showDiscountListFilter, setDiscountListFilter] = useState(false);
+  
+  const handleDiscountListFilterClick = () => {
+    setDiscountListFilter(!showDiscountListFilter);
+  };  
   return (
 <main id = "DSQuyDinhGiamGia">
 <div className='w-full h-screen bg-background-secondary relative grid grid-cols-7 gap-4'>
@@ -27,7 +33,7 @@ const DSQuyDinhGiamGia = () => {
             <div className='gap-4'>
             <ActionIcon icon={<AddPlus width="1.5rem" height="1.5rem"/>}/>
             <ActionIcon icon={<SearchMagnifyingGlass width="1.5rem" height="1.5rem"/>}/>
-            <ActionIcon icon={<Filter width="1.5rem" height="1.5rem"/>}/>
+            <ActionIcon icon={<Filter width="1.5rem" height="1.5rem"/>} onClick={handleDiscountListFilterClick}/>
             <ActionIcon icon={<ArrowDownUp width="1.5rem" height="1.5rem"/>}/>
             </div>
           </div>
@@ -69,6 +75,11 @@ const DSQuyDinhGiamGia = () => {
       
     </div>
 </div>
+    {showDiscountListFilter && 
+                <div className="absolute top-[160px] right-[60px] z-50">
+                    <DiscountListFilter/>
+                </div>
+      }
 </main>
   )
 }
