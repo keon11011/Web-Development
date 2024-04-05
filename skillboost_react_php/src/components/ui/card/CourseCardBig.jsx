@@ -3,7 +3,7 @@ import Button from "../button/Button"
 const CourseCardBig = () => {
     return (
         <nav>
-            <div className="flex w-max min-w-min lg:w-max h-auto flex-col rounded-xl bg-white border-2 hover:shadow-2xl ">
+            <div className="flex w-max min-w-min lg:w-max h-auto flex-col rounded-xl bg-white border-2 hover:shadow-2xl cursor-pointer ">
                 <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
                         className=""

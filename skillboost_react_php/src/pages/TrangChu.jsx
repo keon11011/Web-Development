@@ -10,13 +10,14 @@ import Google_logo from '../assets/logo/Google_logo.svg'
 import UEH_logo from '../assets/logo/UEH_logo.svg'
 import Illustration from '../assets/img/Illustration.svg'
 
+
 const TrangChu = () => (
 
-    <main>
+    <main className=''>
         <div name="Header">
             <Header />
         </div>
-        <div className='px-40'>
+        <div name="body" className='px-40'>
             <div className='relative flex flex-row xl:w-full justify-center items-start w-full pt-28'>
                 <div className='flex flex-col'>
                     <span className='display-large'>Khám phá tri thức - </span>
@@ -68,22 +69,22 @@ const TrangChu = () => (
                 </div>
                 <div className='flex flex-row self-center pt-10 gap-20'>
                     <div>
-                        <CommentCard 
-                            content={"Tôi thực sự ấn tượng với nền tảng học IT này! Các khóa học rất chi tiết và dễ hiểu, đồng thời có nhiều bài thực hành giúp tăng cường kiến thức. Cộng đồng hỗ trợ cũng rất tích cực."} 
+                        <CommentCard
+                            content={"Tôi thực sự ấn tượng với nền tảng học IT này! Các khóa học rất chi tiết và dễ hiểu, đồng thời có nhiều bài thực hành giúp tăng cường kiến thức. Cộng đồng hỗ trợ cũng rất tích cực."}
                             cus_name={"Hữu Anh Trần"}
                             cus_course={"IT Business Analyst"}
                         />
                     </div>
                     <div>
-                        <CommentCard 
-                            content={"Website cung cấp nhiều tài nguyên học tập chất lượng. Tôi đã học nhiều từ các bài giảng và dự án thực tế. Giao diện người dùng thân thiện và dễ dàng tìm kiếm thông tin mình cần."} 
+                        <CommentCard
+                            content={"Website cung cấp nhiều tài nguyên học tập chất lượng. Tôi đã học nhiều từ các bài giảng và dự án thực tế. Giao diện người dùng thân thiện và dễ dàng tìm kiếm thông tin mình cần."}
                             cus_name={"Phạm Như Ngọc"}
                             cus_course={"IT Business Analyst"}
                         />
                     </div>
                     <div>
-                        <CommentCard 
-                            content={"Cộng đồng học viên rất tích cực và hỗ trợ. Tôi thích cách mà các mentor và giáo viên tương tác với sinh viên. Điều này thực sự tạo ra một môi trường học tập tích cực."} 
+                        <CommentCard
+                            content={"Cộng đồng học viên rất tích cực và hỗ trợ. Tôi thích cách mà các mentor và giáo viên tương tác với sinh viên. Điều này thực sự tạo ra một môi trường học tập tích cực."}
                             cus_name={"Phan Hữu Như"}
                             cus_course={"Product Owner Master Class "}
                         />
@@ -91,7 +92,7 @@ const TrangChu = () => (
                 </div>
             </div>
         </div>
-        <div id="Footer">
+        <div name="Footer">
             <Footer />
         </div>
     </main>

@@ -13,7 +13,7 @@ const CommentCard = ({ content, cus_name, cus_course }) => {
                 <div className="p-3 w-auto justify-items-stretch rounded-lg border-b-4 border-r-4">
                     {content}
                 </div>
-                <div className="p-2 pb-0 flex items-center ">
+                <div className="p-2 pt-5 flex items-center ">
                     <User01 width={30} height={30} className="flex rounded-full border-2 border-black"></User01>
                     <div className='pl-2'>
                         <div className="label-medium ">

@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='/' element={<App />}></Route>
         <Route path='/trangchu' element={<TrangChu />}></Route>
-        <Route path='/trangchukhoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
+        <Route path='/khoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
         <Route path='/lienhe' element={<TrangChu />}></Route>
       </Routes>
     </BrowserRouter>
