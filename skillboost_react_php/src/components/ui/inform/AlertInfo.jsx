@@ -1,13 +1,13 @@
 import Info from '../../icons/Warning/Info';
 
-const AlertInfo = () => {
+const AlertInfo = ({children}) => {
   return (
-    <div className="justify-center items-center gap-2 px-7 py-4 body-large text-lg leading-none rounded-[8px] p-10 ml-10 inline-flex bg-[#F7F3FF] text-[#4B0CCF]">
+    <div className="flex w-full justify-start items-center p-[12px] gap-[12px] body-large rounded-[8px] shadow-[0_0_24px_0_rgba(144, 252, 189, 0.50)] bg-[#F7F3FF] text-[#4B0CCF]">
       <Info
-        width="24px"
-        height="24px"
+        width="20px"
+        height="20px"
       />
-      Lorem ipsum dolor sit amet consectetur.
+      {children}
     </div>
   )
 }

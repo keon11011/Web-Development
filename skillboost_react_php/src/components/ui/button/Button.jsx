@@ -14,6 +14,10 @@ const ButtonComponent = styled.button`
   font-weight: 500;
   border-radius: 0.5rem;
   padding: 16px;
+  width: ${(props) => 
+    props.stretch === "auto" ? "auto" : 
+    props.stretch === "full" ? "100%" : 
+    "auto"};
   height: ${(props) => 
     props.size === "Big" ? "48px" : 
     props.size === "Medium" ? "40px" : 
@@ -84,7 +88,7 @@ const IconWrapper = styled.span`
   align-items: center;
 `;
 
-const Button = ({type, variant, className, id, onClick, size, state, leftIcon, children}) => {
+const Button = ({type, variant, className, id, onClick, size, stretch, state, leftIcon, children}) => {
   return (
     <ButtonComponent
       type={type ? type : "button"}
@@ -93,6 +97,7 @@ const Button = ({type, variant, className, id, onClick, size, state, leftIcon, c
       id={id}
       onClick={onClick}
       size={size}
+      stretch={stretch}
       state={state}
     >
       {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>} {/* Không truyền vào icon sẽ không xuất hiện */}

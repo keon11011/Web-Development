@@ -9,7 +9,7 @@ const LeadListFilter = () => {
     return (
 
         <form className="w-full relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
-            <div className=" w-1/3 relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
+            <div className=" w-auto relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
                 <div className="p-6 w-fit">
                     <div className="pl-3 pb-3 title-medium text-text-secondary">Loại hoạt động</div>
                     <div className="pl-3 grid grid-cols-3 gap-4 items-center">
@@ -42,7 +42,7 @@ const LeadListFilter = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-2 w-11/12 mx-auto  border-t border-1 border-gray-300	"></div>
+                <div className="p-2 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
                 <div className="p-2 pt-0 w-fit">
                     <div className="pl-6 title-medium text-text-secondary">Thời gian thực hiện</div>
@@ -50,7 +50,7 @@ const LeadListFilter = () => {
                         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} isClearable showIcon/>
                     </div>
                 </div>
-                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-gray-300"></div>
+                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
                 <div className="p-6 pb-4 pt-2 w-fit">
                     <div className="pl-3 pb-3 title-medium text-text-secondary">Người thực hiện</div>
@@ -84,12 +84,12 @@ const LeadListFilter = () => {
                         </div>
                     </div>
                 </div>
-                <div className="p-2 w-11/12 mx-auto  border-t border-1 border-gray-300	"></div>
+                <div className="p-2 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
 
                 <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
                     <div className=' relative bg-background-primary space-x-4 p-2 float-left'  >
-                        <Button><input type="reset"/></Button>
+                        <Button variant="Secondary" size='small'><input type="reset"/></Button>
                     </div>
                     <div className=' relative bg-background-primary space-x-4 p-2 float-right'  >
                         <Button size="Small" variant="Primary">Xóa</Button>

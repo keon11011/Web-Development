@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 import Notification from '../notification/Notification';
 import avatar from '../../../../../assets/logo/avatar.svg'
@@ -7,18 +6,23 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transperant;
+  padding: 1rem;
+  background-color: transperant; /* Adjust background color */;
   height: 48px;
 `;
 
 const PageTitle = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
   margin: 0;
 `;
 
 const UserInfo = styled.div`
   display: flex;
   align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: ##5E6A6E;
 `;
 
 const Avatar = styled.span`
@@ -33,13 +37,13 @@ const HeaderAdmin = ({children, progressBar}) => {
 
   return (
     <HeaderContainer>
-      <PageTitle className='headline-medium'>{children}</PageTitle>
+      <PageTitle>{children}</PageTitle>
       <div>
         {progressBar}
       </div>
       <div>
         <UserInfo>
-        <span className='title-medium text-text-secondary'>{getCurrentDate()}</span> {/* Current Date */}
+        <span>{getCurrentDate()}</span> {/* Current Date */}
         <Notification/>
         <Avatar >
             <img src={avatar} alt="Avt" />

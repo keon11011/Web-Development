@@ -16,12 +16,12 @@ const DiscountListFilter = () => {
 
     return (
 
-        <form className="w-full relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
-            <div className=" w-1/3 relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
+        <form className="w-max relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
+            <div className=" w-auto relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
                 <div className="p-6 pb-3 w-fit flex gap-6">
                     <div>
                         <div className=" title-medium text-text-secondary">Phần trăm giảm giá mặc định</div>
-                        <div id="Chon%" className="p-2 pl-1"><Button onClick={() => setIsOpen((prev) => !prev)}>
+                        <div id="Chon%" className="p-2 pl-1 w-max"><Button onClick={() => setIsOpen((prev) => !prev)}>
                             Chọn %
 
                             {!isOpen ? (
@@ -32,11 +32,11 @@ const DiscountListFilter = () => {
                             }
                         </Button></div>
                         {isOpen && (
-                            <div className="absolute z-10 bg-indigo-500 flex flex-col rounded-lg p-2 w-full text-white ">
+                            <div className="absolute w-max z-10 bg-indigo-500 flex flex-col rounded-lg p-2  text-white ">
                                 {defaultdiscountlist.map((item, i) => (
                                     <div className="justify-between  inline-flex mt-2 hover:text-white cursor-pointer rounded-r-lg  hover:border-b-2 hover:font-semibold">
                                         <div >{item.discount_name}</div>
-                                        <div className="ml-auto">{item.discount_value}</div>
+                                        <div className="ml-auto pl-5">{item.discount_value}</div>
                                     </div>
                                 ))}
                             </div>
@@ -44,10 +44,10 @@ const DiscountListFilter = () => {
                     </div>
                     <div>
                         <div className=" title-medium text-text-secondary">Phần trăm giảm giá tối đa</div>
-                        <div className="p-2 pl-1"><Button  onClick={() => setIsOpen1((prev) => !prev )}>
+                        <div className="p-2 pl-1 w-max duration-500 "><Button  onClick={() => setIsOpen1((prev) => !prev )}>
                             Chọn %
 
-                            {!isOpen ? (
+                            {!isOpen1 ? (
                                 <CaretDownMd className="h-8"></CaretDownMd>
                             ) : (
                                 <CaretUpMd className="h-8"></CaretUpMd>
@@ -55,18 +55,18 @@ const DiscountListFilter = () => {
                             }
                         </Button></div>
                         {isOpen1 && (
-                            <div className="absolute z-10 bg-indigo-500 flex flex-col rounded-lg p-2 w-full text-white ">
+                            <div className="absolute  z-10 bg-indigo-500 flex flex-col rounded-lg p-2 w-max text-white ">
                                 {maxdiscountlist.map((item, i) => (
                                     <div className="justify-between  inline-flex mt-2 hover:text-white cursor-pointer rounded-r-lg  hover:border-b-2 hover:font-semibold">
                                         <div >{item.discount_name}</div>
-                                        <div className="ml-auto">{item.discount_value}</div>
+                                        <div className="ml-auto pl-3">{item.discount_value}</div>
                                     </div>
                                 ))}
                             </div>
                         )}
                     </div>
                 </div>
-                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-gray-300"></div>
+                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
 
                 <div className="p-6 pb-3 w-fit">
@@ -75,7 +75,7 @@ const DiscountListFilter = () => {
                         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} isClearable showIcon />
                     </div>
                 </div>
-                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-gray-300"></div>
+                <div className="p-2 pb-0 w-11/12 mx-auto  border-t border-1 border-outline-divider"></div>
 
                 <div className="  display:flex text-right  w-full place-items-right overflow-x-scroll rounded-lg p-3 lg:overflow-visible">
                     <div className=' relative bg-background-primary space-x-4 p-2 float-left'  >
