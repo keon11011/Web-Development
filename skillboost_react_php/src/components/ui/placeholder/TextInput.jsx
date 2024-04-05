@@ -7,6 +7,7 @@ const TextInputContainer = styled.div`
   justify-content: left;
   text-align: left;
   gap: 0.5rem;
+  width: 100%;
 `;
 
 const TextInputWrapper = styled.div`
