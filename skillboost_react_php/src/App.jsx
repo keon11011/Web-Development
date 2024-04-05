@@ -7,5 +7,4 @@ const App = () => (
     <DangNhap/>
   </main>
 )
-
 export default App; 
