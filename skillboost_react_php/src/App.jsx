@@ -24,16 +24,20 @@ import DSLead from './pages/DSLead';
 import SidebarNV from './components/ui/sidebar/SidebarNV';
 import HeaderAdmin from './components/ui/header_footer/admin/headerad/HeaderAdmin';
 import DSBaoGia_TaoBaoGia from './pages/DSBaoGia_TaoBaoGia'
+import Thanh_toan from './pages/Thanh_toan'
+import Thanh_toan2 from './pages/Thanh_toan2'
 
 const App = () => (
   <main className="relative">
-      <DSLead/>
+      {/* <Thanh_toan/> */}
+      <Thanh_toan2/>
+      {/* <DSLead/> */}
       {/* <HeaderAdmin/> */}
       {/* <SidebarNV/> */}
       {/* <CourseSelector/>
       <LeadListFilter/>
       <TestComponents/> */}
-    <DSBaoGia_TaoBaoGia/>
+    {/* <DSBaoGia_TaoBaoGia/> */}
   </main>
 )
 
