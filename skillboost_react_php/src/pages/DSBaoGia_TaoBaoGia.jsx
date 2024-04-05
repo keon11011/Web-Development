@@ -7,6 +7,7 @@ import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
 import DropDown from '../components/ui/placeholder/DropDown'
 import TextInput from '../components/ui/placeholder/TextInput'
+import TextArea from '../components/ui/placeholder/TextArea'
 import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'
 import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuvan'
 import CourseSelector from '../components/ui/SelectItems/CourseSelector'
@@ -18,9 +19,10 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 const DSBaoGia_TaoBaoGia = () => {
   const [showCourseSelector, setShowCourseSelector] = useState(false);
   const [showPromotionInputs, setShowPromotionInputs] = useState(false);
+  const [showEmailInputs, setShowEmailInputs] = useState(false);
   
-  const [selectedDoiTuongUuTien, setselectedDoiTuongUuTien] = useState(null);
-  const [selectedDipDacBiet, setselectedDipDacBiet] = useState(null);
+  const [selectedDoiTuongUuTien, setSelectedDoiTuongUuTien] = useState(null);
+  const [selectedDipDacBiet, setSelectedDipDacBiet] = useState(null);
 
   const handleCourseSelectorClick = () => {
     setShowCourseSelector(!showCourseSelector);
@@ -28,6 +30,10 @@ const DSBaoGia_TaoBaoGia = () => {
 
   const handleAddPromotionClick = () => {
     setShowPromotionInputs(!showPromotionInputs);
+  };
+
+  const handleEmailClick = () => {
+    setShowEmailInputs(!showEmailInputs);
   };
 
   return (
@@ -92,14 +98,14 @@ const DSBaoGia_TaoBaoGia = () => {
                     previewText="Chọn đối tượng ưu tiên"
                     options={["Học sinh - Sinh Viên", "Giảng viên đại học", "Không có"]}
                     selectedOption={selectedDoiTuongUuTien}
-                    setSelectedOption={setselectedDoiTuongUuTien}
+                    setSelectedOption={setSelectedDoiTuongUuTien}
                   />
                   <DropDown
                     title="Dịp đặc biệt"
                     previewText="Chọn dịp đặc biệt"
                     options={["Ngày lễ", "Không có"]}
                     selectedOption={selectedDipDacBiet}
-                    setSelectedOption={setselectedDipDacBiet}
+                    setSelectedOption={setSelectedDipDacBiet}
                   />
                 </div>
                 <div className='flex w-1/3 pr-[16px]'>
@@ -115,10 +121,20 @@ const DSBaoGia_TaoBaoGia = () => {
                 <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5} />} onClick={handleAddPromotionClick}>Thêm khuyến mãi</Button>
               </div>
             )}
-            <div className='space-y-[16px]'>
-              <div className='title-medium text-text-primary'>Email báo giá</div>
-              <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Tạo email</Button>
-            </div>
+            {showEmailInputs ? (
+              <div className='space-y-[16px]'>
+                <div className='title-medium text-text-primary'>Email báo giá</div>
+                <TextArea
+                  previewText="Email báo giá"
+                />
+                <Button variant='Neutral' size='Medium' onClick={handleEmailClick}>Ẩn email</Button>
+              </div>
+            ) : (
+              <div className='space-y-[16px]'>
+                <div className='title-medium text-text-primary'>Email báo giá</div>
+                <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>} onClick={handleEmailClick}>Tạo email</Button>
+              </div>
+            )}
             <div className='flex w-full space-x-[12px] items-center justify-end'>
               <Button variant='Destructive-plain' size='Medium'>Hủy chỉnh sửa</Button>
               <Button variant='Primary' size='Medium'>Lưu thay đổi</Button>

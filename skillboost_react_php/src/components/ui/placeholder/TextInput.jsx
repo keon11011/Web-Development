@@ -13,7 +13,7 @@ const TextInputContainer = styled.div`
 const TextInputWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 100%; //này hình như ai mới thêm nè
+  max-width: 100%;
   min-width: 350px;
   height: auto;
   border-radius: 0.5rem;
