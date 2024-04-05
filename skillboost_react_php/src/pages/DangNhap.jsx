@@ -6,16 +6,23 @@ import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
 import TextInput from '../components/ui/placeholder/TextInput';
 import Button from '../components/ui/button/Button';
 
-import Hide from '../components/icons/Edit/Hide'
+import Hide from '../components/icons/Edit/Hide';
 
 const DangNhap = () => {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevVisible) => !prevVisible);
+  };
+
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 relative">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-url[(BackgroundGradient)] relative">
       <img
         src={BackgroundGradient}
         alt="Background"
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-cover"
       />
+      
       <img
         src={SkillboostLogo}
         alt="SkillboostLogo"
@@ -30,10 +37,25 @@ const DangNhap = () => {
           <form className="w-full space-y-[36px]">
             <div className="flex flex-col space-y-8">
               <TextInput title="Email" previewText="Email" />
-              <TextInput title="Mật khẩu" previewText="Mật khẩu" rightIcon={<Hide width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}/>
+              <TextInput
+                title="Mật khẩu"
+                previewText="Mật khẩu"
+                rightIcon={
+                  <Hide
+                    width="1.25rem"
+                    height="1.25rem"
+                    strokeWidth={1.5}
+                    stroke="#5E6A6E"
+                  />
+                }
+                onClickRightIcon={togglePasswordVisibility}
+                type={passwordVisible ? 'text' : 'password'}
+              />
             </div>
-            <div className="flex justify-center">
-              <Button size="Big">Đăng nhập</Button>
+            <div className="flex w-full justify-center">
+              <Button size="Big" stretch="full">
+                Đăng nhập
+              </Button>
             </div>
           </form>
         </div>

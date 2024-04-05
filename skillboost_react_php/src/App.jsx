@@ -1,10 +1,10 @@
 import './font.css'
 
-import DangNhap from './pages/DangNhap'
+import DSKhachHang_TaoKH from './pages/DSKhachHang_TaoKH'
 
 const App = () => (
   <main className="relative">
-    <DangNhap/>
+    <DSKhachHang_TaoKH/>
   </main>
 )
 
