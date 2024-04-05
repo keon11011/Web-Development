@@ -19,10 +19,13 @@ const DSKhachHang_TaoKH = () => {
   const [selectedGioiTinh, setselectedGioiTinh] = useState(null);
   const [selectedNgheNghiep, setselectedNgheNghiep] = useState(null);
   const [selectedNguon, setselectedNguon] = useState(null);
+  const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
 
   const handleCourseSelectorClick = () => {
     setShowCourseSelector(!showCourseSelector);
   };
+
+  console.log(selectedNgaySinh);
 
 
   return (
@@ -51,7 +54,13 @@ const DSKhachHang_TaoKH = () => {
                         selectedOption={selectedGioiTinh}
                         setSelectedOption={setselectedGioiTinh}
                     />
-                    <CustomDatePicker title='Ngày sinh' previewText='Ngày sinh'></CustomDatePicker>
+                    <CustomDatePicker 
+                      title='Ngày sinh'
+                      previewText='Ngày sinh'
+                      showRedAsterisk={true}
+                      selectedDate={selectedNgaySinh}
+                      setSelectedDate={setselectedNgaySinh}
+                    />
                 </div>
                 <div className='flex space-x-[24px]'>
                     <TextInput title='Số điện thoại' previewText='Số điện thoại' showRedAsterisk></TextInput>
@@ -104,14 +113,14 @@ const DSKhachHang_TaoKH = () => {
               </div>
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy chỉnh sửa</Button>
-                <Button variant='Primary' size='Medium'>Lưu thay đổi</Button>
+                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
             </div>
             </div>
         </div>
         </div>
       {showCourseSelector && 
-          <div className="absolute top-[240px] left-[500px] z-50">
+          <div className="absolute top-[396px] left-[500px] z-50">
               <CourseSelector/>
           </div>
       }

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+// datepicker.jsx
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import styled from 'styled-components';
-import Calendar from '../../icons/Calendar/Calendar'
+import styled, { css } from 'styled-components';
+import Calendar from '../../icons/Calendar/Calendar';
 
 const DatePickerWrapper = styled.div`
   display: flex;
@@ -42,6 +43,15 @@ const Title = styled.div`
   font-weight: medium;
   font-size: 1rem;
   color: #5e6a6e;
+  ${(props) =>
+    props.showRedAsterisk &&
+    css`
+      &:after {
+        content: '*';
+        color: #ff4141;
+        margin-left: 0.25rem;
+      }
+    `}
 `;
 
 const Note = styled.div`
@@ -54,22 +64,31 @@ const Note = styled.div`
 const RightIcon = styled.span`
   display: inline-flex;
   align-items: center;
+  margin-left: auto;
 `;
 
-const CustomDatePicker = ({ variant, title, note, previewText, selectedDate, onChange, ...rest }) => {
-  // Use state to manage the selected date
-  const [startDate, setStartDate] = useState(selectedDate);
-
+const CustomDatePicker = ({
+  variant,
+  title,
+  note,
+  previewText,
+  onChange,
+  selectedDate,
+  setSelectedDate,
+  showRedAsterisk,
+  ...rest
+}) => {
   return (
     <DatePickerWrapper>
-      {title && <Title>{title}</Title>}
+      {title && (
+        <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
+      )}
       <DatePickerInputWrapper variant={variant}>
         <DatePickerComponent
-          selected={startDate}
+          selected={selectedDate}
           onChange={(date) => {
-            setStartDate(date);
-            // Pass the selected date to the parent component
-            onChange(date);
+            setSelectedDate(date);
+            onChange && onChange(date);
           }}
           placeholderText={previewText}
           dateFormat="yyyy-MM-dd"
