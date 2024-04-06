@@ -25,9 +25,6 @@ const DSKhachHang_TaoKH = () => {
     setShowCourseSelector(!showCourseSelector);
   };
 
-  console.log(selectedNgaySinh);
-
-
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
       <div id='Sidebar' className='sticky top-0 h-screen'>

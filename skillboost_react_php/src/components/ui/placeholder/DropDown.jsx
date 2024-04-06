@@ -27,7 +27,7 @@ const DropdownButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   &:focus-within {
     border-color: ${(props) =>
       props.variant === 'ReadOnly' ? '#F8F8F8' : '#DFDFDF'};
@@ -41,7 +41,7 @@ const DropdownButtonComponent = styled.button`
   border: none;
   width: 100%;
   font-size: 1rem;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   text-align: left;
   text-overflow: ellipsis;
 `;
@@ -99,7 +99,8 @@ const DropDown = ({
   previewText,
   selectedOption,
   setSelectedOption,
-  showRedAsterisk, // New prop to trigger showing the red asterisk
+  showRedAsterisk,
+  children,
   ...rest
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,7 +119,9 @@ const DropDown = ({
   }, [buttonRef]);
 
   const toggleOptions = () => {
-    setIsOpen(!isOpen);
+    if (!rest.disabled) {
+      setIsOpen(!isOpen);
+    }
   };
 
   const handleOptionClick = (option) => {
@@ -132,15 +135,22 @@ const DropDown = ({
       {title && (
         <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
       )}
-      <DropdownButtonWrapper variant={variant} onClick={toggleOptions} ref={buttonRef}>
+      <DropdownButtonWrapper
+        variant={variant}
+        onClick={toggleOptions}
+        ref={buttonRef}
+        disabled={variant === 'ReadOnly'}
+      >
         <DropdownButtonComponent
           type="button"
           readOnly={variant === 'ReadOnly'}
-          {...rest} 
+          {...rest}
+          disabled={variant === 'ReadOnly'}
         >
           {selectedOption || previewText}
+          {children}
         </DropdownButtonComponent>
-        <ChevronDown/>
+        {!rest.disabled && variant !== 'ReadOnly' && <ChevronDown />}
       </DropdownButtonWrapper>
       {isOpen && (
         <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth}>
