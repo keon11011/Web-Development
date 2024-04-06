@@ -24,7 +24,7 @@ const TextInputWrapper = styled.div`
     props.variant === 'Error' ? '#ff4141' : '#f8f8f8'};
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: center; //cai nay no effect
   align-items: center;
   &:focus-within {
     border-color: ${(props) =>

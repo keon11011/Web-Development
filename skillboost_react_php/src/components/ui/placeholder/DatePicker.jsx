@@ -5,18 +5,20 @@ import styled from 'styled-components';
 import Calendar from '../../icons/Calendar/Calendar'
 
 // Styled components for the date picker
-const DatePickerWrapper = styled.div`
+const DatePickerContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: left;
+  text-align: left;
   gap: 0.5rem;
   width: 100%;
 `;
 
-const DatePickerInputWrapper = styled.div`
-  position: relative;
+const DatePickerWrapper = styled.div`
+  position: flex;
   width: 100%;
   max-width: 100%;
-  min-width: 488px;
+  min-width: 350px;
   height: auto;
   border-radius: 0.5rem;
   background-color: #FAFAFA;
@@ -26,20 +28,19 @@ const DatePickerInputWrapper = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#F8F8F8'};
   display: flex;
   flex-direction: row;
-  justify-content: between;
-  align-items: center;
+  justify-content: center;
+  align-items: left;
   &:focus-within {
     border-color: ${(props) =>
       props.variant === 'ReadOnly' ? '#F8F8F8' : '#DFDFDF'};
   }
 `;
-
+//fix span
 const DatePickerComponent = styled(DatePicker)`
-  flex: 1;
+  
   background: #FAFAFA;
   outline: none;
   border: none;
-  width: 100%;
   text-align: left;
 `;
 
@@ -56,10 +57,9 @@ const Note = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#5E6A6E'};
 `;
 
-// Styled component for the right icon
 const RightIcon = styled.span`
-  margin-left: 10px; /* Adjust as needed */
-  display: inline-flex;
+  margin-left: 10px;
+  display: flex;
   align-items: center;
 `;
 
@@ -68,25 +68,26 @@ const CustomDatePicker = ({ variant, title, note, previewText, selectedDate, onC
   const [startDate, setStartDate] = useState(selectedDate);
 
   return (
-    <DatePickerWrapper>
+    <DatePickerContainer>
       {title && <Title>{title}</Title>}
-      <DatePickerInputWrapper variant={variant}>
+      <DatePickerWrapper>
         <DatePickerComponent
+          type="date"
+          className="w-72"
+          placeholderText={previewText}
           selected={startDate}
           onChange={(date) => {
             setStartDate(date);
-            // Pass the selected date to the parent component
             onChange(date);
           }}
-          placeholderText={previewText}
-          dateFormat="yyyy-MM-dd"
+          dateFormat="dd-MM-yyyy"
           variant={variant}
           {...rest}
         />
         <RightIcon> <Calendar /> </RightIcon>
-      </DatePickerInputWrapper>
-      {note && <Note variant={variant}>{note}</Note>}
-    </DatePickerWrapper>
+      </DatePickerWrapper>
+      {note && <Note >{note}</Note>}
+    </DatePickerContainer>
   );
 };
 
