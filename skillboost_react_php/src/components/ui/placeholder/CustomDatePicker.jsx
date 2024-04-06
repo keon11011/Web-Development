@@ -1,4 +1,3 @@
-// datepicker.jsx
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -26,6 +25,7 @@ const DatePickerInputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
   &:focus-within {
     border-color: ${(props) =>
       props.variant === 'ReadOnly' ? '#F8F8F8' : '#DFDFDF'};
@@ -37,6 +37,7 @@ const DatePickerComponent = styled(DatePicker)`
   outline: none;
   border: none;
   width: 100%;
+  position: relative; /* Ensure children are positioned relative to this element */
 `;
 
 const Title = styled.div`
@@ -76,6 +77,7 @@ const CustomDatePicker = ({
   selectedDate,
   setSelectedDate,
   showRedAsterisk,
+  children, // Allow children to be passed
   ...rest
 }) => {
   return (
@@ -83,7 +85,7 @@ const CustomDatePicker = ({
       {title && (
         <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
       )}
-      <DatePickerInputWrapper variant={variant}>
+      <DatePickerInputWrapper variant={variant} disabled={variant === 'ReadOnly'}>
         <DatePickerComponent
           selected={selectedDate}
           onChange={(date) => {
@@ -93,9 +95,16 @@ const CustomDatePicker = ({
           placeholderText={previewText}
           dateFormat="yyyy-MM-dd"
           variant={variant}
+          disabled={variant === 'ReadOnly'}
           {...rest}
-        />
-        <RightIcon> <Calendar stroke='#5E6A6E' width="1.25em" height="1.25em"/> </RightIcon>
+        >
+          {children} {/* Render children inside DatePickerComponent */}
+        </DatePickerComponent>
+        {!rest.disabled && variant !== 'ReadOnly' && (
+          <RightIcon>
+            <Calendar stroke='#5E6A6E' width="1.25em" height="1.25em" />
+          </RightIcon>
+        )}
       </DatePickerInputWrapper>
       {note && <Note variant={variant}>{note}</Note>}
     </DatePickerWrapper>

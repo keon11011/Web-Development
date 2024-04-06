@@ -1,8 +1,10 @@
 import './font.css'
-import TrangChu from './pages/TrangChu'
+
+import DSHoatDongLead_XemChiTietHoatDong from './pages/DSHoatDongLead_XemChiTietHoatDong'
+
 const App = () => (
   <main className="relative">
-    <TrangChu/>
+    <DSHoatDongLead_XemChiTietHoatDong/>
   </main>
 )
 
