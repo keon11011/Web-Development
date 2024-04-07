@@ -41,7 +41,7 @@ const DSQuyDinhGiamGia = () => {
         <div className='overflow-x-auto'>
           <table class="w-full my-0 align-middle text-middle text-dark border border-collapse border-neutral-200 rounded-2xl">
             <thead class="align-bottom"> 
-            <tr class="title-small text-text-secondary">
+            <tr class="title-small text-text-secondary text-center">
                   <th class="pb-3 px-10 py-3 text-start min-w-[50px] ">ID</th>
                   <th class="pb-3 px-3 py-3 text-left min-w-[150px]">Mô tả</th>
                   <th class="pb-3 text-middle min-w-[150px]">Phần trăm giảm giá mặc định</th>
