@@ -1,10 +1,14 @@
 import './font.css'
 
-import DSLead_ChinhSuaChiTietLead from './pages/DSLead_ChinhSuaChiTietLead'
+import DangNhap from './pages/DangNhap'
+import Thanh_toan2 from './pages/Thanh_toan2'
+import Chitietkhoahoc from './pages/Chitietkhoahoc'
 
 const App = () => (
   <main className="relative">
-    <DSLead_ChinhSuaChiTietLead/>
+    {/* <DangNhap/> */}
+    {/* <Thanh_toan2/> */}
+    <Chitietkhoahoc/>
   </main>
 )
 
