@@ -13,7 +13,7 @@ import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuva
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 
 const DSHoatDongLead_XemChiTietHoatDong = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedActivityOption, setselectedActivityOption] = useState(null);
 
   return (
     <main id='DSBaoGia' className='w-full bg-background-secondary flex'>
@@ -45,11 +45,10 @@ const DSHoatDongLead_XemChiTietHoatDong = () => {
               <DropDown
                 title="Loại hoạt động"
                 variant="ReadOnly"
-                previewText="Tư vấn"
                 showRedAsterisk
                 options={["Yêu cầu", "Tư vấn"]}
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
+                selectedOption={selectedActivityOption}
+                setSelectedOption={setselectedActivityOption}
               />
             </div>
           </div>

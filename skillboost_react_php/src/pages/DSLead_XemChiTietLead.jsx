@@ -7,10 +7,12 @@ import DropDown from '../components/ui/placeholder/DropDown'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
+import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
+import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
 
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 
-const DSKhachHang_XemChiTietKH = () => {
+const DSLead_XemChiTietLead = () => {
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
@@ -19,7 +21,13 @@ const DSKhachHang_XemChiTietKH = () => {
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
-          <HeaderAdmin>Nguyễn Anh Thư</HeaderAdmin>
+          <HeaderAdmin>Phan Văn Trị</HeaderAdmin>
+        </div>
+        <div id="LeadInfoNavigation" className="flex space-x-[24px]">
+          <div className="grow">
+            <LeadInfoTab />
+          </div>
+          <LeadProgressStatus variant="DangTuVan" />
         </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex justify-between items-center'>
@@ -29,6 +37,7 @@ const DSKhachHang_XemChiTietKH = () => {
                 </div>
                 <div className="flex space-x-[12px]">
                     <ActionPersonDetail variant="Edit" />
+                    <ActionPersonDetail variant="Unfollow" />
                     <ActionPersonDetail variant="Delete"  />
                 </div>
             </div>
@@ -36,29 +45,28 @@ const DSKhachHang_XemChiTietKH = () => {
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
-                    <TextInput variant='ReadOnly' title='ID khách hàng' showRedAsterisk>CUS4013</TextInput>
-                    <TextInput variant='ReadOnly' title='ID chuyển đổi từ Lead'></TextInput>
-                    <TextInput variant='ReadOnly' title='Họ tên' showRedAsterisk>Nguyễn Anh Thư</TextInput>
-                </div>
-                <div className='flex space-x-[24px]'>
+                    <TextInput variant='ReadOnly' title='Lead ID' showRedAsterisk>LEA9021</TextInput>
+                    <TextInput variant='ReadOnly' title='Họ tên' showRedAsterisk>Phan Văn Trị</TextInput>
                     <DropDown
                         variant='ReadOnly'
                         title="Giới tính"
                         showRedAsterisk
                     >
-                        Nữ
+                        Nam
                     </DropDown>
+                </div>
+                <div className='flex space-x-[24px]'>
                     <CustomDatePicker 
                       variant='ReadOnly'
                       title='Ngày sinh'
                       showRedAsterisk={true}
                     >
-                        2024-04-06
+                        07/12/2003
                     </CustomDatePicker>
-                    <TextInput variant='ReadOnly' title='Số điện thoại' showRedAsterisk>09883451213</TextInput>
+                    <TextInput variant='ReadOnly' title='Số điện thoại' showRedAsterisk>09883454712</TextInput>
+                    <TextInput variant='ReadOnly' title='Email' showRedAsterisk>phanvantri0712@gmail.com</TextInput> 
                 </div>
                 <div className='flex space-x-[24px]'>
-                    <TextInput variant='ReadOnly' title='Email' showRedAsterisk>lamthukim2222@gmail.com</TextInput>  
                     <DropDown
                         variant='ReadOnly'
                         title="Nghề nghiệp"
@@ -73,8 +81,6 @@ const DSKhachHang_XemChiTietKH = () => {
                     >
                         Website
                     </DropDown>
-                </div>
-                <div className='w-1/3 space-x-[24px]'>
                     <TextInput variant='ReadOnly' title='PIC (Người tiếp nhận)' showRedAsterisk>Lê Minh Quân</TextInput>  
                 </div>
                 <div className='space-x-[24px]'>
@@ -112,4 +118,4 @@ const DSKhachHang_XemChiTietKH = () => {
   );
 };
 
-export default DSKhachHang_XemChiTietKH;
+export default DSLead_XemChiTietLead;

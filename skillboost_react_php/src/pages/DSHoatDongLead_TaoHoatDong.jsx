@@ -13,7 +13,7 @@ import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuva
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 
 const DSHoatDongLead_TaoHoatDong = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedActivityOption, setselectedActivityOption] = useState(null);
 
   return (
     <main id='DSBaoGia' className='w-full bg-background-secondary flex'>
@@ -37,13 +37,13 @@ const DSHoatDongLead_TaoHoatDong = () => {
             <div className='flex space-x-[16px]'>
               <TextInput title='Tên hoạt động' previewText='Nhập tên hoạt động' showRedAsterisk></TextInput>
               <DropDown
-                    title="Loại hoạt động"
-                    previewText="Chọn loại hoạt động"
-                    showRedAsterisk
-                    options={["Yêu cầu", "Tư vấn"]}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
-                  />
+                title="Loại hoạt động"
+                previewText="Chọn loại hoạt động"
+                showRedAsterisk
+                options={["Yêu cầu", "Tư vấn"]}
+                selectedOption={selectedActivityOption}
+                setSelectedOption={setselectedActivityOption}
+              />
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
               <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
