@@ -65,7 +65,7 @@ const DSBaoGia_TaoBaoGia = () => (
               </div>
 
               <div>
-                <TextInput  title='Ngày bế giảng' previewText='Chọn ngày bế giảng'></TextInput>
+                <DatePicker title='Ngày bế giảng' previewText='Chọn ngày bế giảng'></DatePicker>
               </div>
 
               <div>
