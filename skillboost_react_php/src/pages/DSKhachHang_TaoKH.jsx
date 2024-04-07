@@ -1,12 +1,11 @@
 import axios from "axios";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState} from "react";
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
 import DropDown from '../components/ui/placeholder/DropDown'
-import DropDownOptions from '../components/ui/placeholder/DropDownOptions'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import CourseSelector from '../components/ui/SelectItems/CourseSelector'
@@ -21,19 +20,14 @@ const DSKhachHang_TaoKH = () => {
   //Họ tên
   const [inputs, setInputs] = useState({});
 
+  const [selectedNguon, setselectedNguon] = useState(null);
+
+  //Tất cả Text Inputs
   const handleTextChange = (event) => {
       const id = event.target.id;
       const value = event.target.value;
       setInputs(values => ({...values, [id]: value}));
   }
-
-
-  ///////////////////////////////
-  const [selectedNguon, setselectedNguon] = useState(null);
-
-  const handleCourseSelectorClick = () => {
-    setShowCourseSelector(!showCourseSelector);
-  };
 
   //Nghề nghiệp Dropdown
   const [NgheNghieps, setNgheNghieps] = useState([]);
@@ -43,40 +37,40 @@ const DSKhachHang_TaoKH = () => {
     getNgheNghieps();
   }, []);
 
-  function getNgheNghieps() {
-    axios.get('http://localhost:80/SkillBoost-API/api/NgheNghiep/read_all.php')
-        .then(function(response) {
-            setNgheNghieps(response.data);
-        })
-        .catch(function(error) {
-            console.error('Error fetching courses:', error);
-        });
+  const handleNgheNghiepChange = (event) => {
+    const id = 'MaNgheNghiep';
+    const label = 'TenNgheNghiep';
+    setInputs(values => ({...values, [id]: event.value, [label]:event.label}));
   }
 
-  //console.log(selectNgheNghiepOption?.value || undefined);
-  //console.log(selectNgheNghiepOption?.label || undefined);
+  function getNgheNghieps() {
+    axios.get('http://localhost:80/SkillBoost-API/api/NgheNghiep/read_all.php')
+      .then(function(response) {
+          setNgheNghieps(response.data);
+      })
+      .catch(function(error) {
+          console.error('Error fetching courses:', error);
+      });
+  }
 
   //DatePicker
   const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
-
   const formattedDate = selectedNgaySinh ? selectedNgaySinh.toLocaleDateString('en-CA') : undefined;
-  //console.log(formattedDate);
-
-  const handleGioiTinhChange = (event) => {
-    const id = 'GioiTinhKH';
-    setInputs(values => ({...values, [id]: event.value}));
-  }
 
   useEffect(() => {
     const id = 'NgaySinhKH';
     setInputs(values => ({...values, [id]: formattedDate}))
   }, [formattedDate])
 
-  const handleNgheNghiepChange = (event) => {
-    const id = 'MaNgheNghiep';
-    const label = 'TenNgheNghiep';
-    setInputs(values => ({...values, [id]: event.value, [label]:event.label}));
+  //Giới tính Dropdown
+  const handleGioiTinhChange = (event) => {
+    const id = 'GioiTinhKH';
+    setInputs(values => ({...values, [id]: event.value}));
   }
+
+  const handleCourseSelectorClick = () => {
+    setShowCourseSelector(!showCourseSelector);
+  };
 
   console.log(inputs);
 
