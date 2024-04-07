@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import {Link} from 'react-router-dom'
 import BackgroundGradient from '../assets/img/BackgroundGradient.svg';
 import SkillboostLogo from '../assets/logo/SkillboostLogo.svg';
 
@@ -17,11 +17,13 @@ const DangNhap = () => {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')] relative">
-      <div className="relative mb-[56px] w-auto">
-        <img
-          src={SkillboostLogo}
-          alt="SkillboostLogo"
-        />
+      <div className="relative mb-[56px] w-auto cursor-pointer">
+        <Link to="/trangchu">
+          <img
+            src={SkillboostLogo}
+            alt="Logo"
+          />
+        </Link>
       </div>
       <div className="relative z-10 bg-background-primary w-[540px] p-[36px] rounded-2xl shadow-md flex flex-col items-center justify-center space-y-[36px]">
         <div className="flex flex-col space-y-8 w-full">

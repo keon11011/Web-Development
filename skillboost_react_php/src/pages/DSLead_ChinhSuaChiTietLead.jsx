@@ -3,17 +3,21 @@ import React, { useState } from 'react';
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
-import Button from '../components/ui/button/Button'
 import DropDown from '../components/ui/placeholder/DropDown'
+import Button from '../components/ui/button/Button'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
-import CourseSelector from '../components/ui/SelectItems/CourseSelector'
 import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
+import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
+import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
+import CourseSelector from '../components/ui/SelectItems/CourseSelector'
 
-import AddPlus from '../components/icons/Edit/AddPlus'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
+import AddPlus from '../components/icons/Edit/AddPlus'
 
-const DSKhachHang_TaoKH = () => {
+
+const DSLead_ChinhSuaChiTietLead = () => {
+
   const [showCourseSelector, setShowCourseSelector] = useState(false);
 
   const [selectedGioiTinh, setselectedGioiTinh] = useState(null);
@@ -21,9 +25,9 @@ const DSKhachHang_TaoKH = () => {
   const [selectedNguon, setselectedNguon] = useState(null);
   const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
 
-  const handleCourseSelectorClick = () => {
-    setShowCourseSelector(!showCourseSelector);
-  };
+    const handleCourseSelectorClick = () => {
+        setShowCourseSelector(!showCourseSelector);
+      };
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
@@ -32,54 +36,69 @@ const DSKhachHang_TaoKH = () => {
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
-          <HeaderAdmin>Khách hàng</HeaderAdmin>
+          <HeaderAdmin>Phan Văn Trị</HeaderAdmin>
+        </div>
+        <div id="LeadInfoNavigation" className="flex space-x-[24px]">
+          <div className="grow">
+            <LeadInfoTab />
+          </div>
+          <LeadProgressStatus variant="DangTuVan" />
         </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
-          <div id='Header' className='flex items-center space-x-[16px]'>
-            <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
-            <div className='text-text-primary title-large'>Tạo khách hàng mới</div>
-          </div>
+            <div id='Header' className='flex justify-between items-center'>
+                <div className='flex space-x-[16px] items-center'>
+                    <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+                    <div className='text-text-primary title-large'>Thông tin khách hàng</div>
+                </div>
+            </div>
+          
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
-                    <TextInput title='Họ tên' previewText='Họ tên' showRedAsterisk></TextInput>
+                    <TextInput title='Lead ID' previewText='LEA9021' variant='ReadOnly' showRedAsterisk></TextInput>
+                    <TextInput title='Họ tên' previewText='Phan Văn Trị' showRedAsterisk></TextInput>
                     <DropDown
                         title="Giới tính"
-                        previewText="Giới tính"
                         showRedAsterisk
+                        previewText='Nam'
                         options={["Nam", "Nữ", "Khác"]}
                         selectedOption={selectedGioiTinh}
                         setSelectedOption={setselectedGioiTinh}
-                    />
+                    >
+                    </DropDown>
+                </div>
+                <div className='flex space-x-[24px]'>
                     <CustomDatePicker 
                       title='Ngày sinh'
-                      previewText='Ngày sinh'
+                      previewText='2003-12-07'
                       showRedAsterisk={true}
                       selectedDate={selectedNgaySinh}
                       setSelectedDate={setselectedNgaySinh}
-                    />
+                    >
+                    </CustomDatePicker>
+                    <TextInput title='Số điện thoại' previewText='09883454712' showRedAsterisk></TextInput>
+                    <TextInput title='Email' previewText='phanvantri0712@gmail.com' showRedAsterisk></TextInput> 
                 </div>
                 <div className='flex space-x-[24px]'>
-                    <TextInput title='Số điện thoại' previewText='Số điện thoại' showRedAsterisk></TextInput>
-                    <TextInput title='Email' previewText='Email' showRedAsterisk></TextInput>  
                     <DropDown
                         title="Nghề nghiệp"
-                        previewText="Nghề nghiệp"
+                        previewText='Học sinh - Sinh viên' 
                         showRedAsterisk
                         options={["Học sinh - Sinh viên", "Giảng viên", "Nhiếp ảnh", "Chuyên viên kinh doanh", "Khác"]}
                         selectedOption={selectedNgheNghiep}
                         setSelectedOption={setselectedNgheNghiep}
-                    />
-                </div>
-                <div className='w-1/3 space-x-[24px]'>
+                    >
+                    </DropDown>
                     <DropDown
-                        title="Nguồn"
-                        previewText="Nguồn"
+                        title="Nguồn Lead"
+                        previewText='Website' 
                         showRedAsterisk
                         options={["Website", "Người thân", "Facebook", "Instagram", "Khác"]}
                         selectedOption={selectedNguon}
                         setSelectedOption={setselectedNguon}
-                    />
+                    >
+                    </DropDown>
+                    <TextInput title='PIC (Người tiếp nhận)' previewText='Lê Minh Quân' showRedAsterisk></TextInput>  
                 </div>
                 <div className='space-x-[24px]'>
                     <TextArea
@@ -109,20 +128,16 @@ const DSKhachHang_TaoKH = () => {
                 </table>
               </div>
             </div>
-            <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
-                <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
-            </div>
             </div>
         </div>
         </div>
-      {showCourseSelector && 
-          <div className="absolute top-[396px] left-[500px] z-50">
+        {showCourseSelector && 
+          <div className="absolute top-[480px] left-[500px] z-50">
               <CourseSelector/>
           </div>
-      }
+        }
     </main>
   );
 };
 
-export default DSKhachHang_TaoKH;
+export default DSLead_ChinhSuaChiTietLead;

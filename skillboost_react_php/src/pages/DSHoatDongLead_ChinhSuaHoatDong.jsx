@@ -35,14 +35,15 @@ const DSHoatDongLead_ChinhSuaHoatDong = () => {
           </div>
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div className='flex space-x-[16px]'>
-              <TextInput title='Tên hoạt động' previewText='Nhập tên hoạt động'>Yêu cầu báo giá khóa học IT Business Analyst và Product Owner Master Class</TextInput>
+              <TextInput title='Tên hoạt động' previewText='Nhập tên hoạt động' showRedAsterisk>Yêu cầu báo giá khóa học IT Business Analyst và Product Owner Master Class</TextInput>
               <DropDown
-                    title="Loại hoạt động"
-                    previewText="Tư vấn"
-                    options={["Yêu cầu", "Tư vấn"]}
-                    selectedOption={selectedOption}
-                    setSelectedOption={setSelectedOption}
-                  />
+                title="Loại hoạt động"
+                previewText="Tư vấn"
+                showRedAsterisk
+                options={["Yêu cầu", "Tư vấn"]}
+                selectedOption={selectedOption}
+                setSelectedOption={setSelectedOption}
+              />
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
               <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>

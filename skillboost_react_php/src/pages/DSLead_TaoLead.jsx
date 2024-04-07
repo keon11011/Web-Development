@@ -13,7 +13,7 @@ import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
 import AddPlus from '../components/icons/Edit/AddPlus'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 
-const DSKhachHang_TaoKH = () => {
+const DSLead_TaoLead = () => {
   const [showCourseSelector, setShowCourseSelector] = useState(false);
 
   const [selectedGioiTinh, setselectedGioiTinh] = useState(null);
@@ -32,12 +32,12 @@ const DSKhachHang_TaoKH = () => {
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
-          <HeaderAdmin>Khách hàng</HeaderAdmin>
+          <HeaderAdmin>Lead</HeaderAdmin>
         </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
           <div id='Header' className='flex items-center space-x-[16px]'>
             <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
-            <div className='text-text-primary title-large'>Tạo khách hàng mới</div>
+            <div className='text-text-primary title-large'>Tạo Lead mới</div>
           </div>
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
@@ -125,4 +125,4 @@ const DSKhachHang_TaoKH = () => {
   );
 };
 
-export default DSKhachHang_TaoKH;
+export default DSLead_TaoLead;

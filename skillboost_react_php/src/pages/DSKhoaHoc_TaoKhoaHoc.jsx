@@ -59,7 +59,7 @@ const DSBaoGia_TaoBaoGia = () => (
                 
 
 
-            <div className='justify-between flex space-x-6'>
+            <div className='justify-between flex flex-wrap space-x-6'>
               <div>
                 <DatePicker  title='Ngày khai giảng' previewText='Chọn ngày khai giảng'></DatePicker>
               </div>
