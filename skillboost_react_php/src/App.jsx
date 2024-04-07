@@ -1,14 +1,12 @@
-import './font.css'
-
-import DangNhap from './pages/DangNhap'
-import Thanh_toan2 from './pages/Thanh_toan2'
-import Chitietkhoahoc from './pages/Chitietkhoahoc'
-
+// import './font.css'
+import TestComponent from './pages/TestComponents'
+import DSLead_ChinhSuaChiTietLead from './pages/DSLead_ChinhSuaChiTietLead'
+import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia';
+import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia';
 const App = () => (
   <main className="relative">
-    {/* <DangNhap/> */}
-    {/* <Thanh_toan2/> */}
-    <Chitietkhoahoc/>
+    {/* <DSLead_ChinhSuaChiTietLead/> */}
+    <DSQuyDinhGiamGia/>
   </main>
 )
 
