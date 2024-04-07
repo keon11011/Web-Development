@@ -1,16 +1,31 @@
+import React, { useState } from 'react';
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import ActionPersonDetail from '../components/ui/button/ActionPersonDetail'
 import DropDown from '../components/ui/placeholder/DropDown'
+import Button from '../components/ui/button/Button'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
+import AlertDanger from '../components/ui/inform/AlertDanger';
 
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
+import CloseMd from '../components/icons/Menu/CloseMd'
+
 
 const DSKhachHang_XemChiTietKH = () => {
+  //Xác nhận xóa Khách Hàng
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  
+  const handleDelete = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleCancelDelete = () => {
+    setShowDeleteConfirmation(false);
+  };
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
@@ -29,7 +44,7 @@ const DSKhachHang_XemChiTietKH = () => {
                 </div>
                 <div className="flex space-x-[12px]">
                     <ActionPersonDetail variant="Edit" />
-                    <ActionPersonDetail variant="Delete"  />
+                    <ActionPersonDetail variant="Delete" onClick={handleDelete} />
                 </div>
             </div>
           
@@ -108,6 +123,25 @@ const DSKhachHang_XemChiTietKH = () => {
             </div>
         </div>
         </div>
+        {showDeleteConfirmation && (
+          <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white bg-opacity-50">
+            <div className="relative flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
+              <div>
+              <div className='flex w-full justify-center title-large text-text-primary'>Xác nhận xóa khách hàng</div>
+              <div className='absolute top-[36px] right-[36px]'>
+              <ActionIcon size="Medium" icon={<CloseMd width="1.5rem" height="1.5rem" onClick={handleCancelDelete}/>} />
+              </div>
+              </div>
+              <div className='flex flex-col space-y-[16px] w-[463px]'>
+                <div className='h-[316px]'>
+                  <TextArea title='Lý do xóa' previewText='Điền lý do'/>
+                </div>
+                <AlertDanger>Xóa khách hàng sẽ không thể được khôi phục</AlertDanger>
+              </div>
+              <Button variant="Destructive" size='Big' onClick={handleDelete}>Xác nhận xóa</Button>
+            </div>
+          </div>
+        )}
     </main>
   );
 };

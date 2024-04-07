@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import axios from "axios";
+import { useEffect, useState, useCallback } from "react";
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
 import DropDown from '../components/ui/placeholder/DropDown'
+import DropDownOptions from '../components/ui/placeholder/DropDownOptions'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import CourseSelector from '../components/ui/SelectItems/CourseSelector'
@@ -16,14 +18,67 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 const DSKhachHang_TaoKH = () => {
   const [showCourseSelector, setShowCourseSelector] = useState(false);
 
-  const [selectedGioiTinh, setselectedGioiTinh] = useState(null);
-  const [selectedNgheNghiep, setselectedNgheNghiep] = useState(null);
+  //Họ tên
+  const [inputs, setInputs] = useState({});
+
+  const handleTextChange = (event) => {
+      const id = event.target.id;
+      const value = event.target.value;
+      setInputs(values => ({...values, [id]: value}));
+  }
+
+
+  ///////////////////////////////
   const [selectedNguon, setselectedNguon] = useState(null);
-  const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
 
   const handleCourseSelectorClick = () => {
     setShowCourseSelector(!showCourseSelector);
   };
+
+  //Nghề nghiệp Dropdown
+  const [NgheNghieps, setNgheNghieps] = useState([]);
+  const [selectNgheNghiepOption, setselectNgheNghiepOption] = useState(null);
+
+  useEffect(() => {
+    getNgheNghieps();
+  }, []);
+
+  function getNgheNghieps() {
+    axios.get('http://localhost:80/SkillBoost-API/api/NgheNghiep/read_all.php')
+        .then(function(response) {
+            setNgheNghieps(response.data);
+        })
+        .catch(function(error) {
+            console.error('Error fetching courses:', error);
+        });
+  }
+
+  //console.log(selectNgheNghiepOption?.value || undefined);
+  //console.log(selectNgheNghiepOption?.label || undefined);
+
+  //DatePicker
+  const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
+
+  const formattedDate = selectedNgaySinh ? selectedNgaySinh.toLocaleDateString('en-CA') : undefined;
+  //console.log(formattedDate);
+
+  const handleGioiTinhChange = (event) => {
+    const id = 'GioiTinhKH';
+    setInputs(values => ({...values, [id]: event.value}));
+  }
+
+  useEffect(() => {
+    const id = 'NgaySinhKH';
+    setInputs(values => ({...values, [id]: formattedDate}))
+  }, [formattedDate])
+
+  const handleNgheNghiepChange = (event) => {
+    const id = 'MaNgheNghiep';
+    const label = 'TenNgheNghiep';
+    setInputs(values => ({...values, [id]: event.value, [label]:event.label}));
+  }
+
+  console.log(inputs);
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
@@ -42,16 +97,27 @@ const DSKhachHang_TaoKH = () => {
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
-                    <TextInput title='Họ tên' previewText='Họ tên' showRedAsterisk></TextInput>
+                    <TextInput
+                      id='HoTenKH'
+                      title='Họ tên'
+                      previewText='Họ tên'
+                      onChange={handleTextChange}
+                      showRedAsterisk
+                      >
+
+                      </TextInput>
                     <DropDown
-                        title="Giới tính"
-                        previewText="Giới tính"
-                        showRedAsterisk
-                        options={["Nam", "Nữ", "Khác"]}
-                        selectedOption={selectedGioiTinh}
-                        setSelectedOption={setselectedGioiTinh}
+                      id="GioiTinhKH"
+                      title="Giới tính"
+                      previewText="Giới tính"
+                      showRedAsterisk
+                      options={["Nam", "Nữ"].map(i => ({
+                        value: i,label:i
+                      }))}
+                      onHandleChange={handleGioiTinhChange}
                     />
                     <CustomDatePicker 
+                      id='NgaySinhKH'
                       title='Ngày sinh'
                       previewText='Ngày sinh'
                       showRedAsterisk={true}
@@ -60,31 +126,48 @@ const DSKhachHang_TaoKH = () => {
                     />
                 </div>
                 <div className='flex space-x-[24px]'>
-                    <TextInput title='Số điện thoại' previewText='Số điện thoại' showRedAsterisk></TextInput>
-                    <TextInput title='Email' previewText='Email' showRedAsterisk></TextInput>  
+                    <TextInput
+                      id='SoDienThoaiKH'
+                      title='Số điện thoại'
+                      previewText='Số điện thoại'
+                      onChange={handleTextChange}showRedAsterisk
+                      >
+
+                    </TextInput>
+                    <TextInput
+                      id='EmailKH'
+                      title='Email'
+                      previewText='Email'
+                      showRedAsterisk
+                      onChange={handleTextChange} ></TextInput>  
                     <DropDown
+                        id="NgheNghiepKH"
                         title="Nghề nghiệp"
-                        previewText="Nghề nghiệp"
+                        previewText="Chọn nghề nghiệp"
                         showRedAsterisk
-                        options={["Học sinh - Sinh viên", "Giảng viên", "Nhiếp ảnh", "Chuyên viên kinh doanh", "Khác"]}
-                        selectedOption={selectedNgheNghiep}
-                        setSelectedOption={setselectedNgheNghiep}
+                        options={NgheNghieps.map((NgheNghiep) => ({
+                          label: NgheNghiep.TenNgheNghiep,
+                          value: NgheNghiep.MaNgheNghiep,
+                        }))}
+                        onHandleChange={handleNgheNghiepChange}
                     />
                 </div>
                 <div className='w-1/3 space-x-[24px]'>
                     <DropDown
-                        title="Nguồn"
-                        previewText="Nguồn"
-                        showRedAsterisk
-                        options={["Website", "Người thân", "Facebook", "Instagram", "Khác"]}
-                        selectedOption={selectedNguon}
-                        setSelectedOption={setselectedNguon}
+                      title="Nguồn"
+                      previewText="Nguồn"
+                      showRedAsterisk
+                      options={["Website", "Người thân", "Facebook", "Instagram", "Khác"]}
+                      selectedOption={selectedNguon}
+                      setSelectedOption={setselectedNguon}
                     />
                 </div>
                 <div className='space-x-[24px]'>
                     <TextArea
-                        title='Ghi chú'
-                        previewText='Ghi chú'
+                      id='GhiChuKH'
+                      title='Ghi chú'
+                      previewText='Ghi chú'
+                      onChange={handleTextChange}
                     />
                 </div>
             </div>
@@ -116,11 +199,11 @@ const DSKhachHang_TaoKH = () => {
             </div>
         </div>
         </div>
-      {showCourseSelector && 
-          <div className="absolute top-[396px] left-[500px] z-50">
-              <CourseSelector/>
-          </div>
-      }
+        {showCourseSelector && 
+            <div className="absolute top-[396px] left-[500px] z-50">
+                <CourseSelector/>
+            </div>
+        }
     </main>
   );
 };

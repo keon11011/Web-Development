@@ -94,19 +94,17 @@ const DropDown = ({
   title,
   note,
   options,
-  onChange,
+  onHandleChange,
   readOnly,
   previewText,
-  selectedOption,
-  setSelectedOption,
   showRedAsterisk,
-  children,
   ...rest
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
   const [buttonWidth, setButtonWidth] = useState(null);
   const [buttonPosition, setButtonPosition] = useState({ top: 0, left: 0 });
+  const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -119,36 +117,26 @@ const DropDown = ({
   }, [buttonRef]);
 
   const toggleOptions = () => {
-    if (!rest.disabled) {
-      setIsOpen(!isOpen);
-    }
+    setIsOpen(!isOpen);
   };
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
+    setSelectedOption(option.label);
+    onHandleChange(option);
     setIsOpen(false);
-    onChange(option);
   };
 
   return (
     <DropdownButtonContainer>
-      {title && (
-        <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
-      )}
-      <DropdownButtonWrapper
-        variant={variant}
-        onClick={toggleOptions}
-        ref={buttonRef}
-        disabled={variant === 'ReadOnly'}
-      >
+      {title && <Title showRedAsterisk={showRedAsterisk}>{title}</Title>}
+      <DropdownButtonWrapper variant={variant} onClick={toggleOptions} ref={buttonRef}>
         <DropdownButtonComponent
           type="button"
           readOnly={variant === 'ReadOnly'}
           {...rest}
           disabled={variant === 'ReadOnly'}
         >
-          {selectedOption || previewText}
-          {children}
+          {selectedOption ? selectedOption : previewText}
         </DropdownButtonComponent>
         {!rest.disabled && variant !== 'ReadOnly' && <ChevronDown />}
       </DropdownButtonWrapper>
@@ -156,7 +144,7 @@ const DropDown = ({
         <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth}>
           {options.map((option, index) => (
             <Option key={index} onClick={() => handleOptionClick(option)}>
-              {option}
+              {option.label}
             </Option>
           ))}
         </OptionsList>
