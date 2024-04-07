@@ -86,20 +86,22 @@ const CustomDatePicker = ({
         <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
       )}
       <DatePickerInputWrapper variant={variant} disabled={variant === 'ReadOnly'}>
-        <DatePickerComponent
-          selected={selectedDate}
-          onChange={(date) => {
-            setSelectedDate(date);
-            onChange && onChange(date);
-          }}
-          placeholderText={previewText}
-          dateFormat="yyyy-MM-dd"
-          variant={variant}
-          disabled={variant === 'ReadOnly'}
-          {...rest}
-        >
-          {children} {/* Render children inside DatePickerComponent */}
-        </DatePickerComponent>
+        {variant === 'ReadOnly' ? (
+          <div>{children}</div>
+        ) : (
+          <DatePickerComponent
+            selected={selectedDate}
+            onChange={(date) => {
+              setSelectedDate(date);
+              onChange && onChange(date);
+            }}
+            placeholderText={previewText}
+            dateFormat="yyyy-MM-dd"
+            variant={variant}
+            disabled={variant === 'ReadOnly'}
+            {...rest}
+          />
+        )}
         {!rest.disabled && variant !== 'ReadOnly' && (
           <RightIcon>
             <Calendar stroke='#5E6A6E' width="1.25em" height="1.25em" />
