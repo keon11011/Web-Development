@@ -12,7 +12,7 @@ const DSKhoaHoc = () => (
         </div>
         <div id='ContentContainer' className='w-full px-[64px] py-[32px] space-y-[24px]'>
           <div id='Header'>
-            <HeaderAdmin>Phan Văn Trị</HeaderAdmin>
+            <HeaderAdmin>Khóa học</HeaderAdmin>
           </div>
           <div id='ContentInside' className="w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem]">
             <div id='Header' className='flex justify-between items-center'>

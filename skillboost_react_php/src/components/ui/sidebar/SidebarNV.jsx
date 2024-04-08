@@ -54,7 +54,7 @@ function Sidebar () {
             </Link>
           </li>
           <li>
-            <Link to="/khoahoc" className="block">
+            <Link to="/khoahocAdmin" className="block">
               <div className="relative before:absolute before:left-0 before:top-0 before:w-1 before:h-0 hover:before:h-full before:bg-brand-default ">
                 <div className="py-[18px] px-4">
                   <div className="flex items-center justify-start space-x-[16px]">

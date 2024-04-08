@@ -71,8 +71,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/dsqdgg' element={<DSQuyDinhGiamGia />}></Route>
         <Route path='/dsqdgg/taodsqdgg' element={<DSQDGG_TaoQuyDinhGiamGia />}></Route>
 
-        <Route path='/khoahoc' element={<DSKhoaHoc />}></Route>
-        <Route path='/khoahoc/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
+        <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
+        <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
 
       </Routes>
     </BrowserRouter>
