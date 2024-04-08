@@ -1,12 +1,10 @@
-// import './font.css'
-import TestComponent from './pages/TestComponents'
-import DSLead_ChinhSuaChiTietLead from './pages/DSLead_ChinhSuaChiTietLead'
-import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia';
-import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia';
+import './font.css'
+
+import DSBaoGia_ChinhSuaBaoGia from './pages/DSBaoGia_ChinhSuaBaoGia';
+
 const App = () => (
   <main className="relative">
-    {/* <DSLead_ChinhSuaChiTietLead/> */}
-    <DSQuyDinhGiamGia/>
+    <DSBaoGia_ChinhSuaBaoGia/>
   </main>
 )
 

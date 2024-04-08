@@ -92,7 +92,7 @@ const CustomDatePicker = ({
           <DatePickerComponent
             selected={selectedDate}
             onChange={(date) => {
-              setSelectedDate(date);
+              setSelectedDate(date); // Ensure setSelectedDate is called with the date value
               onChange && onChange(date);
             }}
             placeholderText={previewText}

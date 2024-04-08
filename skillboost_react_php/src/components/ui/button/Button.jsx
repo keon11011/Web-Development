@@ -15,7 +15,6 @@ const ButtonComponent = styled.button`
   border-radius: 0.5rem;
   padding: 16px;
   cursor: ${(props) => props.state === "disabled" ? "not-allowed" : "pointer"};
-
   width: ${(props) => 
     props.stretch === "auto" ? "auto" : 
     props.stretch === "full" ? "100%" : 

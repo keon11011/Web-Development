@@ -56,12 +56,12 @@ const DSLead_ChinhSuaChiTietLead = () => {
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
                     <TextInput title='Lead ID' previewText='LEA9021' variant='ReadOnly' showRedAsterisk></TextInput>
-                    <TextInput title='Họ tên' previewText='Phan Văn Trị' showRedAsterisk></TextInput>
+                    <TextInput title='Họ tên' showRedAsterisk></TextInput>
                     <DropDown
                         title="Giới tính"
                         showRedAsterisk
                         previewText='Nam'
-                        options={["Nam", "Nữ", "Khác"]}
+                        options={["Nam", "Nữ"]}
                         selectedOption={selectedGioiTinh}
                         setSelectedOption={setselectedGioiTinh}
                     >
