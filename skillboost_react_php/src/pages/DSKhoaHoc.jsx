@@ -15,18 +15,18 @@ const DSKhoaHoc = () => {
   return (
 <main id = "DSKhoaHoc">
 <div className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-  <div className='col-span-1'>
+  <div id='Sidebar' className='col-span-1'>
     <SidebarNV/>
   </div>
     
   <div id="ContentContainer" className='col-span-6 bg-background-secondary px-16 py-8 space-y-6' >
-    <div>
+    <div id="Header">
       <HeaderAdmin>Khóa học</HeaderAdmin>
     </div>
       
     <div id="CourseList" className='w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col items-start justify-between p-6'>
       <div className='flex justify-between pb-9'>
-        <div className="relative flex items-center title-large mr-6">Danh sách Khóa học</div>
+        <div className="relative flex items-center title-large mr-6">Danh sách khóa học</div>
           <div className='gap-4'>
             <ActionIcon icon={<AddPlus width="1.5rem" height="1.5rem"/>}/>
             <ActionIcon icon={<SearchMagnifyingGlass width="1.5rem" height="1.5rem"/>}/>
