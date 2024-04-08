@@ -1,7 +1,6 @@
 
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';

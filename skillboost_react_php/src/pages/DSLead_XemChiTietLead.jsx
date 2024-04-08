@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
@@ -60,11 +61,19 @@ const DSLead_XemChiTietLead = () => {
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex justify-between items-center'>
                 <div className='flex space-x-[16px] items-center'>
-                    <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+                  <div className='cursor-pointer block'>
+                      <Link to="/lead/thongtin">
+                        <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+                      </Link>
+                  </div>
                     <div className='text-text-primary title-large'>Thông tin khách hàng</div>
                 </div>
                 <div className="flex space-x-[12px]">
-                    <ActionPersonDetail variant="Edit" />
+                    <div className='cursor-pointer block'>
+                      <Link to="/lead/thongtin/chinhsuachitietlead">
+                        <ActionPersonDetail variant="Edit" />
+                      </Link>
+                    </div>
                     <ActionPersonDetail variant="Unfollow" onClick={handleUnfollow}/>
                     <ActionPersonDetail variant="Delete" onClick={handleDelete} />
                 </div>
@@ -169,13 +178,17 @@ const DSLead_XemChiTietLead = () => {
               <ActionIcon size="Medium" icon={<CloseMd width="1.5rem" height="1.5rem" onClick={handleCancelUnfollow}/>} />
               </div>
               </div>
-              <div className='flex flex-col space-y-[16px] w-[463px]'>
+              <div className='flex flex-col space-y-[16px] w-[auto]'>
                 <div className='h-[316px]'>
                   <TextArea title='Lý do hủy theo dõi' previewText='Điền lý do'/>
                 </div>
                 <AlertDanger>Hủy theo dõi Lead sẽ không thể được khôi phục</AlertDanger>
               </div>
-              <Button variant="Destructive" size='Big' onClick={handleUnfollow}>Xác nhận hủy theo dõi</Button>
+              <div className='cursor-pointer block'>
+                  <Link to="/lead/thongtin/huytheodoilead">
+                    <Button variant="Destructive" size='Big' stretch='full' onClick={handleUnfollow}>Xác nhận hủy theo dõi</Button>
+                  </Link>
+                </div> 
             </div>
           </div>
         )}

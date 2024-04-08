@@ -1,10 +1,11 @@
 import './font.css'
 
-import DSKhoaHoc from './pages/DSKhoaHoc';
+// import Dashboard from './pages/Dashboard';
+import testTab from './components/ui/tabs/testTab';
 
 const App = () => (
   <main className="relative">
-    <DSKhoaHoc/>
+    <testTab/>
   </main>
 )
 

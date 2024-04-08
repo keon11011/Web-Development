@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
@@ -23,7 +25,11 @@ const DSBaoGia_TaoBaoGia = () => (
 
           <div id='ContentInside' className="w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-6 box-border gap-4 space-y-6">
             <div id='Header' className='flex items-center space-x-4'>
-              <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+              <div className='cursor-pointer block'>
+                <Link to="/khoahocAdmin">
+                  <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+                </Link>
+              </div>
               <div className='text-text-primary title-large'>Tạo khóa học</div>
             </div>
 
