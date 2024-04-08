@@ -1,13 +1,13 @@
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 
 const Dashboard = () => {
 
     return (
     <main id = "Dashboard" className='relative w-full bg-background-secondary flex'>
-        <div id='SidebarNV' className='sticky top-0 h-screen'>
-            <SidebarNV/>
+        <div id='SidebarQL' className='sticky top-0 h-screen'>
+            <SidebarQL/>
         </div>
 
         <div id ="ContentContainer" className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>

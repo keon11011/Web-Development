@@ -3,7 +3,7 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import ActionIcon from '../components/ui/button/ActionIcon'
 import SearchBar from '../components/ui/placeholder/SearchBar';
@@ -54,8 +54,8 @@ const DSKhachHang_BangKH = () => {
 
     return (
     <main id = "DSLead" className='relative w-full bg-background-secondary flex'>
-        <div id='SidebarNV' className='sticky top-0 h-screen'>
-            <SidebarNV/>
+        <div id='SidebarQL' className='sticky top-0 h-screen'>
+            <SidebarQL/>
         </div>
         <div id ="ContentContainer" className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div>

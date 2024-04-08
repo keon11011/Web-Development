@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
 import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
@@ -43,7 +43,7 @@ const DSHoatDongLead_BangHoatDong = () => {
     return (
         <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
             <div id='Sidebar' className='sticky top-0 h-screen'>
-                <SidebarNV/>
+                <SidebarQL/>
             </div>
             <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
                 <div id='Header'>
