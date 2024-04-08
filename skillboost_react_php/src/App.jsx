@@ -1,10 +1,12 @@
 import './font.css'
-import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH';
+import TrangChu from './pages/TrangChu'
+import Dashboard from './pages/Dashboard';
 
 const App = () => (
   <main className="relative">
-    <DSKhachHang_BangKH/>
-   </main> 
+    {/* <TrangChu/> */}
+    <Dashboard/>
+  </main>
 )
 
 export default App; 
