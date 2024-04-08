@@ -3,7 +3,10 @@ import SidebarNV from "../components/ui/sidebar/SidebarNV";
 import HeaderAdmin from "../components/ui/header_footer/admin/headerad/HeaderAdmin";
 import DashboardOverviewCardUp from "../components/ui/card/DashboardOverviewCardUp";
 import DashboardOverviewCardDown from "../components/ui/card/DashboardOverviewCardDown";
+import DashboardOverviewCardNone from "../components/ui/card/DashboardOverviewCardNone";
 import LineChart from "../components/ui/chart/LineChart";
+import DoughnutChart from "../components/ui/chart/DoughnutChart";
+import ColumnChart from"../components/ui/chart/ColumnChart";
 
 const DSLead = () => {
   return (
@@ -19,26 +22,49 @@ const DSLead = () => {
           <div>
             <HeaderAdmin>Số liệu</HeaderAdmin>
           </div>
-          <div className="w-max flex-col items-start justify-between p-6 relative rounded-lg ">
-            <div className="flex gap-10 ">
-              <div className="relative flex items-center">
-                <DashboardOverviewCardUp
-                  namecard={"Số lượng Lead"}
-                  percentchange={"3.1%"}
-                  total={"9.901"}
-                />
-              </div>
-              <div className="relative flex items-center">
-                <DashboardOverviewCardDown
-                  namecard={"Số lượng Khách hàng"}
-                  percentchange={"3.1%"}
-                  total={"9.901"}
-                />
-              </div>
+          {/* Hàng đầu */}
+          <div className="flex w-full justify-center space-x-[24px]">
+            <div className="flex w-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              <DashboardOverviewCardUp
+                namecard={"Số lượng Lead"}
+                percentchange={"3.1%"}
+                total={"9.901"}
+              />
+            </div>
+            <div className="flex w-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              <DashboardOverviewCardDown
+                namecard={"Số lượng Lead"}
+                percentchange={"3.1%"}
+                total={"9.901"}
+              />
+            </div>
+            <div className="flex w-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              <DashboardOverviewCardNone
+                namecard={"Số lượng Lead"}
+                percentchange={"3.1%"}
+                total={"5.861"}
+              />
             </div>
           </div>
-          <div className="w-max flex-col items-start justify-between p-6 relative rounded-lg ">
-            <LineChart/>
+
+          {/* Hàng hai */}
+          <div className="flex w-full justify-center space-x-[24px]">
+            <div className="flex w-2/3 h-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              <LineChart />
+            </div>
+            <div className="flex w-1/3 h-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              <DoughnutChart />
+            </div>
+          </div>
+
+          {/* Hàng ba */}
+          <div className="flex w-full justify-center space-x-[24px]">
+            <div className="flex w-3/4 h-[390px] justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              <ColumnChart/>
+            </div>
+            <div className="flex w-1/4 h-[390px] justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+              List Items
+            </div>
           </div>
         </div>
       </div>

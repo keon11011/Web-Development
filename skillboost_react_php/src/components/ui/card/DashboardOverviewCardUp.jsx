@@ -7,7 +7,7 @@ const DashboardOverviewCardUp = ({ namecard, percentchange, total}) => {
         <div trend ="up"className="p-6 w-max rounded-lg bg-background-primary border-2 items-center jusitfy-between flex-col">
             <div className="flex flex-row items-center ">
                 <div className="opacity-70">{namecard}</div>
-                <div className="flex items-center ml-atuo">
+                <div className="flex items-center pl-5 ml-atuo">
                     <Triangle className="pl-2 fill-green-500 size-8" />
                     <div className="text-green-500">{percentchange}</div>
                 </div>
