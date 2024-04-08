@@ -9,6 +9,7 @@ import Fullstack_logo from '../assets/logo/Fullstack_logo.svg'
 import Google_logo from '../assets/logo/Google_logo.svg'
 import UEH_logo from '../assets/logo/UEH_logo.svg'
 import Illustration from '../assets/img/Illustration.svg'
+import TextInput from '../components/ui/placeholder/TextInput.jsx'
 const TrangChu = () => (
 
     <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
@@ -44,7 +45,7 @@ const TrangChu = () => (
                 <div className='flex self-center display-small max-sm:text-text-secondary max-sm:text-4xl'>
                     Chúng tôi hợp tác với nhiều đối tác đặc biệt
                 </div>
-                <div className='flex flex-row self-center pt-10 gap-20 max-sm:flex-col'>
+                <div className='flex flex-row self-center pt-10 gap-20 max-sm:flex-col max-sm:gap-3'>
                     <div><BrandCard brandname={Google_logo} /></div>
                     <div><BrandCard brandname={UEH_logo} /></div>
                     <div><BrandCard brandname={Fullstack_logo} /></div>
@@ -60,7 +61,7 @@ const TrangChu = () => (
                 </div>
                 <div name="Reason To Choose Container max-sm:text-center">
                     <div className='display-small max-sm:text-text-secondary max-sm:text-4xl max-sm:text-center'>Vì sao nền tảng học trực tuyến của chúng tôi là lựa chọn tốt nhất cho khóa học IT của bạn?</div>
-                    <div className='relative flex flex-col gap-5 sm:pl-40 pt-10 self-center max-sm:pl-40 max-sm:flex-left'>
+                    <div className='relative flex flex-col gap-5 sm:pl-40 pt-10 self-center max-sm:pl-36 max-sm:flex-left'>
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd /> Chất lượng đáng tin cậy</p>
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd />Đa dạng chủ đề</p>
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd />Học tập linh hoạt</p>
@@ -82,7 +83,7 @@ const TrangChu = () => (
                 <div className='flex self-center display-small max-sm:text-text-secondary max-sm:text-4xl max-sm:text-center'>
                     Chúng tôi hợp tác với nhiều đối tác đặc biệt
                 </div>
-                <div className='flex flex-row self-center pt-10 gap-20 max-sm:flex-col'>
+                <div className='flex flex-row self-center pt-10 gap-20 max-sm:flex-col max-sm:gap-2'>
                     <div>
                         <CommentCard
                             content={"Tôi thực sự ấn tượng với nền tảng học IT này! Các khóa học rất chi tiết và dễ hiểu, đồng thời có nhiều bài thực hành giúp tăng cường kiến thức. Cộng đồng hỗ trợ cũng rất tích cực."}

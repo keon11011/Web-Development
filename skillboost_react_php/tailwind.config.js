@@ -30,6 +30,7 @@ export default {
           'secondary': '#5E6A6E',
           'third': '#BEBEBE',
           'white': '#FFFFFF',
+          'blue': '#1E9BFF',
         },
         outline: {
           'placeholder': '#DFDFDF',
