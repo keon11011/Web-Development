@@ -10,6 +10,7 @@ import Google_logo from '../assets/logo/Google_logo.svg'
 import UEH_logo from '../assets/logo/UEH_logo.svg'
 import Illustration from '../assets/img/Illustration.svg'
 import TextInput from '../components/ui/placeholder/TextInput.jsx'
+
 const TrangChu = () => (
 
     <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
@@ -48,8 +49,7 @@ const DSLead_ChinhSuaChiTietLead = () => {
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex justify-between items-center'>
                 <div className='flex space-x-[16px] items-center'>
-                    <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
-                    <div className='text-text-primary title-large'>Thông tin khách hàng</div>
+                  <div className='text-text-primary title-large'>Chỉnh sửa thông tin khách hàng</div>
                 </div>
             </div>
           
@@ -128,6 +128,14 @@ const DSLead_ChinhSuaChiTietLead = () => {
                   </tbody>
                 </table>
               </div>
+            </div>
+            <div className='flex w-full space-x-[12px] items-center justify-end'>
+                <div className='cursor-pointer block'>
+                  <Link to="/lead/thongtin/xemchitietlead">
+                    <Button variant='Destructive-plain' size='Medium'>Hủy thay đổi</Button>
+                  </Link>
+                </div>   
+                <Button variant='Primary' size='Medium'>Lưu thay đổi</Button>
             </div>
             </div>
         </div>
