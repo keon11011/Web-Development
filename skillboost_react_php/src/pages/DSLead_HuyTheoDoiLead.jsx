@@ -3,18 +3,14 @@
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
-import ActionPersonDetail from '../components/ui/button/ActionPersonDetail'
 import DropDown from '../components/ui/placeholder/DropDown'
-import Button from '../components/ui/button/Button'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
 import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
 import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
-import AlertDanger from '../components/ui/inform/AlertDanger';
 
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
-import CloseMd from '../components/icons/Menu/CloseMd'
 
 const DSLead_HuyTheoDoiLead = () => {
 

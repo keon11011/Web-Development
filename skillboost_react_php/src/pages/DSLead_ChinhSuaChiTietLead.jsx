@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
+import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuvan'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import DropDown from '../components/ui/placeholder/DropDown'
 import Button from '../components/ui/button/Button'
@@ -36,7 +37,7 @@ const DSLead_ChinhSuaChiTietLead = () => {
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
-          <HeaderAdmin>Phan Văn Trị</HeaderAdmin>
+          <HeaderAdmin progressBar={<Nhantuvan/>}>Phan Văn Trị</HeaderAdmin>
         </div>
         <div id="LeadInfoNavigation" className="flex space-x-[24px]">
           <div className="grow">

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 import Header from '../components/ui/header_footer/customer/Header.jsx'
 import Footer from '../components/ui/header_footer/customer/Footer.jsx'
 import BA_course from '../assets/logo/BA_course.svg'
@@ -14,11 +15,16 @@ import TextArea from '../components/ui/placeholder/TextArea'
 import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
 import Button from '../components/ui/button/Button.jsx'
 import AddPlus from '../components/icons/Edit/AddPlus.jsx'
-
-
+import CourseSelector from '../components/ui/SelectItems/CourseSelector'
 
 
 const Chitietkhoahoc = () => {
+    const [showCourseSelector, setShowCourseSelector] = useState(false);
+
+    const handleCourseSelectorClick = () => {
+        setShowCourseSelector(!showCourseSelector);
+      };  
+
     return (
         <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
             <div name="Header">
@@ -146,7 +152,7 @@ const Chitietkhoahoc = () => {
                                     <TextArea title="Ghi chú"  previewText='Nhập ghi chú'></TextArea>
                                 </div>
                                 <div >
-                                    <Button variant='Neutral' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>}>Thêm khóa học quan tâm </Button>
+                                    <Button variant='Neutral' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5} stroke='#5E6A6E'/>} onClick={handleCourseSelectorClick}>Thêm khóa học quan tâm </Button>
                                 </div>
                                 <div className='flex justify-end'>
                                     <Button variant='Plain' size='Medium' state='disabled' >Gửi yêu cầu tư vấn </Button>
@@ -160,6 +166,11 @@ const Chitietkhoahoc = () => {
             <div name="Footer">
                 <Footer />
             </div>
+            {showCourseSelector && 
+            <div className="absolute top-[942px] right-[150px] z-50">
+                <CourseSelector/>
+            </div>
+            }
         </main>
     )
 }

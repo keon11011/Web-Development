@@ -8,8 +8,11 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import Check from '../components/icons/Interface/Check'
 import TextInput from '../components/ui/placeholder/TextInput';
 import Button from '../components/ui/button/Button'
+import ActionPersonDetail from '../components/ui/button/ActionPersonDetail'
 import EditPencil01 from '../components/icons/Edit/EditPencil01'; 
 import TrashFull from '../components/icons/Interface/TrashFull';
+
+
 const DSQDGG_TaoQuyDinhGiamGia = () => {
   const [selectedNgheNghiep, setselectedNgheNghiep] = useState(null);
 
@@ -54,12 +57,8 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
               <div className='text-text-primary title-large '>Tạo quy định giảm giá</div>
             </div>
             <div className="flex justify-between space-x-[10px]">
-              <div className="flex place-items-center p-2 bg-[#DDF3FF] hover:bg-[#C5EAFF] border-solid border-[#C5EAFF] border-2 rounded-lg">
-              <EditPencil01 width="1.2rem" height="1.2rem"/>
-              </div>
-              <div className="flex place-items-center p-2 bg-[#FFDDDD] hover:bg-[#FFCFCF] border-solid border-[#FFCFCF] border-2 rounded-lg">
-              <TrashFull width="1.2rem" height="1.2rem"/>
-              </div>
+              <ActionPersonDetail variant='Edit'/>
+              <ActionPersonDetail variant='Delete'/>
             </div>
           </div>
           <div className='flex-auto block pb-1 '>

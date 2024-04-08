@@ -1,10 +1,10 @@
 import './font.css'
 
-import DSBaoGia_ChinhSuaBaoGia from './pages/DSBaoGia_ChinhSuaBaoGia';
+import DSLead_XemChiTietLead from './pages/DSLead_XemChiTietLead';
 
 const App = () => (
   <main className="relative">
-    <DSBaoGia_ChinhSuaBaoGia/>
+    <DSLead_XemChiTietLead/>
   </main>
 )
 
