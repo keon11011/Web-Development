@@ -8,6 +8,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import TrangChu_DSKhoaHoc from './pages/TrangChu_DSKhoaHoc.jsx'
 import DangNhap from './pages/DangNhap.jsx'
 
+import Dashboard from './pages/Dashboard.jsx'
+
 import DSLead_BangLead from './pages/DSLead_BangLead.jsx'
 import DSLead_XemChiTietLead from './pages/DSLead_XemChiTietLead.jsx'
 import DSLead_TaoLead from './pages/DSLead_TaoLead.jsx'
@@ -43,6 +45,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/khoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
         <Route path='/dangnhap' element={<DangNhap />}></Route>
 
+        <Route path='/dashboard' element={<Dashboard />}></Route>
+
         <Route path='/lead/thongtin' element={<DSLead_BangLead />}></Route>
         <Route path='/lead/thongtin/xemchitietlead' element={<DSLead_XemChiTietLead />}></Route>
         <Route path='/lead/thongtin/taolead' element={<DSLead_TaoLead />}></Route>
@@ -67,8 +71,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/dsqdgg' element={<DSQuyDinhGiamGia />}></Route>
         <Route path='/dsqdgg/taodsqdgg' element={<DSQDGG_TaoQuyDinhGiamGia />}></Route>
 
-        <Route path='/khoahoc' element={<DSKhoaHoc />}></Route>
-        <Route path='/khoahoc/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
+        <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
+        <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
 
       </Routes>
     </BrowserRouter>

@@ -12,6 +12,8 @@ import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
 import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
 import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
 import AlertDanger from '../components/ui/inform/AlertDanger';
+import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuvan'
+
 
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import CloseMd from '../components/icons/Menu/CloseMd'
@@ -47,7 +49,7 @@ const DSLead_XemChiTietLead = () => {
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
-          <HeaderAdmin>Phan Văn Trị</HeaderAdmin>
+          <HeaderAdmin progressBar={<Nhantuvan/>}>Phan Văn Trị</HeaderAdmin>
         </div>
         <div id="LeadInfoNavigation" className="flex space-x-[24px]">
           <div className="grow">
