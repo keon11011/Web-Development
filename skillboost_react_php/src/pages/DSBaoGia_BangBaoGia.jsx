@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
@@ -5,6 +6,9 @@ import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
 import ActionIcon from '../components/ui/button/ActionIcon';
 import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuvan';
 import Pagination from '../components/ui/pagination/Pagination';
+import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
+import Button from '../components/ui/button/Button'
+import AddPlus from '../components/icons/Edit/AddPlus'
 
 import ChevronRight from '../components/icons/Arrow/ChevronRight';
 
@@ -19,13 +23,21 @@ const DSBaoGia_BangBaoGia = () => {
                 <div id='Header'>
                     <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
                 </div>
-                <div id='LeadInfoNavigation'>
-                    <LeadInfoTab/>
+                <div id='LeadInfoNavigation' className='flex space-x-[24px]'>
+                    <div className='grow'>
+                        <LeadInfoTab/>
+                    </div>
+                    <LeadProgressStatus variant="DangTuVan" />
                 </div>
                 <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[36px]">
-                    <div id='Header' className='flex justify-between items-start h-[30px]'>
-                        <div className='text-text-primary title-large'>Danh sách báo giá</div>
-                    </div>
+                <div id='Header' className='flex justify-between items-center'>
+                    <div className='text-text-primary title-large'>Danh sách báo giá</div>
+                    <div className='cursor-pointer block'>
+                        <Link to="/lead/dsbaogia/taobaogia">
+                            <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Tạo báo giá mới</Button>
+                        </Link>
+                    </div> 
+                </div>
                     <div id='Content' className='flex flex-col space-y-[32px] w-full h-auto'>
                         <div id='Table' className="flex w-full rounded-lg border border-outline-table">
                             <table className="table-auto w-full">
@@ -47,7 +59,13 @@ const DSBaoGia_BangBaoGia = () => {
                                         <td className="px-[16px] py-[24px] text-center">13:10 - 11/12/2023</td>
                                         <td className="px-[16px] py-[24px] text-center">4.000.000đ</td>
                                         <td className="px-[16px] py-[24px] text-center">PIC</td>
-                                        <td><ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} /></td>
+                                        <td>
+                                            <div className='cursor-pointer block'>
+                                                <Link to="/lead/dsbaogia/xemchitietbaogia">
+                                                    <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} />
+                                                </Link>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

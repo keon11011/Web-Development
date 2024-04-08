@@ -52,12 +52,12 @@ const DSLead_XemChiTietLead = () => {
         <div id='Header'>
           <HeaderAdmin progressBar={<Nhantuvan/>}>Phan Văn Trị</HeaderAdmin>
         </div>
-        <div id="LeadInfoNavigation" className="flex space-x-[24px]">
-          <div className="grow">
-            <LeadInfoTab />
+          <div id="LeadInfoNavigation" className="flex space-x-[24px]">
+            <div className="grow">
+              <LeadInfoTab />
+            </div>
+            <LeadProgressStatus variant="DangTuVan" />
           </div>
-          <LeadProgressStatus variant="DangTuVan" />
-        </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex justify-between items-center'>
                 <div className='flex space-x-[16px] items-center'>
@@ -66,7 +66,7 @@ const DSLead_XemChiTietLead = () => {
                         <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
                       </Link>
                   </div>
-                    <div className='text-text-primary title-large'>Thông tin khách hàng</div>
+                    <div className='text-text-primary title-large'>Thông tin Lead</div>
                 </div>
                 <div className="flex space-x-[12px]">
                     <div className='cursor-pointer block'>

@@ -1,11 +1,10 @@
 import './font.css'
 
-// import Dashboard from './pages/Dashboard';
-import testTab from './components/ui/tabs/testTab';
+import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH';
 
 const App = () => (
   <main className="relative">
-    <testTab/>
+    <DSKhachHang_BangKH/>
   </main>
 )
 

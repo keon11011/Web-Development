@@ -103,7 +103,11 @@ const DSBaoGia_TaoBaoGia = () => (
               </div>
 
               <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                <div className='cursor-pointer block'>
+                  <Link to="/khoahocAdmin">
+                    <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                  </Link>
+                </div>
                 <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
               </div>
             </div>

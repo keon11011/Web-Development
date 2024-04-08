@@ -1,6 +1,7 @@
 
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import SidebarNV from '../components/ui/sidebar/SidebarNV';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
@@ -65,7 +66,11 @@ const DSKhachHang_BangKH = () => {
                 <div className="flex items-center title-large">Danh sách khách hàng</div>
                 {showSearchBar && <SearchBar previewText='Tìm kiếm Khách hàng'/>}
                 <div className='flex space-x-[16px] items-center'>
-                    <ActionIcon size='Small' icon={<AddPlus width="1.25rem" height="1.25rem"/>}/>
+                    <div className='cursor-pointer block'>
+                        <Link to="/khachhang/taokhachhang">
+                            <ActionIcon size='Small' icon={<AddPlus width="1.25rem" height="1.25rem"/>}/>
+                        </Link>
+                    </div>
                     <ActionIcon size='Small' icon={<SearchMagnifyingGlass width="1.25rem" height="1.25rem"/>} onClick={handleSearchIconClick}/>
                     <ActionIcon size='Small' icon={<Filter width="1.25rem" height="1.25rem"/>} onClick={handleFilterIconClick}/>
                     <ActionIcon size='Small' icon={<ArrowDownUp width="1.25rem" height="1.25rem"/>} onClick={handleOptionIconClick}/>
@@ -109,7 +114,13 @@ const DSKhachHang_BangKH = () => {
                                 <td class="px-[16px] py-[24px] text-center">{customer.ChinhSuaLanCuoiVaoLuc}</td>
                                 <td class="px-[16px] py-[24px] text-center">{customer.TenNgheNghiep}</td>
                                 <td class="px-[16px] py-[24px] text-center">{customer.EmailKH}</td>
-                                <td class="items-center text-center"><ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} /></td>
+                                <td class="items-center text-center">
+                                    <div className='cursor-pointer block'>
+                                        <Link to="/khachhang/xemchitietkhachhang">
+                                            <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} />
+                                        </Link>
+                                    </div>
+                                </td>
                             </tr>
                             )}
                         </tbody>

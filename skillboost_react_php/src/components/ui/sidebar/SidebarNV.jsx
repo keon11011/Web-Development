@@ -48,7 +48,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const Sidebar = () => {
+const SidebarNV = () => {
   return (
     <SidebarContainer>
       <LogoContainer>
@@ -76,4 +76,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarNV;
