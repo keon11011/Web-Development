@@ -1,13 +1,13 @@
 import './font.css'
 
-import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH';
+import Dashboard from './pages/Dashboard';
 
 const App = () => (
   <main className="relative">
-    <DSKhachHang_BangKH/>
+    <Dashboard/>
   </main>
 )
 
-export default App; 
+export default App;   
 
 

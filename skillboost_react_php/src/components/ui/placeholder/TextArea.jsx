@@ -7,6 +7,7 @@ const TextAreaContainer = styled.div`
   align-items: left;
   gap: 0.5rem;
   height: 100%;
+  width: 100%;
 `;
 
 const TextAreaWrapper = styled.div`

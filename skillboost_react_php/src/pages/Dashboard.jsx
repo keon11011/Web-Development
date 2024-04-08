@@ -6,7 +6,7 @@ const Dashboard = () => {
 
     return (
     <main id = "Dashboard" className='relative w-full bg-background-secondary flex'>
-        <div id='SidebarQL' className='sticky top-0 h-screen'>
+        <div id='SidebarQL'>
             <SidebarQL/>
         </div>
 

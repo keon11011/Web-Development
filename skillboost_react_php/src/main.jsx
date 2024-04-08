@@ -50,7 +50,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/dashboard' element={<Dashboard />}></Route>
 
         <Route path='/lead/thongtin' element={<DSLead_BangLead />}></Route>
-        <Route path='/lead/thongtin/xemchitietlead' element={<DSLead_XemChiTietLead />}></Route>
+        <Route path='/lead/thongtin/xemchitietlead/:id' element={<DSLead_XemChiTietLead />}></Route>
         <Route path='/lead/thongtin/taolead' element={<DSLead_TaoLead />}></Route>
         <Route path='/lead/thongtin/chinhsuachitietlead' element={<DSLead_ChinhSuaChiTietLead />}></Route>
         <Route path='/lead/thongtin/huytheodoilead' element={<DSLead_HuyTheoDoiLead />}></Route>
