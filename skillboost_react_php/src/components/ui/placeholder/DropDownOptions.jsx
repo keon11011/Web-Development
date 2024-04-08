@@ -48,8 +48,8 @@ const DropdownButtonComponent = styled.button`
 
 const OptionsList = styled.ul`
   position: absolute;
-  overflow-y: auto; //the list can scroll
-  max-height: 10rem; //scroll
+  top: ${(props) => props.top + 8}px;
+  left: ${(props) => props.left}px;
   width: ${(props) => props.width}px;
   background-color: #FFFFFF;
   border: 1px solid #DFDFDF;
@@ -89,22 +89,25 @@ const Note = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#5E6A6E'};
 `;
 
-const DropDown = ({
+const DropDownOptions = ({
   variant,
+  id,
   title,
   note,
   options,
-  onHandleChange,
+  onChange,
   readOnly,
   previewText,
+  selectedOption,
+  setSelectedOption,
   showRedAsterisk,
+  children,
   ...rest
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
   const [buttonWidth, setButtonWidth] = useState(null);
   const [buttonPosition, setButtonPosition] = useState({ top: 0, left: 0 });
-  const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -117,34 +120,44 @@ const DropDown = ({
   }, [buttonRef]);
 
   const toggleOptions = () => {
-    setIsOpen(!isOpen);
+    if (!rest.disabled) {
+      setIsOpen(!isOpen);
+    }
   };
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option.label);
-    onHandleChange(option);
+    setSelectedOption(option);
     setIsOpen(false);
+    onChange(option);
   };
 
   return (
     <DropdownButtonContainer>
-      {title && <Title showRedAsterisk={showRedAsterisk}>{title}</Title>}
-      <DropdownButtonWrapper variant={variant} onClick={toggleOptions} ref={buttonRef}>
+      {title && (
+        <Title showRedAsterisk={showRedAsterisk}>{title}</Title>
+      )}
+      <DropdownButtonWrapper
+        variant={variant}
+        onClick={toggleOptions}
+        ref={buttonRef}
+        disabled={variant === 'ReadOnly'}
+      >
         <DropdownButtonComponent
           type="button"
           readOnly={variant === 'ReadOnly'}
           {...rest}
           disabled={variant === 'ReadOnly'}
         >
-          {selectedOption ? selectedOption : previewText}
+          {selectedOption || previewText}
+          {children}
         </DropdownButtonComponent>
         {!rest.disabled && variant !== 'ReadOnly' && <ChevronDown />}
       </DropdownButtonWrapper>
       {isOpen && (
-        <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth} className='mt-24'>
+        <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth}>
           {options.map((option, index) => (
             <Option key={index} onClick={() => handleOptionClick(option)}>
-              {option.label}
+              {option}
             </Option>
           ))}
         </OptionsList>
@@ -154,4 +167,4 @@ const DropDown = ({
   );
 };
 
-export default DropDown;
+export default DropDownOptions;

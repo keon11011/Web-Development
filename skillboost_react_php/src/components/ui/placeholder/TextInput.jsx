@@ -24,7 +24,7 @@ const TextInputWrapper = styled.div`
     props.variant === 'Error' ? '#ff4141' : '#f8f8f8'};
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: center; //cai nay no effect
   align-items: center;
   &:focus-within {
     border-color: ${(props) =>
@@ -86,13 +86,14 @@ const TextInput = ({
   previewText,
   note,
   name,
+  value,
   onChange,
   leftIcon,
   rightIcon,
   onClickRightIcon,
   readOnly,
   children,
-  showRedAsterisk, // New prop to trigger showing the red asterisk
+  showRedAsterisk,
   ...rest
 }) => {
   const handleClickRightIcon = () => {
@@ -111,7 +112,7 @@ const TextInput = ({
         <TextInputComponent
           type="text"
           placeholder={previewText}
-          value={children}
+          value={children ? children : value} 
           name={name}
           onChange={onChange}
           readOnly={variant === 'ReadOnly'}

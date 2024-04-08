@@ -2,9 +2,9 @@ import User02 from '../../icons/User/User02.jsx'
 import Heart01 from '../../icons/Interface/Heart01.jsx'
 import TrashFull from '../../../components/icons/Interface/TrashFull'
 
-const FeedbackCard = () => {
+const FeedbackCard = ({cusname, starrate, content, likecount}) => {
     return (
-        <div className=" lg:w-2/5 p-4 flex  max-w-max min-w-min h-auto flex-col rounded-xl bg-white border-2">
+        <div className=" lg:w-full p-4 flex  max-w-max min-w-min h-auto flex-col rounded-xl bg-white border-2">
             <div className='flex items-center pl-3'>
                 <div className='flex'>
                     <User02 width={30} height={30} className="flex rounded-full border-2 border-black">
@@ -13,7 +13,7 @@ const FeedbackCard = () => {
                 </div>
                 <div className="pl-2 ">
                     <div className="flex label-medium ">
-                        Bùi Xuân Vĩ
+                        {cusname}
                     </div>
                     <div className="flex items-center gap-1 font-sans font-normal leading-relaxed bold">
                         <svg
@@ -29,17 +29,17 @@ const FeedbackCard = () => {
                                 clip-rule="evenodd"
                             ></path>
                         </svg>
-                        5
+                        {starrate}
                     </div>
                 </div>
             </div>
             <div className="p-3 w-auto justify-items-stretch rounded-lg border-b-4 border-r-4">
-                Khóa học rất hữu ích khi tôi tìm kiếm chính xác thông tin này và tôi đã có được thứ mình muốn, thật may mắn :) Ryan là một giáo viên xuất sắc, hiểu rất rõ về chủ đề này và đưa ra những lời giải thích có cấu trúc rõ ràng.
+                {content}
             </div>
             <div className='pt-3 flex items-center'>
                 <button><Heart01></Heart01></button>
                 <div className='body-small pl-2'>
-                    22
+                    {likecount}
                 </div>
             </div>
         </div>

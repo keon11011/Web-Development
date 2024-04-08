@@ -16,7 +16,7 @@ const DiscountListFilter = () => {
 
     return (
 
-        <form className="w-max relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
+        <form className="w-auto relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
             <div className=" w-auto relative flex flex-col min-w-0 break-words border border-solid border-[#5200FF] rounded-2xl ">
                 <div className="p-6 pb-3 w-fit flex gap-6">
                     <div>

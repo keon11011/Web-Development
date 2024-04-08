@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
+import LeadProgressStatus from '../components/ui/chips/LeadProgressStatus'; 
 import ActionIcon from '../components/ui/button/ActionIcon';
 import Nhantuvan from '../components/ui/header_footer/admin/progressbar/Nhantuvan';
 import Pagination from '../components/ui/pagination/Pagination';
@@ -41,21 +43,28 @@ const DSHoatDongLead_BangHoatDong = () => {
     return (
         <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
             <div id='Sidebar' className='sticky top-0 h-screen'>
-                <SidebarNV/>
+                <SidebarQL/>
             </div>
             <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
                 <div id='Header'>
                     <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
                 </div>
-                <div id='LeadInfoNavigation'>
-                    <LeadInfoTab/>
+                <div id="LeadInfoNavigation" className="flex space-x-[24px]">
+                    <div className="grow">
+                        <LeadInfoTab />
+                    </div>
+                    <LeadProgressStatus variant="DangTuVan" />
                 </div>
                 <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[36px]">
                     <div id='Header' className='flex justify-between items-start h-[30px]'>
                         <div className='text-text-primary title-large'>Danh sách hoạt động</div>
                         {showSearchBar && <SearchBar previewText='Tìm kiếm hoạt động'/>} 
                         <div id='ActionIconSet' className='flex space-x-[16px]'>
-                            <ActionIcon size='Small' icon={<AddPlus width="1.25rem" height="1.25rem"/>} />
+                            <div className='cursor-pointer block'>
+                                <Link to="/lead/dshoatdong/taohoatdong">
+                                    <ActionIcon size='Small' icon={<AddPlus width="1.25rem" height="1.25rem"/>} />
+                                </Link>
+                            </div>
                             <ActionIcon size='Small' icon={<SearchMagnifyingGlass width="1.25rem" height="1.25rem"/>} onClick={handleSearchIconClick} />
                             <ActionIcon size='Small' icon={<Filter width="1.25rem" height="1.25rem"/>} onClick={handleFilterIconClick}/>
                             <ActionIcon size='Small' icon={<ArrowDownUp width="1.25rem" height="1.25rem"/>} onClick={handleOptionIconClick} />
@@ -88,7 +97,13 @@ const DSHoatDongLead_BangHoatDong = () => {
                                         <td className="px-[16px] py-[24px] text-center">Yêu cầu</td>
                                         <td className="px-[16px] py-[24px] text-center">13:11 - 11/12/2023</td>
                                         <td className="px-[16px] py-[24px] text-center">Lead</td>
-                                        <td><ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} /></td>
+                                        <td>
+                                            <div className='cursor-pointer block'>
+                                                <Link to="/lead/dshoatdong/xemchitiethoatdong">
+                                                    <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} />
+                                                </Link>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
