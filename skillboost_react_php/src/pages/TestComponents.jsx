@@ -139,7 +139,7 @@ const TestComponents = () => (
       <div className='flex space-x-4 p-2'>   
         <Button size="Small" variant="Primary" state="disabled" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Primary</Button> 
         <Button size="Small" variant="Secondary" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Secondary</Button>
-        <Button size="Small" variant="Outlined" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Outlined</Button>
+        <Button state='disabled' size="Small" variant="Outlined" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Outlined</Button>
         <Button size="Small" variant="Plain" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Plain</Button>
         <Button size="Small" variant="Neutral" leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Neutral</Button>
         <Button size="Small" variant="Destructive" onClick={() => alert('Đang xóa ư?')} leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Destructive</Button>

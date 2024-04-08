@@ -1,9 +1,9 @@
 import './font.css'
-import CTKhoaHoc from './pages/CTKhoaHoc';
+import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH';
+
 const App = () => (
   <main className="relative">
-    <CTKhoaHoc/>
-  </main>
+    <DSKhachHang_BangKH/>
 )
 
 export default App; 

@@ -8,7 +8,7 @@ import Mail from '../../../icons/Communication/Mail'
 
 const Footer = () => {
     return (
-        <div className=' bg-background-third sm:px-40 sm:py-[40px] max-sm:pt-5 max-sm:flex-col text-text-secondary max-sm:pl-5 max-sm:pb-10'>
+        <div className=' bg-background-third sm:px-40 sm:py-[40px] max-sm:flex-col text-text-secondary max-sm:pl-5 max-sm:pb-10'>
             <div >
                 <div className='flex flex-row space-x-auto justify-between max-sm:flex-col gap-7' >
                     <div className='w-[462px] max-sm:w-full' >

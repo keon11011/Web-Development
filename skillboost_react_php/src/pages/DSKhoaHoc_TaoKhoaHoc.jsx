@@ -1,4 +1,6 @@
-import SidebarNV from '../components/ui/sidebar/SidebarNV'
+import { Link } from 'react-router-dom'
+
+import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
@@ -113,7 +115,11 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
               </div>
 
               <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                <div className='cursor-pointer block'>
+                  <Link to="/khoahocAdmin">
+                    <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                  </Link>
+                </div>
                 <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
               </div>
             </div>

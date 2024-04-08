@@ -1,5 +1,6 @@
 import React from 'react'
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import { Link } from 'react-router-dom'
+import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import CourseTableStatus from '../components/ui/chips/CourseTableStatus'
 import ActionIcon from '../components/ui/button/ActionIcon'
