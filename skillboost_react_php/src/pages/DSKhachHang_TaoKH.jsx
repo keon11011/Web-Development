@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV'
+import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
@@ -77,7 +78,7 @@ const DSKhachHang_TaoKH = () => {
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
       <div id='Sidebar' className='sticky top-0 h-screen'>
-        <SidebarNV/>
+        <SidebarQL/>
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
@@ -85,7 +86,11 @@ const DSKhachHang_TaoKH = () => {
         </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
           <div id='Header' className='flex items-center space-x-[16px]'>
-            <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+            <div className='cursor-pointer block'>
+                <Link to="/khachhang">
+                  <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+                </Link>
+            </div>
             <div className='text-text-primary title-large'>Tạo khách hàng mới</div>
           </div>
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
@@ -187,7 +192,11 @@ const DSKhachHang_TaoKH = () => {
               </div>
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                <div className='cursor-pointer block'>
+                    <Link to="/khachhang">
+                      <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                    </Link>
+                </div>
                 <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
             </div>
             </div>

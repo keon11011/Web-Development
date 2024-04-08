@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
+
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import Pagination from '../components/ui/pagination/Pagination';
@@ -6,12 +8,11 @@ import ActionIcon from '../components/ui/button/ActionIcon'
 import AddPlus from '../components/icons/Edit/AddPlus'
 import SearchMagnifyingGlass from '../components/icons/Interface/SearchMagnifyingGlass'
 import Filter from '../components/icons/Interface/Filter'
-import  ArrowDownUp from '../components/icons/Arrow/ArrowDownUp';
+import ArrowDownUp from '../components/icons/Arrow/ArrowDownUp';
 import SvgHamburgerMd from '../components/icons/Menu/HamburgerMd';
 import ChervonRightMD from '../components/icons/Arrow/ChevronRightMd'
 import DiscountListFilter from '../components/ui/SelectItems/DiscountListFilter';
 import SearchBar from '../components/ui/placeholder/SearchBar';
-import Sidebar from '../components/ui/sidebar/SidebarNV';
 
 const DSQuyDinhGiamGia = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -51,25 +52,28 @@ const DSQuyDinhGiamGia = () => {
       </div>
       <div className='w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col items-start justify-between p-6 max-sm:pr-4 max-sm:pl-4 gap-[24px] '>
           <div className='pb-5 flex justify-between'>
-            <div className="relative flex items-center title-large max-sm:w-[180px] font-bold">Danh sách quy định giảm giá</div>
-            <div className="max-sm:hidden">{showSearchBar && <SearchBar previewText='Tìm kiếm hoạt động'/>}    </div>                 
-            <div>
-            
-            <ActionIcon icon={<AddPlus width="1.5rem" height="1.5rem"/>}/>
-            <ActionIcon icon={<SearchMagnifyingGlass width="1.5rem" height="1.5rem"/>} onClick={handleSearchIconClick}/>
-            <ActionIcon icon={<Filter width="1.5rem" height="1.5rem"/>} onClick={handleDiscountListFilterClick}/>
-            <ActionIcon icon={<ArrowDownUp width="1.5rem" height="1.5rem"/>} onClick={handleOptionIconClick}/>
-            {showOptionList && (
-                                <div className="absolute top-[70px] right-[16px] z-50 bg-background-primary shadow-md rounded-md p-[12px]">
-                                    <ul>
-                                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 1')}>Từ A-Z</li>
-                                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 2')}>Từ Z-A</li>
-                                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 3')}>Mới nhất</li>
-                                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 4')}>Cũ nhất</li>
-                                    </ul>
-                                </div>
-                            )}
+            <div className="relative flex items-center title-large max-sm:w-[180px]">Danh sách quy định giảm giá</div>
+            <div className="max-sm:hidden">{showSearchBar && <SearchBar previewText='Tìm kiếm hoạt động'/>}    </div>
+            <div className='flex space-x-[4px]'>
+              <div className='cursor-pointer block'>
+                  <Link to="/dsqdgg/taodsqdgg">
+                    <ActionIcon icon={<AddPlus width="1.5rem" height="1.5rem"/>}/>
+                  </Link>
+              </div>                 
+              <ActionIcon icon={<SearchMagnifyingGlass width="1.5rem" height="1.5rem"/>} onClick={handleSearchIconClick}/>
+              <ActionIcon icon={<Filter width="1.5rem" height="1.5rem"/>} onClick={handleDiscountListFilterClick}/>
+              <ActionIcon icon={<ArrowDownUp width="1.5rem" height="1.5rem"/>} onClick={handleOptionIconClick}/>
             </div>
+            {showOptionList && (
+                <div className="absolute top-[70px] right-[16px] z-50 bg-background-primary shadow-md rounded-md p-[12px]">
+                    <ul>
+                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 1')}>Từ A-Z</li>
+                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 2')}>Từ Z-A</li>
+                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 3')}>Mới nhất</li>
+                        <li className='title-medium text-text-secondary p-[12px] text-right hover:bg-background-third cursor-pointer' onClick={() => handleSortOptionSelect('Option 4')}>Cũ nhất</li>
+                    </ul>
+                </div>
+            )}
           </div>
           <div className='sm:hidden pb-5'>            
             {showSearchBar && <SearchBar previewText='Tìm kiếm hoạt động'/>}                     

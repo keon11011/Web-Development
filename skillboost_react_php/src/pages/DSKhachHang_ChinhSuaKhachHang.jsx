@@ -18,7 +18,7 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import AddPlus from '../components/icons/Edit/AddPlus'
 
 
-const DSLead_ChinhSuaChiTietLead = () => {
+const DSKhachHang_ChinhSuaKhachHang = () => {
 
   const [showCourseSelector, setShowCourseSelector] = useState(false);
 
@@ -40,28 +40,21 @@ const DSLead_ChinhSuaChiTietLead = () => {
         <div id='Header'>
           <HeaderAdmin progressBar={<Nhantuvan/>}>Phan Văn Trị</HeaderAdmin>
         </div>
-        <div id="LeadInfoNavigation" className="flex space-x-[24px]">
-          <div className="grow">
-            <LeadInfoTab />
-          </div>
-          <LeadProgressStatus variant="DangTuVan" />
-        </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex justify-between items-center'>
                 <div className='flex space-x-[16px] items-center'>
                   <div className='cursor-pointer block'>
-                    <Link to="/lead/thongtin/xemchitietlead">
+                    <Link to="/khachhang/xemchitietkhachhang">
                       <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
                     </Link>
                   </div>
-                  <div className='text-text-primary title-large'>Thông tin Lead</div>
+                  <div className='text-text-primary title-large'>Thông tin khách hàng</div>
                 </div>
             </div>
           
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
-                    <TextInput title='Lead ID' previewText='LEA9021' variant='ReadOnly' showRedAsterisk></TextInput>
                     <TextInput title='Họ tên' showRedAsterisk></TextInput>
                     <DropDown
                         title="Giới tính"
@@ -72,8 +65,6 @@ const DSLead_ChinhSuaChiTietLead = () => {
                         setSelectedOption={setselectedGioiTinh}
                     >
                     </DropDown>
-                </div>
-                <div className='flex space-x-[24px]'>
                     <CustomDatePicker 
                       title='Ngày sinh'
                       previewText='2003-12-07'
@@ -82,10 +73,10 @@ const DSLead_ChinhSuaChiTietLead = () => {
                       setSelectedDate={setselectedNgaySinh}
                     >
                     </CustomDatePicker>
-                    <TextInput title='Số điện thoại' previewText='09883454712' showRedAsterisk></TextInput>
-                    <TextInput title='Email' previewText='phanvantri0712@gmail.com' showRedAsterisk></TextInput> 
                 </div>
                 <div className='flex space-x-[24px]'>
+                    <TextInput title='Số điện thoại' previewText='09883454712' showRedAsterisk></TextInput>
+                    <TextInput title='Email' previewText='phanvantri0712@gmail.com' showRedAsterisk></TextInput>
                     <DropDown
                         title="Nghề nghiệp"
                         previewText='Học sinh - Sinh viên' 
@@ -95,16 +86,17 @@ const DSLead_ChinhSuaChiTietLead = () => {
                         setSelectedOption={setselectedNgheNghiep}
                     >
                     </DropDown>
+                </div>
+                <div className='flex space-x-[24px] w-1/3'>
                     <DropDown
-                        title="Nguồn Lead"
+                        title="Nguồn"
                         previewText='Website' 
                         showRedAsterisk
                         options={["Website", "Người thân", "Facebook", "Instagram", "Khác"]}
                         selectedOption={selectedNguon}
                         setSelectedOption={setselectedNguon}
                     >
-                    </DropDown>
-                    <TextInput title='PIC (Người tiếp nhận)' previewText='Lê Minh Quân' showRedAsterisk></TextInput>  
+                    </DropDown> 
                 </div>
                 <div className='space-x-[24px]'>
                     <TextArea
@@ -125,6 +117,11 @@ const DSLead_ChinhSuaChiTietLead = () => {
                     </tr>
                   </thead>
                   <tbody className='body-medium text-text-primary'>
+                  <tr className='border-b'>
+                      <td className="w-[649px] px-[16px] py-[24px]">IT Business Analystc</td>
+                      <td className="w-[649px] px-[16px] py-[24px]">Tyan Nguyễn</td>
+                      <td className="w-[649px] px-[16px] py-[24px]">4.999.000đ</td>
+                    </tr>
                     <tr>
                       <td colspan="3" className='px-[16px] py-[16px]'>
                         <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>} onClick={handleCourseSelectorClick}>Thêm khóa học</Button>
@@ -136,7 +133,7 @@ const DSLead_ChinhSuaChiTietLead = () => {
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
                 <div className='cursor-pointer block'>
-                  <Link to="/lead/thongtin/xemchitietlead">
+                  <Link to="/khachhang/xemchitietkhachhang">
                     <Button variant='Destructive-plain' size='Medium'>Hủy thay đổi</Button>
                   </Link>
                 </div>   
@@ -154,4 +151,4 @@ const DSLead_ChinhSuaChiTietLead = () => {
   );
 };
 
-export default DSLead_ChinhSuaChiTietLead;
+export default DSKhachHang_ChinhSuaKhachHang;

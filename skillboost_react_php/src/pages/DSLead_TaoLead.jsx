@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV'
+import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
@@ -29,7 +29,7 @@ const DSLead_TaoLead = () => {
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
       <div id='Sidebar' className='sticky top-0 h-screen'>
-        <SidebarNV/>
+        <SidebarQL/>
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>
@@ -115,7 +115,11 @@ const DSLead_TaoLead = () => {
               </div>
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                <div className='cursor-pointer block'>
+                  <Link to="/lead/thongtin">
+                    <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                  </Link>
+                </div>
                 <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
             </div>
             </div>

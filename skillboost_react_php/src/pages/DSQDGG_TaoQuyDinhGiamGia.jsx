@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'
+
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import DropDown from '../components/ui/placeholder/DropDown'
@@ -53,7 +55,11 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
         <form>
           <div className='max-sm:hidden pb-5 flex justify-between'>
             <div id='Header' className=' flex items-center space-x-[16px]'>
-              <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+              <div className='cursor-pointer block'>
+                <Link to="/dsqdgg">
+                <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+                </Link>
+              </div>   
               <div className='text-text-primary title-large '>Tạo quy định giảm giá</div>
             </div>
             <div className="flex justify-between space-x-[10px]">
@@ -126,16 +132,20 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
               <div className=' relative bg-background-primary space-x-4 p-2 float-right'  >
                 <Button size="Medium" variant="Primary" onClick={showDialog}>Xác nhận tạo</Button>
               </div>
-              <div className='relative bg-background-primary space-x-4 p-2 float-right'  >
-                <Button size="Medium" variant="Destructive-plain">Hủy tạo</Button>
+              <div className='relative bg-background-primary space-x-4 p-2 float-right'>
+                <div className='cursor-pointer block'>
+                  <Link to="/dsqdgg">
+                    <Button size="Medium" variant="Destructive-plain">Hủy tạo</Button>
+                  </Link>
+                </div>
               </div>
           </div>
           </form>
       </div>
       <div id="dialog" className="sm:left-1/3 flex absolute max-h-[calc(100vh-5em)] h-fit max-w-lg overflow-hidden
-                overscroll-contain rounded-md bg-sematic-green p-3 text-white shadow-2xl transition-opacity hidden ">
-                <Check width="1.5rem" height="1.5rem"/>
-                <h3 className="pl-2 flex-col body-large">Chỉnh sửa quy định giảm giá thành công</h3>
+          overscroll-contain rounded-md bg-sematic-green p-3 text-white shadow-2xl transition-opacity hidden ">
+          <Check width="1.5rem" height="1.5rem"/>
+          <h3 className="pl-2 flex-col body-large">Chỉnh sửa quy định giảm giá thành công</h3>
       </div>
     </div>      
 </div>

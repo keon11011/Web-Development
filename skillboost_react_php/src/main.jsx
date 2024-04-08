@@ -5,6 +5,7 @@ import App from './App.jsx'
 import TrangChu from './pages/TrangChu.jsx'
 import './index.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
+
 import TrangChu_DSKhoaHoc from './pages/TrangChu_DSKhoaHoc.jsx'
 import DangNhap from './pages/DangNhap.jsx'
 
@@ -29,6 +30,7 @@ import DSHoatDongLead_ChinhSuaHoatDong from './pages/DSHoatDongLead_ChinhSuaHoat
 import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH.jsx'
 import DSKhachHang_TaoKH from './pages/DSKhachHang_TaoKH.jsx'
 import DSKhachHang_XemChiTietKH from './pages/DSKhachHang_XemChiTietKH.jsx'
+import DSKhachHang_ChinhSuaKhachHang from './pages/DSKhachHang_ChinhSuaKhachHang.jsx'
 
 import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia.jsx'
 import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia.jsx'
@@ -66,7 +68,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/khachhang' element={<DSKhachHang_BangKH />}></Route>
         <Route path='/khachhang/taokhachhang' element={<DSKhachHang_TaoKH />}></Route>
         <Route path='/khachhang/xemchitietkhachhang' element={<DSKhachHang_XemChiTietKH />}></Route>
-        {/* Thiếu chinhSuaKhachHang */}
+        <Route path='/khachhang/chinhsuakhachhang' element={<DSKhachHang_ChinhSuaKhachHang />}></Route>
 
         <Route path='/dsqdgg' element={<DSQuyDinhGiamGia />}></Route>
         <Route path='/dsqdgg/taodsqdgg' element={<DSQDGG_TaoQuyDinhGiamGia />}></Route>
