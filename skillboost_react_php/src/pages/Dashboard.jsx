@@ -7,13 +7,15 @@ import DashboardOverviewCardNone from "../components/ui/card/DashboardOverviewCa
 import LineChart from "../components/ui/chart/LineChart";
 import DoughnutChart from "../components/ui/chart/DoughnutChart";
 import ColumnChart from"../components/ui/chart/ColumnChart";
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
+import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 
-const DSLead = () => {
-  return (
-    <main id="Dashboard">
-      <div className="w-full bg-background-secondary relative grid grid-cols-7 gap-4">
-        <div className="">
-          <SidebarNV />
+const Dashboard = () => {
+
+    return (
+    <main id = "Dashboard" className='relative w-full bg-background-secondary flex'>
+        <div id='SidebarQL'>
+            <SidebarQL/>
         </div>
         <div
           id="ContentContainer"

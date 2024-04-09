@@ -5,11 +5,10 @@ import DSQDGG_XemChiTietQuyDinhGiamGia from './pages/DSQDGG_XemChiTietQuyDinhGia
 const App = () => (
   <main className="relative">
     <DSLead_ChinhSuaChiTietLead/>
-
     <DSQDGG_XemChiTietQuyDinhGiamGia/>
   </main>
 )
 
-export default App; 
+export default App;   
 
 

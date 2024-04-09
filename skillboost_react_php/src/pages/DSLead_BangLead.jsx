@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from "axios"
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
@@ -38,6 +39,31 @@ const DSLead_BangLead = () => {
         setSelectedSortOption(option);
         // Perform any action with the selected option, e.g., save to database filter
     };
+
+    const [leads, setLeads] = useState([]);
+    useEffect(() => {
+        getLeads();
+    }, []);
+
+    function getLeads() {
+        axios.get('http://localhost:80/SkillBoost-API/api/Lead/read_all.php').then(function(response) {
+            console.log(response.data);
+            setLeads(response.data);
+        });
+    }
+
+    function trangthaiLead(status) {
+        switch (status) {
+          case 'Đang tư vấn':
+            return <LeadTableStatus />;
+          case 'Ngừng theo dõi':
+            return <LeadTableStatus variant='DangTuVan' />;
+          case 'Đã thanh toán':
+            return <LeadTableStatus variant='DaThanhToan' />;
+          default:
+            return <LeadTableStatus variant='NgungTheoDoi' />;
+        }
+      }
 
     return (
     <main id = "DSLead" className='relative w-full bg-background-secondary flex'>
@@ -87,27 +113,29 @@ const DSLead_BangLead = () => {
                             </tr>             
                         </thead>
                         <tbody className='body-medium text-text-primary'>
-                            <tr className="border-t">
-                                <td class="px-[16px] py-[24px]">LEA9021</td>
+                            {leads.map((lead, key) =>
+                            <tr className="border-t" key={key}> 
+                                <td class="px-[16px] py-[24px]">{lead.MaLead}</td>
                                 <td class="px-[16px] py-[24px]">
                                 <div class="body-medium text-text-primary flex items-center space-x-[12px]">
                                     <div class="w-[28px] h-[28px] shrink-0 rounded-2xl">
                                         <img src={avatar} alt="" className='h-6'></img>
                                     </div>
-                                    <div class="flex flex-col justify-start">Phan Văn Trị</div>
+                                    <div class="flex flex-col justify-start">{lead.HoTenLead}</div>
                                 </div>
                                 </td>
-                                <td class="px-[16px] py-[24px] text-center">13:00 - 12/11/2023</td>
+                                <td class="px-[16px] py-[24px] text-center">{lead.ChinhSuaLanCuoiVaoLuc}</td>
                                 <td class="px-[16px] py-[24px] text-center">IT Business Analyst</td>
-                                <td class="flex px-[16px] py-[24px] justify-center"><LeadTableStatus/></td>
+                                <td class="flex px-[16px] py-[24px] justify-center">{trangthaiLead(lead.TrangThaiLead)}</td>
                                 <td class="items-center text-center">
                                 <div className='cursor-pointer block'>
-                                    <Link to="/lead/thongtin/xemchitietlead">
-                                    <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} />
+                                    <Link to={`/lead/thongtin/xemchitietlead/${lead.MaLead}`}>
+                                        <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} />
                                     </Link>
                                 </div>
                                 </td>
                             </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
