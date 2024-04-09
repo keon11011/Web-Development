@@ -1,5 +1,4 @@
 import './font.css'
-
 import DSLead_BangLead from './pages/DSLead_BangLead';
 
 const App = () => (

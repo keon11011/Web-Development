@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import CourseTableStatus from '../components/ui/chips/CourseTableStatus'
@@ -16,8 +17,8 @@ const DSKhoaHoc = () => {
   return (
 <main id = "DSKhoaHoc">
 <div className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-  <div id='Sidebar' className='col-span-1  max-sm:relative'>
-    <SidebarNV/>
+  <div id='Sidebar' className='col-span-1'>
+    <SidebarQL/>
   </div>
     
   <div id="ContentContainer" className='col-span-6 bg-background-secondary px-16 py-8 space-y-6' >
