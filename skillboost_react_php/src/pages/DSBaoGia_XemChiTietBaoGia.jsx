@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import LeadInfoTab from '../components/ui/tabs/LeadInfoTab';
 import ActionIcon from '../components/ui/button/ActionIcon';
@@ -32,7 +33,7 @@ const DSBaoGia_XemChiTietBaoGia = () => {
   return (
     <main id="DSBaoGia" className="w-full bg-background-secondary relative flex">
       <div id="Sidebar" className="sticky top-0 h-screen">
-        <SidebarNV />
+        <SidebarQL />
       </div>
       <div id="ContentContainer" className="w-full h-full px-[64px] py-[32px] space-y-[24px]">
         <div id="Header">
@@ -50,11 +51,19 @@ const DSBaoGia_XemChiTietBaoGia = () => {
         >
           <div id="Header" className="flex justify-between">
             <div className="flex space-x-[16px] items-center">
-              <ActionIcon size="Medium" icon={<ChevronLeft width="1.5rem" height="1.5rem" />} />
+              <div className='cursor-pointer block'>
+                  <Link to="/lead/dsbaogia">
+                    <ActionIcon size="Medium" icon={<ChevronLeft width="1.5rem" height="1.5rem" />} />
+                  </Link>
+              </div>
               <div className="text-text-primary title-large">Báo giá khóa học IT Business Analyst</div>
             </div>
             <div className="flex space-x-[12px]">
-              <ActionPersonDetail variant="Edit" />
+              <div className='cursor-pointer block'>
+                  <Link to="/lead/dsbaogia/chinhsuabaogia">
+                    <ActionPersonDetail variant="Edit" />
+                  </Link>
+              </div>
               <ActionPersonDetail variant="Delete" onClick={handleDelete} />
             </div>
           </div>

@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
 
-import SidebarNV from '../components/ui/sidebar/SidebarNV';
+import axios from "axios"
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
 import ActionIcon from '../components/ui/button/ActionIcon'
 import SearchBar from '../components/ui/placeholder/SearchBar';
@@ -37,10 +40,22 @@ const DSKhachHang_BangKH = () => {
         // Perform any action with the selected option, e.g., save to database filter
     };
 
+    const [customers, setCustomers] = useState([]);
+    useEffect(() => {
+        getCustomers();
+    }, []);
+
+    function getCustomers() {
+        axios.get('http://localhost:80/SkillBoost-API/api/KhachHang/read_all.php').then(function(response) {
+            console.log(response.data);
+            setCustomers(response.data);
+        });
+    }
+
     return (
     <main id = "DSLead" className='relative w-full bg-background-secondary flex'>
-        <div id='SidebarNV' className='sticky top-0 h-screen'>
-            <SidebarNV/>
+        <div id='SidebarQL' className='sticky top-0 h-screen'>
+            <SidebarQL/>
         </div>
         <div id ="ContentContainer" className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div>
@@ -51,7 +66,11 @@ const DSKhachHang_BangKH = () => {
                 <div className="flex items-center title-large">Danh sách khách hàng</div>
                 {showSearchBar && <SearchBar previewText='Tìm kiếm Khách hàng'/>}
                 <div className='flex space-x-[16px] items-center'>
-                    <ActionIcon size='Small' icon={<AddPlus width="1.25rem" height="1.25rem"/>}/>
+                    <div className='cursor-pointer block'>
+                        <Link to="/khachhang/taokhachhang">
+                            <ActionIcon size='Small' icon={<AddPlus width="1.25rem" height="1.25rem"/>}/>
+                        </Link>
+                    </div>
                     <ActionIcon size='Small' icon={<SearchMagnifyingGlass width="1.25rem" height="1.25rem"/>} onClick={handleSearchIconClick}/>
                     <ActionIcon size='Small' icon={<Filter width="1.25rem" height="1.25rem"/>} onClick={handleFilterIconClick}/>
                     <ActionIcon size='Small' icon={<ArrowDownUp width="1.25rem" height="1.25rem"/>} onClick={handleOptionIconClick}/>
@@ -81,21 +100,29 @@ const DSKhachHang_BangKH = () => {
                             </tr>             
                         </thead>
                         <tbody className='body-medium text-text-primary'>
-                            <tr className="border-t">
-                                <td class="px-[16px] py-[24px]">CUS4013</td>
+                            {customers.map((customer, key) =>
+                            <tr className="border-t" key={key}>
+                                <td class="px-[16px] py-[24px]">{customer.MaKH}</td>
                                 <td class="px-[16px] py-[24px]">
                                 <div class="body-medium text-text-primary flex items-center space-x-[12px]">
                                     <div class="w-[28px] h-[28px] shrink-0 rounded-2xl">
                                         <img src={avatar} alt="" className='h-6'></img>
                                     </div>
-                                    <div class="flex flex-col justify-start">Vũ Khắc Huy</div>
+                                    <div class="flex flex-col justify-start">{customer.HoTenKH}</div>
                                 </div>
                                 </td>
-                                <td class="px-[16px] py-[24px] text-center">13:00 - 12/11/2023</td>
-                                <td class="px-[16px] py-[24px] text-center">Học sinh - Sinh viên</td>
-                                <td class="px-[16px] py-[24px] text-center">vukhachuy@gmail.com</td>
-                                <td class="items-center text-center"><ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} /></td>
+                                <td class="px-[16px] py-[24px] text-center">{customer.ChinhSuaLanCuoiVaoLuc}</td>
+                                <td class="px-[16px] py-[24px] text-center">{customer.TenNgheNghiep}</td>
+                                <td class="px-[16px] py-[24px] text-center">{customer.EmailKH}</td>
+                                <td class="items-center text-center">
+                                    <div className='cursor-pointer block'>
+                                        <Link to="/khachhang/xemchitietkhachhang">
+                                            <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem"/>} />
+                                        </Link>
+                                    </div>
+                                </td>
                             </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
