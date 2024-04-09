@@ -1,5 +1,4 @@
 import React from 'react'
-import 'chart.js/auto'
 import Filter from "../../icons/Interface/Filter"
 import { Doughnut } from 'react-chartjs-2'
 import {

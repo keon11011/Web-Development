@@ -1,9 +1,9 @@
 import './font.css'
-import DSLead_BangLead from './pages/DSLead_BangLead';
+import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc';
 
 const App = () => (
   <main className="relative">
-    <DSLead_BangLead/>
+    <DSKhoaHoc_TaoKhoaHoc/>
   </main>
 )
 

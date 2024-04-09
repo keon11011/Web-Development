@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import 'chart.js/auto'
 import Filter from "../../icons/Interface/Filter"
 import { subDays } from "date-fns";
 import {
