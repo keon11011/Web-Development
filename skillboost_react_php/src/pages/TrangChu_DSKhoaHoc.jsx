@@ -20,15 +20,15 @@ const TrangChu_DSKhoaHoc = () => (
         <div name="Header">
             <Header />
         </div>
-        <div name="body" className='px-40 pb-20 '>
-            <div className='relative flex flex-col xl:w-full items-start w-full pt-28 gap-10'>
+        <div name="body" className='px-40 max-sm:px-7 pb-20 max-sm:pt-6 '>
+            <div className='relative flex flex-col xl:w-full items-start w-full gap-10 max-sm:p-0'>
                 <div className='items-center inline-flex justify-between w-full'>
-                    <span className='headline-medium text-gray-500'>Khóa học tại Skillboost</span>
-                    <div className='ml-auto'>
-                        <ButtonFloat> <ArrowDownUp /> <div className='pl-2'>Sắp xếp</div></ButtonFloat>
+                    <p className='headline-medium text-gray-500'>Khóa học tại Skillboost</p>
+                    <div className='ml-auto max-sm:hidden'>
+                        <ButtonFloat> <ArrowDownUp /> <div className='pl-2 '>Sắp xếp</div></ButtonFloat>
                     </div>
                 </div>
-                <div className='grid grid-cols-3 gap-10 justify-center self-center'>
+                <div className='grid grid-cols-3 gap-10 justify-center self-center max-sm:hidden'>
                     <div>
                         <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
                     </div>

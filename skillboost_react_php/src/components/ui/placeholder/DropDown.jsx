@@ -57,8 +57,8 @@ const DropdownButtonComponent = styled.button`
 
 const OptionsList = styled.ul`
   position: absolute;
-  top: ${(props) => props.top + 8}px;
-  left: ${(props) => props.left}px;
+  overflow-y: auto; //the list can scroll
+  max-height: 10rem; //scroll
   width: ${(props) => props.width}px;
   background-color: #FFFFFF;
   border: 1px solid #DFDFDF;
@@ -152,7 +152,7 @@ const DropDown = ({
         {!rest.disabled && variant !== 'readOnly' && <ChevronDown />}
       </DropdownButtonWrapper>
       {isOpen && (
-        <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth}>
+        <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth} className='mt-24'>
           {options.map((option, index) => (
             <Option key={index} onClick={() => handleOptionClick(option)}>
               {option.label}

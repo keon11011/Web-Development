@@ -11,6 +11,8 @@ import Image_01 from '../components/icons/Media/Image01'
 import React, { useState } from "react"
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from '../components/ui/placeholder/DatePicker'
+import DropDown from '../components/ui/placeholder/DropDown.jsx'
+
 
 const DSBaoGia_TaoBaoGia = () => (
     <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
@@ -22,14 +24,10 @@ const DSBaoGia_TaoBaoGia = () => (
             <HeaderAdmin>Khóa học</HeaderAdmin>
           </div>
 
-          <div id='ContentInside' className="w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-6 box-border gap-4 space-y-6">
-            <div id='Header' className='flex items-center space-x-4'>
-              <div className='cursor-pointer block'>
-                <Link to="/khoahocAdmin">
-                  <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
-                </Link>
-              </div>
-              <div className='text-text-primary title-large'>Tạo khóa học</div>
+      <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col p-6 box-border gap-4 space-y-6">
+        <div id='Header' className='flex items-center space-x-4'>
+            <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+        <div className='text-text-primary title-large relative flex items-center mr-6'>Tạo khóa học</div>
             </div>
 
             <div id='Content' className='flex flex-col space-y-9 w-full h-full'>
@@ -70,7 +68,7 @@ const DSBaoGia_TaoBaoGia = () => (
               </div>
 
               <div>
-                <TextInput  title='Ngày bế giảng' previewText='Chọn ngày bế giảng'></TextInput>
+                <DatePicker title='Ngày bế giảng' previewText='Chọn ngày bế giảng'></DatePicker>
               </div>
 
               <div>
@@ -83,12 +81,26 @@ const DSBaoGia_TaoBaoGia = () => (
 
             <div className='justify-between flex space-x-6'>
               <div>
-                <TextInput  title='Thời gian bắt đầu' previewText='Chọn giờ' ></TextInput>
+                <DropDown  
+                  title='Thời gian bắt đầu' 
+                  previewText='Chọn giờ' 
+                  options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
+                ]}
+                  // selectedOption={selectedTime}
+                  // setSelectedOption={setselectedTime}
+                />
               </div>
 
 
               <div>
-                <TextInput  title='Thời gian kết thúc' previewText='Chọn giờ'></TextInput>
+                <DropDown 
+                  title='Thời gian kết thúc' 
+                  previewText='Chọn giờ'
+                  options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
+                ]}
+                  // selectedOption={selectedTime}
+                  // setSelectedOption={setselectedTime}
+                />
               </div>
               
               <div>
@@ -115,4 +127,4 @@ const DSBaoGia_TaoBaoGia = () => (
     </main>
 )
 
-export default DSBaoGia_TaoBaoGia
+export default DSKhoaHoc_TaoKhoaHoc
