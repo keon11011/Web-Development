@@ -12,10 +12,9 @@ import React, { useState } from "react"
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from '../components/ui/placeholder/DatePicker'
 
-
 const DSBaoGia_TaoBaoGia = () => (
     <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
-        <div id='Sidebar' className='sticky top-0 h-screen'>
+        <div id='Sidebar'>
           <SidebarQL/>
         </div>
         <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>

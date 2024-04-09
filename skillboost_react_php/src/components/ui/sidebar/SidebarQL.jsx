@@ -14,7 +14,7 @@ import Notebook from '../../icons/File/Notebook';
 const SidebarContainer = styled.div`
 position: sticky;
 top: 0px;
-height: 100vh;  
+height: 100vh;
 background-color: transparent;
   width: 232px;
   height: 100vh;
