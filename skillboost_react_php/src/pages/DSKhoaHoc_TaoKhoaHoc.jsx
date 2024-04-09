@@ -14,7 +14,7 @@ import DatePicker from '../components/ui/placeholder/DatePicker'
 import DropDown from '../components/ui/placeholder/DropDown.jsx'
 
 
-const DSBaoGia_TaoBaoGia = () => (
+const DSKhoaHoc_TaoKhoaHoc = () => (
     <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
         <div id='Sidebar'>
           <SidebarQL/>

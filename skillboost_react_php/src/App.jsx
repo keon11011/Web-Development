@@ -1,10 +1,10 @@
 import './font.css'
 
-import DSLead_BangLead from './pages/DSLead_BangLead';
+import Dashboard from './pages/Dashboard';
 
 const App = () => (
   <main className="relative">
-    <DSLead_BangLead/>
+    <Dashboard/>
   </main>
 )
 
