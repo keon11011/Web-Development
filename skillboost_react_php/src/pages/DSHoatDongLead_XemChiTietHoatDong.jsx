@@ -33,7 +33,7 @@ const DSHoatDongLead_XemChiTietHoatDong = () => {
 
   return (
     <main id='DSBaoGia' className='w-full bg-background-secondary flex'>
-      <div id='Sidebar' className='sticky top-0 h-screen'>
+      <div id='Sidebar' className='sticky top-0 h-screen  max-sm:relative'>
         <SidebarQL/>
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
