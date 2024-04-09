@@ -142,7 +142,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
           </div>
           </form>
       </div>
-      <div id="dialog" className="sm:left-1/3 flex absolute max-h-[calc(100vh-5em)] h-fit max-w-lg overflow-hidden
+      <div id="dialog" className="sm:left-1/3 absolute max-h-[calc(100vh-5em)] h-fit max-w-lg overflow-hidden
           overscroll-contain rounded-md bg-sematic-green p-3 text-white shadow-2xl transition-opacity hidden ">
           <Check width="1.5rem" height="1.5rem"/>
           <h3 className="pl-2 flex-col body-large">Chỉnh sửa quy định giảm giá thành công</h3>

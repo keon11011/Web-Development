@@ -1,9 +1,9 @@
 import './font.css'
-import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH';
+import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc';
 
 const App = () => (
   <main className="relative">
-    <DSKhachHang_BangKH/>
+    <DSKhoaHoc_TaoKhoaHoc/>
    </main> 
 )
 

@@ -16,25 +16,25 @@ import DropDown from '../components/ui/placeholder/DropDown.jsx'
 
 const DSKhoaHoc_TaoKhoaHoc = () => (
   <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-    <div id='Sidebar' className='col-span-1'>
-      <SidebarNV/>
-    </div>
+    <div id='Sidebar' className='col-span-1 max-2xl:hidden'>
+      <SidebarQL/>
+    </div> {/* cướp phần responsiv head của dskhoahoc*/}
         
-    <div id='ContentContainer' className='col-span-6 bg-background-secondary px-16 py-8 space-y-6'>
+    <div id='ContentContainer' className='col-span-6 max-2xl:col-span-7 bg-background-secondary px-16 py-8 space-y-6'>
       <div id='Header' >
         <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
 
-      <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col p-6 box-border gap-4 space-y-6">
+      <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] max-lg:flex-auto flex-col p-6 box-border gap-4 space-y-6">
         <div id='Header' className='flex items-center space-x-4'>
             <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
         <div className='text-text-primary title-large relative flex items-center mr-6'>Tạo khóa học</div>
             </div>
 
             <div id='Content' className='flex flex-col space-y-9 w-full h-full'>
-                <div className='flex justify-between space-x-6'>
-                    <div className='space-y-6 flex-auto '>
-                        <div>
+                <div className='flex justify-between space-x-6 max-2xl:flex-wrap max-2xl:space-x-0'>
+                    <div className='space-y-6 flex-auto '> {/* check lai width voi screen duoi 540px */}
+                        <div> {/* từ khoảng 540px tất cả inputs bị tràn */}
                             <TextInput  title='Tên khóa học' previewText='Nhập tên khóa học'></TextInput>
                         </div>
                         
@@ -43,7 +43,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-center w-[40%]">
+                    <div class="flex items-center justify-center w-[40%] max-2xl:w-[100%] max-2xl:mt-6">
                         <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                             <div className="flex flex-col items-center justify-center pt-5 pb-6 text-[#BEBEBE]">
                                 <Image_01
@@ -63,7 +63,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
                 
 
 
-            <div className='justify-between flex flex-wrap space-x-6'>
+            <div className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
               <div>
                 <DatePicker  title='Ngày khai giảng' previewText='Chọn ngày khai giảng'></DatePicker>
               </div>
@@ -76,11 +76,10 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
                 <TextInput  title='Số buổi học' previewText='Nhập số buổi'></TextInput>
               </div>
 
-             
-
-            </div>
-
-            <div className='justify-between flex space-x-6'>
+              <div>
+                <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng'></TextInput>
+              </div>
+              
               <div>
                 <DropDown  
                   title='Thời gian bắt đầu' 
@@ -104,13 +103,11 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
                 />
               </div>
               
-              <div>
-                <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng'></TextInput>
-              </div>
+              
             </div>     
 
               <div>
-                <TextArea title='Mô tả khóa học' previewText='Nhập mô tả' className="block" variant="Editable">
+                <TextArea title='Mô tả khóa học' previewText='Nhập mô tả' className="block w-full" variant="Editable"> {/* từ khoảng 680px sẽ bị tràn */}
                   </TextArea>
               </div>
 
