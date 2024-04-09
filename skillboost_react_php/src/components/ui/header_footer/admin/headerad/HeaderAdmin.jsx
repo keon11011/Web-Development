@@ -9,6 +9,7 @@ const HeaderContainer = styled.div`
   padding: 1rem;
   background-color: transperant; /* Adjust background color */;
   height: 48px;
+  
 `;
 
 const PageTitle = styled.h1`
@@ -19,6 +20,7 @@ const PageTitle = styled.h1`
 
 const UserInfo = styled.div`
   display: flex;
+  width: 100% !important;
   align-items: center;
   font-size: 1rem;
   font-weight: 400;
@@ -29,26 +31,28 @@ const Avatar = styled.span`
 `;
 
 // Header component
-const HeaderAdmin = ({children, progressBar}) => {
+const HeaderAdmin = ({ children, progressBar }) => {
   const getCurrentDate = () => {
     const currentDate = new Date();
     return currentDate.toDateString();
   };
 
   return (
-    <HeaderContainer>
+    <HeaderContainer className='flex flex-row items-center gap-10 justify-between'>
       <PageTitle>{children}</PageTitle>
-      <div>
+      <div className='max-sm:hidden'>
         {progressBar}
       </div>
       <div>
-        <UserInfo>
-        <span>{getCurrentDate()}</span> {/* Current Date */}
-        <Notification/>
-        <Avatar >
+        <UserInfo className='w-full'>
+          <span className='max-sm:hidden'>{getCurrentDate()}</span> {/* Current Date */}
+          <div className='max-sm:pl-6'>
+            <Notification />
+          </div>
+          <Avatar className='max-sm:hidden'>
             <img src={avatar} alt="Avt" />
-            
-        </Avatar> {/* Replace with actual user name */}
+          </Avatar> {/* Replace with actual user name */}
+
         </UserInfo>
       </div>
     </HeaderContainer>

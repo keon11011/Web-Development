@@ -16,7 +16,7 @@ position: sticky;
 top: 0px;
 height: 100vh;  
 background-color: transparent;
-  width: 232px;
+  width: 100% !important;
   height: 100vh;
   border-right: 1px solid #dee2e6;
   transition: width 0.3s ease;
@@ -79,8 +79,8 @@ const SidebarQL = () => {
   };
 
   return (
-    <main>
-      <SidebarContainer isOpen={isOpen}>
+    <main >
+      <SidebarContainer isOpen={isOpen} >
         <LogoContainer>
           <img src={SkillboostLogo} alt="Logo" />
         </LogoContainer>
@@ -97,7 +97,7 @@ const SidebarQL = () => {
             <User03 strokeWidth={1.5}/>
             Khách hàng
           </StyledNavLink>
-          <StyledNavLink to="/dsqdg g" activeClassName="active" className="flex space-x-[16px]">
+          <StyledNavLink to="/dsqdgg" activeClassName="active" className="flex space-x-[16px]">
             <Tag strokeWidth={1.5}/>
             Quy định giảm giá
           </StyledNavLink>
