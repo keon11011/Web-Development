@@ -4,8 +4,8 @@ import Dashboard from './pages/Dashboard';
 
 const App = () => (
   <main className="relative">
-    {/* <TrangChu/> */}
-    <Dashboard/>
+    <TrangChu/>
+    {/* <Dashboard/> */}
   </main>
 )
 

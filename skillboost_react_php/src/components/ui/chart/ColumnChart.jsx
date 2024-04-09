@@ -23,13 +23,7 @@ const BarChart = () => {
             },
         },
         maintainAspectRatio: false,
-        // scales: {
-        //     yAxes: [{
-        //         ticks: {
-        //             beginAtZero: true
-        //         }
-        //     }]
-        // }
+        
 
     };
     const BarChartData = {

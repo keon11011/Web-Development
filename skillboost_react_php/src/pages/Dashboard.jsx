@@ -1,5 +1,5 @@
 import React from "react";
-import SidebarNV from "../components/ui/sidebar/SidebarNV";
+import SidebarQL from "../components/ui/sidebar/SidebarQL";
 import HeaderAdmin from "../components/ui/header_footer/admin/headerad/HeaderAdmin";
 import DashboardOverviewCardUp from "../components/ui/card/DashboardOverviewCardUp";
 import DashboardOverviewCardDown from "../components/ui/card/DashboardOverviewCardDown";
@@ -13,7 +13,7 @@ const DSLead = () => {
     <main id="Dashboard">
       <div className="w-full bg-background-secondary relative grid grid-cols-7 gap-4">
         <div className="">
-          <SidebarNV />
+          <SidebarQL />
         </div>
         <div
           id="ContentContainer"
@@ -59,12 +59,10 @@ const DSLead = () => {
 
           {/* Hàng ba */}
           <div className="flex w-full justify-center space-x-[24px]">
-            <div className="flex w-3/4 h-[390px] justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
+            <div className="flex w-full h-[390px] justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
               <ColumnChart/>
             </div>
-            <div className="flex w-1/4 h-[390px] justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
-              List Items
-            </div>
+            
           </div>
         </div>
       </div>
