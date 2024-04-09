@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from "axios"
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
@@ -15,6 +16,18 @@ import DiscountListFilter from '../components/ui/SelectItems/DiscountListFilter'
 import SearchBar from '../components/ui/placeholder/SearchBar';
 
 const DSQuyDinhGiamGia = () => {
+  const [qdgiamgias, setQdggs] = useState([]);
+    useEffect(() => {
+        getQdggs();
+    }, []);
+
+    function getQdggs() {
+        axios.get('http://localhost:8080/SkillBoost-API/api/QuyDinhGiamGia/read_all.php').then(function(response) {
+            console.log(response.data);
+            setQdggs(response.data);
+        });
+    }
+  
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showDiscountListFilter, setDiscountListFilter] = useState(false);
   const [showOptionList, setShowOptionList] = useState(false);
@@ -93,19 +106,20 @@ const DSQuyDinhGiamGia = () => {
                 </tr>             
             </thead>
             <tbody>
-              <tr className="body-medium text-text-primary border-t border-solid last:border-b-0 text-middle">
-                <td class="sm:pl-10 max-sm:pl-5 py-3 body-large text-left">DIS001</td>
-                <td class=" px-3 py-3 body-large text-left">Giảm giá cơ bản</td>
-                <td class=" px-3 py-3 body-large text-center">0%</td>
-                <td class=" px-3 py-3 body-large text-center">10%</td>
-                <td class=" px-3 py-3 body-large text-center">00:00 - 01/01/2023</td>
-                <td class=" px-3 py-3 body-large text-center">Nguyễn Phương Thanh</td>
+              {qdgiamgias.map((DSQDGG, key) => 
+              <tr key ={key} className="body-medium text-text-primary border-t border-solid last:border-b-0 text-middle">
+                <td class="sm:pl-10 max-sm:pl-5 py-3 body-large text-left">{DSQDGG.MaQuyDinhGiamGia}</td>
+                <td class=" px-3 py-3 body-large text-left">{DSQDGG.MoTaLoaiGiamGia}</td>
+                <td class=" px-3 py-3 body-large text-center">{DSQDGG.PhanTramGiamGiaMacDinh}</td>
+                <td class=" px-3 py-3 body-large text-center">{DSQDGG.PhanTramGiamGiaToiDa}</td>
+                <td class=" px-3 py-3 body-large text-center">{DSQDGG.TaoVaoLuc}</td>
+                <td class=" px-3 py-3 body-large text-center">{DSQDGG.TaoBoi}</td>
                 <td></td>
                 <td>
                 <ActionIcon icon={<ChervonRightMD width="1.5rem" height="1.5rem"/>}/>
                 </td>
               </tr>
-              
+              )}
             </tbody>
           </table>
         </div>
