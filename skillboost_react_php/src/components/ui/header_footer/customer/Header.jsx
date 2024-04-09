@@ -9,8 +9,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <main>
-      <div className='max-sm:px-5 max-sm:flex-row sm:px-40 py-4 text-text-secondary sm:space-x-auto flex w-full justify-between items-center '>
-        <div className='cursor-pointer block'>
+      <div className='max-sm:pl-2 max-sm:flex-row sm:px-40 py-4 text-text-secondary sm:space-x-auto flex w-full justify-between items-center '>
+        <div className='cursor-pointer flex'>
           <Link to="/trangchu">
             <img
               src={SkillboostLogo}
@@ -18,19 +18,19 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div name="mobile_devices" className="hidden max-sm:flex relative cursor-pointer  max-sm:justify-self-end	">
-          <button className='hover:text-brand-default font-bold' onClick={() => setIsOpen((prev) => !prev)}>
+        <div name="mobile_devices" className="hidden max-sm:flex relative cursor-pointer pl-36">
+          <button className='hover:text-brand-default font-bold z-10'  onClick={() => setIsOpen((prev) => !prev)}>
             {!isOpen ? (
-              <div><HamburgerMd /></div>
+              <div ><HamburgerMd width="22px" height="22px" /></div>
             ) : (
-              <div><CloseMd></CloseMd></div>
+              <div><CloseMd width="22px" height="22px"/></div>
             )}
           </button><div>
             {isOpen && (
-              <nav className="absolute top-4 right-0 w-max mt-2 p-2 max-sm:flex-col max-sm:gap-5 z-10 duration-150 rounded-lg bg-white">
+              <nav className="absolute top-4 right-5 w-max mt-2 p-5 max-sm:flex-col max-sm:gap-10 z-10 duration-150 rounded-lg bg-white">
                 <ul className='py-2 px-2'>
                   <li>
-                    <Link to="/trangchu" className="hover:text-brand-default font-bold">Trang chủ</Link>
+                    <Link to="/trangchu" className="hover:textbrand-default font-bold">Trang chủ</Link>
                   </li>
                 </ul>
                 <ul className=' py-2 px-2 '>
