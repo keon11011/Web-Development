@@ -6,7 +6,7 @@ import EmptyState from '../assets/state/EmptyState.svg'
 
 const DSKhoaHoc_EmptyState = () => (
     <main id='DSKhoaHoc' className='w-full bg-background-secondary relative flex'>
-        <div id='Sidebar' className=''>
+        <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
           <SidebarNV/>
         </div>
         <div id='ContentContainer' className='w-full px-16 py-8 space-y-6'>

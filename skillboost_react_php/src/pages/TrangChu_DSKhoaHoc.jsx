@@ -13,25 +13,31 @@ import ExcelAdvanced_course from '../assets/img/ExcelAdvanced_course.svg'
 import PO_course from '../assets/img/PO_course.svg'
 import Python_course from '../assets/img/Python_course.svg'
 import SQLAdvanced_course from '../assets/img/SQLAdvanced_course.svg'
+import { Link } from 'react-router-dom'
 
 
 const TrangChu_DSKhoaHoc = () => (
-    <main className="">
+    <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
         <div name="Header">
             <Header />
         </div>
-        <div name="body" className='px-40 pb-20 '>
-            <div className='relative flex flex-col xl:w-full items-start w-full pt-28 gap-10'>
+        <div name="body" className='px-40 max-sm:px-7 pb-20 max-sm:pt-6 '>
+            <div className='relative flex flex-col xl:w-full items-start w-full gap-10 max-sm:p-0'>
                 <div className='items-center inline-flex justify-between w-full'>
-                    <span className='headline-medium text-gray-500'>Khóa học tại Skillboost</span>
-                    <div className='ml-auto'>
-                        <ButtonFloat> <ArrowDownUp /> <div className='pl-2'>Sắp xếp</div></ButtonFloat>
+                    <p className='headline-medium text-gray-500'>Khóa học tại Skillboost</p>
+                    <div className='ml-auto max-sm:hidden'>
+                        <ButtonFloat> <ArrowDownUp /> <div className='pl-2 '>Sắp xếp</div></ButtonFloat>
                     </div>
                 </div>
-                <div className='grid grid-cols-3 gap-10 justify-center self-center'>
-                    <div>
-                        <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
-                    </div>
+                <div className='grid grid-cols-3 gap-10 justify-center self-center max-sm:grid-cols-1'>
+                    <ul>
+                        <li>
+                            <Link to='/ITBA_course' >
+                                <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
+                            </Link>
+                        </li>
+                        
+                    </ul>
                     <div>
                         <CourseCard coursepic ={PO_course} coursename ="Product Owner Master Class" teachername="Harry Phạm" starrate="5.0" price="5.400.000"/>
                     </div>

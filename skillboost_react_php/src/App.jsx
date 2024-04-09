@@ -1,12 +1,12 @@
 import './font.css'
-import DSKhoaHoc from './pages/DSKhoaHoc.jsx';
+import DSLead_BangLead from './pages/DSLead_BangLead';
 
 const App = () => (
   <main className="relative">
-    <DSKhoaHoc/>
-   </main> 
+    <DSLead_BangLead/>
+  </main>
 )
 
-export default App; 
+export default App;   
 
 
