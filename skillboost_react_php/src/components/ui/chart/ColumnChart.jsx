@@ -23,7 +23,13 @@ const BarChart = () => {
             },
         },
         maintainAspectRatio: false,
-        
+        scales:{
+            x:{
+                ticks:{
+                    align:"center"
+                }
+            }
+        }
 
     };
     const BarChartData = {

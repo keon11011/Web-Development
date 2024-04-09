@@ -8,6 +8,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import TrangChu_DSKhoaHoc from './pages/TrangChu_DSKhoaHoc.jsx'
 import DangNhap from './pages/DangNhap.jsx'
+import Chitietkhoahoc from './pages/Chitietkhoahoc.jsx'
 
 import Dashboard from './pages/Dashboard.jsx'
 

@@ -10,10 +10,11 @@ import Google_logo from '../assets/logo/Google_logo.svg'
 import UEH_logo from '../assets/logo/UEH_logo.svg'
 import Illustration from '../assets/img/Illustration.svg'
 
+
 const TrangChu = () => (
 
     <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
-        <div name="Header">
+        <div name="Header" className="sticky top-0 z-10 bg-cover bg-[url('./assets/logo/Background.svg')]">
             <Header />
         </div>
         <div name="body" className="px-40 max-sm:px-5">
@@ -21,28 +22,30 @@ const TrangChu = () => (
                 <div className='hidden max-sm:block w-auto h-auto rounded-xl self-center'>
                     <img
                         src={Banner}
-                        alt="Banner" 
+                        alt="Banner"
                         className=''
                         width={350}
                         height={202}
                     />
                 </div>
-
-                <div className='flex flex-col max-sm:grid max-sm:grid-rows-2 max-sm:py-5 max-sm:text-center'>
-                    <div className='display-large max-sm:text-text-secondary max-sm:text-4xl'>Khám phá tri thức - </div>
-                    <div className='display-large max-sm:text-text-secondary max-sm:text-4xl'>Vươn tới thành công</div>
-                    <div className='text-gray-500 pt-10 sm:w-2/3'>Một nền tảng giúp bạn khám phá tiềm năng vô tận trong thế giới IT thông qua các khoá trực tuyến tùy chỉnh</div>
+                <div className='flex flex-col  max-sm:py-5 max-sm:text-center'>
+                    <div className='display-large text-text-secondary max-sm:font-semibold max-sm:text-3xl'>Khám phá tri thức - </div>
+                    <div className='display-large text-text-secondary max-sm:text-text-secondary max-sm:text-3xl max-sm:pt-[-5px]'>Vươn tới thành công</div>
+                    <div className='headline-small text-text-third pt-10 sm:w-2/3 max-sm:text-xl'>Một nền tảng giúp bạn khám phá tiềm năng vô tận trong thế giới IT thông qua các khoá trực tuyến tùy chỉnh</div>
                 </div>
                 <div className='max-sm:hidden sm:flex w-max p-2 relative max-w-max h-auto flex-row rounded-xl '>
                     <img
                         src={Banner}
                         alt="Banner"
                         className='duration-500 ease-in-out hover:scale-110'
+                        width={1100}
+
                     />
                 </div>
             </div>
-            <div name="Partner container" className='relative flex flex-col xl:w-full justify-center max-sm:text-center items-start w-full py-28'>
-                <div className='flex self-center display-small max-sm:text-text-secondary max-sm:text-4xl'>
+
+            <div name="Partner container" className='relative flex flex-col xl:w-full justify-center max-sm:text-center items-start w-full py-28 max-sm:pt-0 max-sm:pb-7'>
+                <div className='flex self-center display-small max-sm:text-text-secondary max-sm:text-3xl'>
                     Chúng tôi hợp tác với nhiều đối tác đặc biệt
                 </div>
                 <div className='flex flex-row self-center pt-10 gap-20 max-sm:flex-col max-sm:gap-3'>
@@ -51,17 +54,20 @@ const TrangChu = () => (
                     <div><BrandCard brandname={Fullstack_logo} /></div>
                 </div>
             </div>
+
+
             <div className='relative flex flex-row xl:w-full justify-center items-start w-full'>
                 <div className='flex w-max p-2 relative max-w-max h-auto flex-row rounded-xl max-sm:hidden'>
                     <img
                         src={Illustration}
                         alt="Illustration"
                         className='duration-500 ease-in-out hover:scale-110'
+                        width={1100}
                     />
                 </div>
                 <div name="Reason To Choose Container max-sm:text-center">
-                    <div className='display-small max-sm:text-text-secondary max-sm:text-4xl max-sm:text-center'>Vì sao nền tảng học trực tuyến của chúng tôi là lựa chọn tốt nhất cho khóa học IT của bạn?</div>
-                    <div className='relative flex flex-col gap-5 sm:pl-40 pt-10 self-center max-sm:pl-36 max-sm:flex-left'>
+                    <div className='display-small max-sm:text-text-secondary max-sm:text-3xl max-sm:text-center max-sm:pt-0'>Vì sao nền tảng học trực tuyến của chúng tôi là lựa chọn tốt nhất cho khóa học IT của bạn?</div>
+                    <div className='relative flex flex-col gap-5 sm:pl-40 pt-10 self-center max-sm:pl-[80px] max-sm:flex-left'>
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd /> Chất lượng đáng tin cậy</p>
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd />Đa dạng chủ đề</p>
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd />Học tập linh hoạt</p>
@@ -70,18 +76,17 @@ const TrangChu = () => (
                         <p className='flex items-center duration-300 ease-in-out hover:scale-105'> <ArrowRightMd />Chứng chỉ hoàn thành</p>
                     </div>
                     <div className='hidden max-sm:block w-auto h-auto rounded-xl self-center'>
-                    <img
-                        src={Illustration}
-                        alt="Illustration"
-                        className='duration-500 ease-in-out hover:scale-110'
-                    />
+                        <img
+                            src={Illustration}
+                            alt="Illustration"
+                            className='duration-500 ease-in-out hover:scale-110'
+                        />
+                    </div>
                 </div>
-                </div>
-
             </div>
-            <div name="Comments Container" className='relative flex flex-col xl:w-full justify-center items-start w-full py-28'>
-                <div className='flex self-center display-small max-sm:text-text-secondary max-sm:text-4xl max-sm:text-center'>
-                    Chúng tôi hợp tác với nhiều đối tác đặc biệt
+            <div name="Comments Container" className='relative flex flex-col xl:w-full justify-center items-start w-full py-28 max-sm:pt-0'>
+                <div className='flex self-center display-small max-sm:text-text-secondary max-sm:text-3xl max-sm:text-center'>
+                    Học viên nói gì về chúng tôi
                 </div>
                 <div className='flex flex-row self-center pt-10 gap-20 max-sm:flex-col max-sm:gap-2'>
                     <div>

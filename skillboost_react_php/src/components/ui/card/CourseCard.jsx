@@ -1,7 +1,7 @@
 const CourseCard = ({coursepic, coursename, teachername, starrate, price}) => {
     return (
         <nav>
-            <div className="flex w-max min-w-min lg:w-max h-auto flex-col rounded-xl bg-white border-2 hover:shadow-2xl cursor-pointer ">
+            <div className="flex w-max min-w-min lg:w-max h-auto flex-col rounded-xl bg-white border-2 hover:shadow-2xl cursor-pointer max-sm:w-[300px]">
                 <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
                         className="duration-500 ease-in-out hover:scale-110"
