@@ -8,17 +8,31 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import Image_01 from '../components/icons/Media/Image01'
-import React, { useState } from "react"
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from '../components/ui/placeholder/DatePicker'
 import DropDown from '../components/ui/placeholder/DropDown.jsx'
+import { useEffect, useState } from 'react'
 
 
-const DSKhoaHoc_TaoKhoaHoc = () => (
+const DSKhoaHoc_TaoKhoaHoc = () => {
+
+  const [inputs, setInputs] = useState({});
+
+  const handleTimeStartChange = (event) => {
+    const id = "TimeStart";
+    setInputs(values => ({...values, [id]: event.value}));
+  }
+
+  const handleTimeEndChange = () => {
+    const id = "TimeEnd";
+    setInputs(values => ({...values, [id]: event.value}));
+  }
+
+  return (
   <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
     <div id='Sidebar' className='col-span-1 max-2xl:hidden'>
       <SidebarQL/>
-    </div> {/* cướp phần responsiv head của dskhoahoc*/}
+    </div>
         
     <div id='ContentContainer' className='col-span-6 max-2xl:col-span-7 bg-background-secondary px-16 py-8 space-y-6'>
       <div id='Header' >
@@ -85,9 +99,9 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
                   title='Thời gian bắt đầu' 
                   previewText='Chọn giờ' 
                   options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
-                ]}
-                  // selectedOption={selectedTime}
-                  // setSelectedOption={setselectedTime}
+                ].map(i => ({value: i, label: i
+                }))}
+                  onHandleChange={handleTimeStartChange}
                 />
               </div>
 
@@ -97,9 +111,9 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
                   title='Thời gian kết thúc' 
                   previewText='Chọn giờ'
                   options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
-                ]}
-                  // selectedOption={selectedTime}
-                  // setSelectedOption={setselectedTime}
+                ].map(i => ({value: i, label: i
+                }))}
+                  onHandleChange={handleTimeEndChange}
                 />
               </div>
               
@@ -123,6 +137,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => (
           </div>
         </div>
     </main>
-)
+  );
+};
 
 export default DSKhoaHoc_TaoKhoaHoc
