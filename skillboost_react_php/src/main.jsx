@@ -47,6 +47,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App />}></Route>
         <Route path='/trangchu' element={<TrangChu />}></Route>
         <Route path='/khoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
+        <Route path='/ITBA_course' element={<Chitietkhoahoc />}></Route>
         <Route path='/dangnhap' element={<DangNhap />}></Route>
 
         <Route path='/dashboard' element={<Dashboard />}></Route>
