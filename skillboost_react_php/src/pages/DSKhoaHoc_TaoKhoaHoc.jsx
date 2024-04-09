@@ -16,7 +16,7 @@ import DropDown from '../components/ui/placeholder/DropDown.jsx'
 
 const DSKhoaHoc_TaoKhoaHoc = () => (
   <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-    <div id='Sidebar' className='col-span-1'>
+    <div id='Sidebar' className='col-span-1 max-sm:relative'>
       <SidebarNV/>
     </div>
         
