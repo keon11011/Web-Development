@@ -13,6 +13,7 @@ import ExcelAdvanced_course from '../assets/img/ExcelAdvanced_course.svg'
 import PO_course from '../assets/img/PO_course.svg'
 import Python_course from '../assets/img/Python_course.svg'
 import SQLAdvanced_course from '../assets/img/SQLAdvanced_course.svg'
+import { Link } from 'react-router-dom'
 
 
 const TrangChu_DSKhoaHoc = () => (
@@ -29,9 +30,14 @@ const TrangChu_DSKhoaHoc = () => (
                     </div>
                 </div>
                 <div className='grid grid-cols-3 gap-10 justify-center self-center'>
-                    <div>
-                        <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
-                    </div>
+                    <ul>
+                        <li>
+                            <Link to='/ITBA_course' >
+                                <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
+                            </Link>
+                        </li>
+                        
+                    </ul>
                     <div>
                         <CourseCard coursepic ={PO_course} coursename ="Product Owner Master Class" teachername="Harry Phạm" starrate="5.0" price="5.400.000"/>
                     </div>
