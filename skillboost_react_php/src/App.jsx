@@ -1,10 +1,10 @@
 import './font.css'
 
-import Dashboard from './pages/Dashboard';
+import DSHoatDongLead_TaoHoatDong from './pages/DSHoatDongLead_TaoHoatDong';
 
 const App = () => (
   <main className="relative">
-    <Dashboard/>
+    <DSHoatDongLead_TaoHoatDong/>
   </main>
 )
 

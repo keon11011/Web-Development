@@ -44,6 +44,7 @@ const DSLead_XemChiTietLead = () => {
     setShowDeleteConfirmation(false);
   };
 
+  //Hiển thị data dưới BE lên
   const [inputs, setInputs] = useState([]);
   const { id } = useParams();
  
@@ -57,6 +58,8 @@ const DSLead_XemChiTietLead = () => {
       setInputs(response.data);
     });
   }
+
+  console.log(inputs)
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
@@ -85,7 +88,7 @@ const DSLead_XemChiTietLead = () => {
             </div>
             <div className="flex space-x-[12px]">
               <div className='cursor-pointer block'>
-                <Link to="/lead/thongtin/chinhsuachitietlead">
+                <Link to={`/lead/thongtin/chinhsuachitietlead/${inputs.MaLead}`}>
                   <ActionPersonDetail variant="Edit" />
                 </Link>
               </div>
@@ -134,7 +137,7 @@ const DSLead_XemChiTietLead = () => {
                   variant='readOnly'
                   title="Nghề nghiệp"
                   showRedAsterisk
-                  previewText={inputs.TenNgheNgiep}
+                  value={inputs.TenNgheNghiep}
                 >
                   
                 </DropDown>
@@ -150,8 +153,8 @@ const DSLead_XemChiTietLead = () => {
                   variant='readOnly'
                   title='PIC (Người tiếp nhận)'
                   showRedAsterisk
+                  value={inputs.HoTenNV}
                 >
-                  Lê Minh Quân
                 </TextInput>
               </div>
               <div className='space-x-[24px]'>
