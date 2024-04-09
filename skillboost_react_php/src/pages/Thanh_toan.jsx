@@ -1,10 +1,9 @@
 import React from 'react'
 import SkillboostLogo from '../assets/logo/SkillboostLogo.svg'
-import Background from '../assets/logo/Background.svg'
-import qrcode from '../assets/logo/qrcode.svg'
 import Copy from '../../src/components/icons/Edit/Copy'
 import Button from '../components/ui/button/Button'
 import TextInput from '../components/ui/placeholder/TextInput'
+import pay from '../assets/logo/pay.svg'
 
 
 
@@ -12,14 +11,13 @@ import TextInput from '../components/ui/placeholder/TextInput'
 const Thanh_toan = () => {
   return (
     
-    <div className=''> 
-      <div className='absolute z-0 '>
-        <img src={Background} alt=""/>
-      </div>
+    <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]"> 
       
       <div className="relative z-10 flex flex-col ">
-        <div className='py-[100px] w-full  items-center justify-center flex order-first'>
-          <img src={SkillboostLogo} alt="" />
+       
+
+        <div className='py-[100px] w-full  items-center justify-center flex order-first '>
+          <img src={SkillboostLogo} alt=""  />
         </div>
         <div className=' bg-white py-[36px] px-[64px] rounded-lg self-center	 items-center justify-center flex flex-col 	'>
           <div className='headline-medium text-center  '>
@@ -27,13 +25,11 @@ const Thanh_toan = () => {
           </div>
           <div className='flex flex-row mt-6'>
             <div className='mr-14'>
-              <div className='title-medium text-text-secondary text-center '>
-                Quét mã QR bên dưới để tiến hành thanh toán
-              </div>
-              <div className='justify-center flex'>
-                <img src={qrcode} alt="" />
+              <div>
+                <img src={pay} alt="" />
               </div>
             </div>
+            
             <div className=' pl-2 w-full space-y-6'>
               <div className='flex space-x-16'>
                 <TextInput title='Mã đơn hàng' variant='ReadOnly'> ID01468790</TextInput>
@@ -63,7 +59,7 @@ const Thanh_toan = () => {
         </div>
 
 
-        <div className='flex justify-center space-x-[24px] mt-10'>
+        <div className='flex justify-center space-x-[24px] mt-10 mb-10'>
           <Button variant='Outlined'> Trở về trang chủ</Button>
           <Button> Đã thanh toán</Button>
         </div>
@@ -71,7 +67,7 @@ const Thanh_toan = () => {
 
 
 
-    </div>
+    </main>
   )
 }
 

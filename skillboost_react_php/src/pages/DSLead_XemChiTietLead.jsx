@@ -60,8 +60,8 @@ const DSLead_XemChiTietLead = () => {
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
-      <div id='Sidebar' className='sticky top-0 h-screen'>
-        <SidebarQL />
+      <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
+        <SidebarQL/>
       </div>
       <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
         <div id='Header'>

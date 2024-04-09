@@ -67,7 +67,7 @@ const DSLead_BangLead = () => {
 
     return (
     <main id = "DSLead" className='relative w-full bg-background-secondary flex'>
-        <div id='SidebarQL' className='sticky top-0 h-screen'>
+        <div id='SidebarQL' className='sticky top-0 h-screen max-sm:relative'>
             <SidebarQL/>
         </div>
         <div id ="ContentContainer" className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>

@@ -13,10 +13,11 @@ import ExcelAdvanced_course from '../assets/img/ExcelAdvanced_course.svg'
 import PO_course from '../assets/img/PO_course.svg'
 import Python_course from '../assets/img/Python_course.svg'
 import SQLAdvanced_course from '../assets/img/SQLAdvanced_course.svg'
+import { Link } from 'react-router-dom'
 
 
 const TrangChu_DSKhoaHoc = () => (
-    <main className="">
+    <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
         <div name="Header">
             <Header />
         </div>
@@ -28,10 +29,15 @@ const TrangChu_DSKhoaHoc = () => (
                         <ButtonFloat> <ArrowDownUp /> <div className='pl-2 '>Sắp xếp</div></ButtonFloat>
                     </div>
                 </div>
-                <div className='grid grid-cols-3 gap-10 justify-center self-center max-sm:hidden'>
-                    <div>
-                        <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
-                    </div>
+                <div className='grid grid-cols-3 gap-10 justify-center self-center max-sm:grid-cols-1'>
+                    <ul>
+                        <li>
+                            <Link to='/ITBA_course' >
+                                <CourseCard coursepic ={ITBA_course} coursename ="IT Bussiness Analysis" teachername="Ryan Nguyễn" starrate="5.0" price="4.000.000"/>
+                            </Link>
+                        </li>
+                        
+                    </ul>
                     <div>
                         <CourseCard coursepic ={PO_course} coursename ="Product Owner Master Class" teachername="Harry Phạm" starrate="5.0" price="5.400.000"/>
                     </div>
