@@ -34,6 +34,8 @@ import DSKhachHang_ChinhSuaKhachHang from './pages/DSKhachHang_ChinhSuaKhachHang
 
 import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia.jsx'
 import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia.jsx'
+import DSQDGG_XemChiTietQuyDinhGiamGia from './pages/DSQDGG_XemChiTietQuyDinhGiamGia.jsx'
+import DSQDGG_ChinhSuaQuyDinhGiamGia from './pages/DSQDGG_ChinhSuaQuyDinhGiamGia.jsx'
 
 import DSKhoaHoc from './pages/DSKhoaHoc.jsx'
 import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx'
@@ -45,12 +47,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<App />}></Route>
         <Route path='/trangchu' element={<TrangChu />}></Route>
         <Route path='/khoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
+        <Route path='/ITBA_course' element={<Chitietkhoahoc />}></Route>
         <Route path='/dangnhap' element={<DangNhap />}></Route>
 
         <Route path='/dashboard' element={<Dashboard />}></Route>
 
         <Route path='/lead/thongtin' element={<DSLead_BangLead />}></Route>
-        <Route path='/lead/thongtin/xemchitietlead' element={<DSLead_XemChiTietLead />}></Route>
+        <Route path='/lead/thongtin/xemchitietlead/:id' element={<DSLead_XemChiTietLead />}></Route>
         <Route path='/lead/thongtin/taolead' element={<DSLead_TaoLead />}></Route>
         <Route path='/lead/thongtin/chinhsuachitietlead' element={<DSLead_ChinhSuaChiTietLead />}></Route>
         <Route path='/lead/thongtin/huytheodoilead' element={<DSLead_HuyTheoDoiLead />}></Route>
@@ -72,6 +75,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Route path='/dsqdgg' element={<DSQuyDinhGiamGia />}></Route>
         <Route path='/dsqdgg/taodsqdgg' element={<DSQDGG_TaoQuyDinhGiamGia />}></Route>
+        <Route path='/dsqdgg/xemchitietdsqdgg' element={<DSQDGG_XemChiTietQuyDinhGiamGia />}></Route>
+        <Route path='/dsqdgg/chinhsuadsqdgg' element={<DSQDGG_ChinhSuaQuyDinhGiamGia />}></Route>
 
         <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
         <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>

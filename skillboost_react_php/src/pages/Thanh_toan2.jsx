@@ -5,7 +5,7 @@ import qrcode from '../assets/logo/qrcode.svg'
 import Copy from '../../src/components/icons/Edit/Copy'
 import Button from '../components/ui/button/Button'
 import TextInput from '../components/ui/placeholder/TextInput'
-import payment from '../assets/logo/payment.svg'
+import paid from '../assets/logo/paid.svg'
 
 
 
@@ -28,7 +28,7 @@ const Thanh_toan2 = () => {
           </div>
           <div className='flex flex-row mt-6'>
             <div className='mr-14 '>
-              <img src={payment} alt="" />
+              <img src={paid} alt="" />
             </div>
             <div className=' pl-2 w-full space-y-6'>
               <div className='flex space-x-16'>

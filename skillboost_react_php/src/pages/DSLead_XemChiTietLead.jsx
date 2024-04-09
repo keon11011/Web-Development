@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import axios from "axios"
+import React, { useState, useEffect } from 'react';
+import { Link, useParams  } from 'react-router-dom'
 
 import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
@@ -43,6 +44,20 @@ const DSLead_XemChiTietLead = () => {
       setShowDeleteConfirmation(false);
     };
 
+    const [inputs, setInputs] = useState([]);
+    const {id} = useParams();
+
+    useEffect(() => {
+      getLead();
+    }, []);
+
+    function getLead() {
+      axios.get(`http://localhost:80/SkillBoost-API/api/Lead/read_single.php?MaLead=${id}`).then(function(response) {
+          console.log(response.data);
+          setInputs(response.data);
+      });
+    }
+
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
       <div id='Sidebar' className='sticky top-0 h-screen'>
@@ -82,14 +97,15 @@ const DSLead_XemChiTietLead = () => {
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
-                    <TextInput variant='ReadOnly' title='Lead ID' showRedAsterisk>LEA9021</TextInput>
-                    <TextInput variant='ReadOnly' title='Họ tên' showRedAsterisk>Phan Văn Trị</TextInput>
+                    <TextInput variant='ReadOnly' title='Lead ID' showRedAsterisk value={inputs.MaLead} type="text"/>
+                    <TextInput variant='ReadOnly' title='Họ tên' showRedAsterisk value={inputs.HoTenLead} type="text"/>
                     <DropDown
                         variant='ReadOnly'
                         title="Giới tính"
                         showRedAsterisk
+                        //value={inputs.GioiTinhLead}
                     >
-                        Nam
+                      {inputs.GioiTinhLead}
                     </DropDown>
                 </div>
                 <div className='flex space-x-[24px]'>
@@ -100,8 +116,20 @@ const DSLead_XemChiTietLead = () => {
                     >
                         07/12/2003
                     </CustomDatePicker>
-                    <TextInput variant='ReadOnly' title='Số điện thoại' showRedAsterisk>09883454712</TextInput>
-                    <TextInput variant='ReadOnly' title='Email' showRedAsterisk>phanvantri0712@gmail.com</TextInput> 
+                    <TextInput
+                      variant='ReadOnly'
+                      title='Số điện thoại'
+                      showRedAsterisk
+                      value={inputs.SoDienThoaiLead}
+                      type="text"
+                    />
+                    <TextInput
+                      variant='ReadOnly'
+                      title='Email'
+                      showRedAsterisk
+                      value={inputs.EmailLead}
+                      type="text"
+                    /> 
                 </div>
                 <div className='flex space-x-[24px]'>
                     <DropDown
@@ -118,12 +146,20 @@ const DSLead_XemChiTietLead = () => {
                     >
                         Website
                     </DropDown>
-                    <TextInput variant='ReadOnly' title='PIC (Người tiếp nhận)' showRedAsterisk>Lê Minh Quân</TextInput>  
+                    <TextInput
+                      variant='ReadOnly'
+                      title='PIC (Người tiếp nhận)'
+                      showRedAsterisk
+                    >
+                      Lê Minh Quân
+                    </TextInput>  
                 </div>
                 <div className='space-x-[24px]'>
                     <TextArea
                         title='Ghi chú'
                         variant='ReadOnly'
+                        value={inputs.GhiChuLead}
+                        type="text"
                     />
                 </div>
             </div>
