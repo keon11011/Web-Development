@@ -34,6 +34,8 @@ import DSKhachHang_ChinhSuaKhachHang from './pages/DSKhachHang_ChinhSuaKhachHang
 
 import DSQuyDinhGiamGia from './pages/DSQuyDinhGiamGia.jsx'
 import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia.jsx'
+import DSQDGG_XemChiTietQuyDinhGiamGia from './pages/DSQDGG_XemChiTietQuyDinhGiamGia.jsx'
+import DSQDGG_ChinhSuaQuyDinhGiamGia from './pages/DSQDGG_ChinhSuaQuyDinhGiamGia.jsx'
 
 import DSKhoaHoc from './pages/DSKhoaHoc.jsx'
 import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx'
@@ -72,6 +74,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Route path='/dsqdgg' element={<DSQuyDinhGiamGia />}></Route>
         <Route path='/dsqdgg/taodsqdgg' element={<DSQDGG_TaoQuyDinhGiamGia />}></Route>
+        <Route path='/dsqdgg/xemchitietdsqdgg' element={<DSQDGG_XemChiTietQuyDinhGiamGia />}></Route>
+        <Route path='/dsqdgg/chinhsuadsqdgg' element={<DSQDGG_ChinhSuaQuyDinhGiamGia />}></Route>
 
         <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
         <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>

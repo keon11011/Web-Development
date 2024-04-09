@@ -15,7 +15,7 @@ const TextAreaWrapper = styled.div`
   position: relative;
   width: 100%; /* Set width to 100% */
   max-width: 100%; /* Ensure it doesn't exceed the screen width */
-  min-width: 488px;
+  min-width: 350px;
   border-radius: 0.5rem;
   background-color: #FAFAFA;
   min-height: 100px;
