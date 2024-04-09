@@ -1,9 +1,9 @@
 import './font.css'
-import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc';
+import DSKhoaHoc from './pages/DSKhoaHoc.jsx';
 
 const App = () => (
   <main className="relative">
-    <DSKhoaHoc_TaoKhoaHoc/>
+    <DSKhoaHoc/>
    </main> 
 )
 

@@ -10,7 +10,7 @@ import React, { useState } from "react"
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from '../components/ui/placeholder/DatePicker.jsx'
 import DropDown from '../components/ui/placeholder/DropDown.jsx'
-
+import { Link } from "react-router-dom";
 
 const CTKhoaHocAdmin = () => (
   <main id='CTKhoaHocAdmin' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>

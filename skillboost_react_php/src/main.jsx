@@ -37,6 +37,8 @@ import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia.jsx'
 
 import DSKhoaHoc from './pages/DSKhoaHoc.jsx'
 import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx'
+// import CTKhoaHocAdmin from '.pages/CTKhoaHocAdmin.jsx'
+// import CTKhoaHoc_Edit from './pages/CTKhoaHoc_Edit.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -75,6 +77,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
         <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
+        {/*        
+        <Route path='/khoahocAdmin/ctkhoahoc' element={<CTKhoaHocAdmin />}></Route>
+        <Route path='/khoahocAdmin/ctkhoahoc/chinhsua' element={<CTKhoaHocEdit/>}></Route>        
+        */}
 
       </Routes>
     </BrowserRouter>

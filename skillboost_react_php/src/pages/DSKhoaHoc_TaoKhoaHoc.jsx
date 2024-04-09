@@ -8,6 +8,7 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
 import Image_01 from '../components/icons/Media/Image01'
+import AddPlus from '../components/icons/Edit/AddPlus.jsx'
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from '../components/ui/placeholder/DatePicker'
 import DropDown from '../components/ui/placeholder/DropDown.jsx'
@@ -17,6 +18,12 @@ import { useEffect, useState } from 'react'
 const DSKhoaHoc_TaoKhoaHoc = () => {
 
   const [inputs, setInputs] = useState({});
+  const [counter, setCounter] = useState({});
+
+  const handleWeekdayChange = (event) => {
+    const id = "Weekday";
+    setInputs(values => ({...values, [id]: event.value}));
+  }
 
   const handleTimeStartChange = (event) => {
     const id = "TimeStart";
@@ -28,13 +35,22 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
     setInputs(values => ({...values, [id]: event.value}));
   }
 
+  const handleDuplicate = () => {
+    const id ="Duplucator"
+    const originalElement = document.getElementById('Duplicated');
+    const clone = originalElement.cloneNode(true);
+    clone.id = `Duplicator${counter + 1}`;
+    setCounter(counter + 1);
+    originalElement.parentNode.appendChild(clone);
+  };
+
   return (
   <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
     <div id='Sidebar' className='col-span-1 max-2xl:hidden'>
       <SidebarQL/>
     </div>
         
-    <div id='ContentContainer' className='col-span-6 max-2xl:col-span-7 bg-background-secondary px-16 py-8 space-y-6'>
+    <div id='ContentContainer' className='col-span-6 max-2xl:col-span-7 bg-background-secondary px-16 max-2xl:px-10 max-lg:px-4 py-8 space-y-6'>
       <div id='Header' >
         <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
@@ -87,14 +103,28 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
               </div>
 
               <div>
-                <TextInput  title='Số buổi học' previewText='Nhập số buổi'></TextInput>
+                <TextInput  title='Số buổi học' previewText='Nhập số buổi học'></TextInput>
               </div>
 
               <div>
-                <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng'></TextInput>
+                <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng tối đa'></TextInput>
               </div>
-              
-              <div>
+            </div>
+
+            <div id="Duplicated" className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
+              <div className='flex'>
+                <DropDown  
+                  title='Thứ' 
+                  previewText='Chọn thứ' 
+                  options={["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"
+                ].map(i => ({value: i, label: i
+                }))}
+                  onHandleChange={handleWeekdayChange}
+                  className='flex'
+                />
+              </div>
+
+              <div className='flex'>
                 <DropDown  
                   title='Thời gian bắt đầu' 
                   previewText='Chọn giờ' 
@@ -102,35 +132,45 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                 ].map(i => ({value: i, label: i
                 }))}
                   onHandleChange={handleTimeStartChange}
+
                 />
               </div>
 
 
-              <div>
+              <div className='flex'>
                 <DropDown 
                   title='Thời gian kết thúc' 
                   previewText='Chọn giờ'
-                  options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
+                  options={["09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00", "23h30"
                 ].map(i => ({value: i, label: i
                 }))}
                   onHandleChange={handleTimeEndChange}
+                  
                 />
               </div>
-              
-              
             </div>     
 
-              <div>
-                <TextArea title='Mô tả khóa học' previewText='Nhập mô tả' className="block w-full" variant="Editable"> {/* từ khoảng 680px sẽ bị tràn */}
-                  </TextArea>
-              </div>
+            <div id='Duplicator' className=''>
+              <Button 
+                variant='Neutral' 
+                size='Medium' 
+                leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
+                onClick={handleDuplicate}
+                  
+              >Thêm buổi học</Button>
+            </div>
 
-              <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <div className='cursor-pointer block'>
-                  <Link to="/khoahocAdmin">
-                    <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
-                  </Link>
-                </div>
+            <div>
+              <TextArea title='Mô tả khóa học' previewText='Nhập mô tả' className="block w-full" variant="Editable"> {/* từ khoảng 680px sẽ bị tràn */}
+                </TextArea>
+            </div>
+
+            <div className='flex w-full space-x-3 items-center justify-end'>
+              <div className='cursor-pointer block'>
+                <Link to="/khoahocAdmin">
+                  <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
+                </Link>
+              </div>
                 <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
               </div>
             </div>
