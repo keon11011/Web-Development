@@ -97,7 +97,7 @@ const SidebarQL = () => {
             <User03 strokeWidth={1.5}/>
             Khách hàng
           </StyledNavLink>
-          <StyledNavLink to="/dsqdg g" activeClassName="active" className="flex space-x-[16px]">
+          <StyledNavLink to="/dsqdgg" activeClassName="active" className="flex space-x-[16px]">
             <Tag strokeWidth={1.5}/>
             Quy định giảm giá
           </StyledNavLink>
