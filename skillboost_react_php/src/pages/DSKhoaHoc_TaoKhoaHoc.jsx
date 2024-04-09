@@ -14,16 +14,15 @@ import DatePicker from '../components/ui/placeholder/DatePicker'
 import DropDown from '../components/ui/placeholder/DropDown.jsx'
 
 
-const DSKhoaHoc_TaoKhoaHoc = () => (
-  <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-    <div id='Sidebar' className='col-span-1 max-sm:relative'>
-      <SidebarNV/>
-    </div>
-        
-    <div id='ContentContainer' className='col-span-6 bg-background-secondary px-16 py-8 space-y-6'>
-      <div id='Header' >
-        <HeaderAdmin>Khóa học</HeaderAdmin>
-      </div>
+const DSBaoGia_TaoBaoGia = () => (
+    <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
+        <div id='Sidebar'>
+          <SidebarQL/>
+        </div>
+        <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+          <div id='Header' >
+            <HeaderAdmin>Khóa học</HeaderAdmin>
+          </div>
 
       <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col p-6 box-border gap-4 space-y-6">
         <div id='Header' className='flex items-center space-x-4'>

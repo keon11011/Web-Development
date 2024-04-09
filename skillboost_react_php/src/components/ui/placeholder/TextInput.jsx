@@ -48,11 +48,11 @@ const IconWrapperLeft = styled.span`
 
 const TextInputComponent = styled.input`
   flex: 1;
-  background: #FAFAFA;
+  background: #fafafa;
   outline: none;
   border: none;
   width: 100%;
-  color: #1a1f23;
+  color: ${(props) => (props.isPreviewText ? '#5e6a6e' : '#1a1f23')};
   &::placeholder {
     visibility: ${(props) => (props.children ? 'hidden' : 'visible')};
   }
@@ -101,6 +101,7 @@ const TextInput = ({
       onClickRightIcon();
     }
   };
+  const textColor = value ? '#1a1f23' : '#5e6a6e';
 
   return (
     <TextInputContainer>
@@ -112,11 +113,12 @@ const TextInput = ({
         <TextInputComponent
           type="text"
           placeholder={previewText}
-          value={children ? children : value} 
+          value={children ? children : value}
           name={name}
           onChange={onChange}
           readOnly={variant === 'ReadOnly'}
-          {...rest}
+          textColor={textColor}
+          {...rest} 
         />
         {rightIcon && (
           <IconWrapperRight onClick={handleClickRightIcon}>

@@ -1,11 +1,10 @@
 import './font.css'
-import TrangChu from "./pages/TrangChu.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+
+import DSLead_BangLead from './pages/DSLead_BangLead';
 
 const App = () => (
   <main className="relative">
-    {/* <TrangChu /> */}
-    <Dashboard/>
+    <DSLead_BangLead/>
   </main>
 )
 

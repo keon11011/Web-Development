@@ -101,8 +101,8 @@ const DSLead_TaoLead = () => {
         <div id='Header'>
           <HeaderAdmin>Lead</HeaderAdmin>
         </div>
-        <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
-        <form onSubmit={handleSubmit}>
+        <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] ">
+        <form onSubmit={handleSubmit} className="space-y-[24px]">
           <div id='Header' className='flex items-center space-x-[16px]'>
             <div className='cursor-pointer block'>
               <Link to="/lead/thongtin">
@@ -118,7 +118,7 @@ const DSLead_TaoLead = () => {
                     <TextInput
                       id='HoTenLead' 
                       title='Họ tên'
-                      previewText='Họ tên'
+                      previewText='Nhập họ tên'
                       showRedAsterisk
                       onChange={handleTextChange}
                       >
@@ -127,7 +127,7 @@ const DSLead_TaoLead = () => {
                     <DropDown
                         id="GioiTinhLead"
                         title="Giới tính"
-                        previewText="Giới tính"
+                        previewText="Chọn giới tính"
                         showRedAsterisk
                         options={["Nam", "Nữ"].map(i => ({
                           value: i,label:i
@@ -137,7 +137,7 @@ const DSLead_TaoLead = () => {
                     <CustomDatePicker 
                       id='NgaySinhLead'
                       title='Ngày sinh'
-                      previewText='Ngày sinh'
+                      previewText='Chọn ngày sinh'
                       showRedAsterisk={true}
                       selectedDate={selectedNgaySinh}
                       setSelectedDate={setselectedNgaySinh}
@@ -147,7 +147,7 @@ const DSLead_TaoLead = () => {
                     <TextInput
                       id='SoDienThoaiLead'
                       title='Số điện thoại'
-                      previewText='Số điện thoại'
+                      previewText='Nhập số điện thoại'
                       onChange={handleTextChange}showRedAsterisk
                     >
 
@@ -155,7 +155,7 @@ const DSLead_TaoLead = () => {
                     <TextInput
                       id='EmailLead'
                       title='Email'
-                      previewText='Email'
+                      previewText='Nhập email'
                       showRedAsterisk
                       onChange={handleTextChange}
                       >
@@ -176,7 +176,7 @@ const DSLead_TaoLead = () => {
                 <div className='w-1/3 space-x-[24px]'>
                     <DropDown
                         title="Nguồn"
-                        previewText="Nguồn"
+                        previewText="Chọn nguồn"
                         showRedAsterisk
                         options={["Website", "Người thân", "Facebook", "Instagram", "Khác"].map(i => ({
                           value: i,label:i
@@ -188,7 +188,7 @@ const DSLead_TaoLead = () => {
                     <TextArea
                         id='GhiChuLead'
                         title='Ghi chú'
-                        previewText='Ghi chú'
+                        previewText='Nhập ghi chú'
                         onChange={handleTextChange}
                     />
                 </div>

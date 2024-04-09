@@ -16,7 +16,7 @@ import CloseMd from "../../icons/Menu/CloseMd";
 const SidebarContainer = styled.div`
 position: sticky;
 top: 0px;
-height: 100vh;  
+height: 100vh;
 background-color: transparent;
   width: 100% !important;
   height: 100vh;
