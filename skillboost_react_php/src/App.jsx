@@ -1,10 +1,14 @@
 import './font.css'
 
-import DSHoatDongLead_TaoHoatDong from './pages/DSHoatDongLead_TaoHoatDong';
+
+import DSLead_XemChiTietLead from './pages/DSLead_XemChiTietLead';
+import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH'
+import DSKhachHang_XemChiTietKH from './pages/DSKhachHang_XemChiTietKH'
+import DSKhachHang_TaoKH from './pages/DSKhachHang_TaoKH'
 
 const App = () => (
   <main className="relative">
-    <DSHoatDongLead_TaoHoatDong/>
+    <DSLead_XemChiTietLead/>
   </main>
 )
 
