@@ -4,12 +4,12 @@ import Button from '../components/ui/button/Button'
 import AddPlus from '../components/icons/Edit/AddPlus'
 import EmptyState from '../assets/state/EmptyState.svg'
 
-const DSKhoaHoc = () => (
+const DSKhoaHoc_EmptyState = () => (
     <main id='DSKhoaHoc' className='w-full bg-background-secondary relative flex'>
         <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
           <SidebarNV/>
         </div>
-        <div id='ContentContainer' className='w-full px-[64px] py-[32px] space-y-[24px]'>
+        <div id='ContentContainer' className='w-full px-16 py-8 space-y-6'>
           <div id='Header'>
             <HeaderAdmin>Khóa học</HeaderAdmin>
           </div>
@@ -18,7 +18,7 @@ const DSKhoaHoc = () => (
               <div className='text-text-primary title-large'>Danh sách khóa học</div>
               <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Tạo khóa học mới</Button>
             </div>
-            <div id='Content' className='flex flex-col space-y-[32px] w-full h-full items-center justify-center'>
+            <div id='Content' className='flex flex-col space-y-8 w-full h-full items-center justify-center'>
               <img src={EmptyState} alt="EmptySate" />
               <div className='title-large text-text-third'>Hiện chưa có khóa học nào</div>
             </div>
@@ -27,4 +27,4 @@ const DSKhoaHoc = () => (
     </main>
 )
 
-export default DSKhoaHoc
+export default DSKhoaHoc_EmptyState
