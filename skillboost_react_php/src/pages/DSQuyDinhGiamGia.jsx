@@ -60,8 +60,7 @@ const DSQuyDinhGiamGia = () => {
       </div>
       <div className="sm:hidden max-sm:headline-medium max-sm:flex max-sm:justify-between max-sm:pr-28 ">
         <ActionIcon size='Medium' icon={<SvgHamburgerMd width="1.5rem" height="1.5rem"/>} />
-        <div className="max-sm:font-bold max-sm:text-center max-sm:pt-1">Quy định giảm giá</div>
-        
+        <div className="max-sm:font-bold max-sm:text-center max-sm:pt-1 max-sm:title-medium max-sm:text-text-primary">Quy định giảm giá</div>
       </div>
       <div className='w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col items-start justify-between p-6 max-sm:pr-4 max-sm:pl-4 gap-[24px] '>
           <div className='pb-5 flex justify-between'>
