@@ -25,7 +25,7 @@ const Dashboard = () => {
 
 
         {/* Hàng đầu */}
-        <div className="flex w-full justify-center space-x-[24px] relative max-sm:overflow-x-scroll max-sm:w-[350px]">
+        <div className="grid w-full justify-center grid-cols-3 gap-2 relative max-sm:grid max-sm:grid-cols-1">
           <div className=" flex w-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
             <DashboardOverviewCardUp
               namecard={"Số lượng Lead"}

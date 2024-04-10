@@ -97,7 +97,7 @@ const DSLead_TaoLead = () => {
       <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
         <SidebarQL/>
       </div>
-      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+      <div id='ContentContainer' className='w-full h-full sm:px-[64px] max-sm:px-[30px] py-[32px] space-y-[24px]'>
         <div id='Header'>
           <HeaderAdmin>Lead</HeaderAdmin>
         </div>
@@ -109,12 +109,11 @@ const DSLead_TaoLead = () => {
                 <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
               </Link>
             </div>
-            <div className='text-text-primary title-large'>Tạo Lead mới</div>
+            <div className='text-text-primary sm:title-large max-sm:title-medium'>Tạo Lead mới</div>
           </div>
-          <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
+          <div id='Content' className='flex flex-col sm:space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
-                
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px]'>
                     <TextInput
                       id='HoTenLead' 
                       title='Họ tên'
@@ -143,7 +142,7 @@ const DSLead_TaoLead = () => {
                       setSelectedDate={setselectedNgaySinh}
                     />
                 </div>
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px]'>
                     <TextInput
                       id='SoDienThoaiLead'
                       title='Số điện thoại'
@@ -173,7 +172,7 @@ const DSLead_TaoLead = () => {
                         onHandleChange={handleNgheNghiepChange}
                     />
                 </div>
-                <div className='w-1/3 space-x-[24px]'>
+                <div className='w-1/3 max-sm:flex-col sm:space-x-[24px]'>
                     <DropDown
                         id='NguonLead'
                         title="Nguồn"
@@ -185,7 +184,7 @@ const DSLead_TaoLead = () => {
                         onHandleChange={handleNguonChange}
                     />
                 </div>
-                <div className='space-x-[24px]'>
+                <div className='max-sm:flex-col sm:space-x-[24px]'>
                     <TextArea
                         id='GhiChuLead'
                         title='Ghi chú'
@@ -195,7 +194,7 @@ const DSLead_TaoLead = () => {
                 </div>
             </div>
             <div className='space-y-[16px]'>
-              <div className='title-medium text-text-primary'>Khóa học đã mua</div>
+              <div className='title-medium text-text-primary max-sm: pt-5'>Khóa học đã mua</div>
               <div id='Table' className="overflow-x-auto rounded-lg border border-outline-table">
                 <table className="table-auto w-full">
                   <thead className='title-small text-text-secondary text-left'>
@@ -215,7 +214,7 @@ const DSLead_TaoLead = () => {
                 </table>
               </div>
             </div>
-            <div className='flex w-full space-x-[12px] items-center justify-end'>
+            <div className='flex w-full space-x-[12px] items-center justify-end max-sm:pt-5'>
                 <div className='cursor-pointer block'>
                   <Link to="/lead/thongtin">
                     <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
@@ -228,7 +227,7 @@ const DSLead_TaoLead = () => {
         </div>
         </div>
       {showCourseSelector && 
-          <div className="absolute top-[396px] left-[500px] z-50">
+          <div className="max-sm:w-[450px] sm:w-auto absolute sm:top-[396px] sm:left-[500px] sm:z-50 max-sm:top-[1210px] max-sm:left-[20px] max-sm:z-50">
               <CourseSelector/>
           </div>
       }
