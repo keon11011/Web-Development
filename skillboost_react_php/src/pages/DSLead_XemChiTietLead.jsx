@@ -210,14 +210,14 @@ const DSLead_XemChiTietLead = () => {
         )}
         {showUnfollowConfirmation && (
           <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white bg-opacity-50">
-            <div className="relative flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
+            <div className="relative max-sm:w-[450px] flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
               <div>
                 <div className='flex w-full justify-center title-large text-text-primary'>Xác nhận hủy theo dõi</div>
                 <div className='absolute top-[36px] right-[36px]'>
                   <ActionIcon size="Medium" icon={<CloseMd width="1.5rem" height="1.5rem" onClick={handleCancelUnfollow} />} />
                 </div>
               </div>
-              <div className='flex flex-col space-y-[16px] w-[auto]'>
+              <div className='flex flex-col space-y-[16px] sm:w-[463px] max-sm:w-[390px]'>
                 <div className='h-[316px]'>
                   <TextArea title='Lý do hủy theo dõi' previewText='Điền lý do' />
                 </div>
