@@ -4,11 +4,10 @@ import TrashFull from '../../../components/icons/Interface/TrashFull'
 
 const FeedbackCard = ({cusname, starrate, content, likecount}) => {
     return (
-        <div className=" lg:w-full p-4 flex  max-w-max min-w-min h-auto flex-col rounded-xl bg-white border-2">
+        <div className=" p-4 flex  max-w-max min-w-min h-auto flex-col rounded-xl bg-white border-2">
             <div className='flex items-center pl-3'>
                 <div className='flex'>
                     <User02 width={30} height={30} className="flex rounded-full border-2 border-black">
-
                     </User02>
                 </div>
                 <div className="pl-2 ">
