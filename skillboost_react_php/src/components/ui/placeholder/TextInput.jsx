@@ -14,7 +14,7 @@ const TextInputWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-width: 350px;
+  min-width: auto;
   height: auto;
   border-radius: 0.5rem;
   background-color: #fafafa;

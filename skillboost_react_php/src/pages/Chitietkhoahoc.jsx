@@ -10,15 +10,15 @@ import BookOpen from '../components/icons/Interface/BookOpen.jsx'
 import PlayCircle from '../components/icons/Media/PlayCircle.jsx'
 import FileDownload from '../components/icons/File/FileDownload.jsx'
 import Notebook from '../components/icons/File/Notebook.jsx'
-import TextInput from '../components/ui/placeholder/TextInput'
-import TextArea from '../components/ui/placeholder/TextArea'
-import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker'
+import TextInput from '../components/ui/placeholder/TextInput.jsx'
+import TextArea from '../components/ui/placeholder/TextArea.jsx'
+import CustomDatePicker from '../components/ui/placeholder/CustomDatePicker.jsx'
 import Button from '../components/ui/button/Button.jsx'
 import AddPlus from '../components/icons/Edit/AddPlus.jsx'
-import CourseSelector from '../components/ui/SelectItems/CourseSelector'
+import CourseSelector from '../components/ui/SelectItems/CourseSelector.jsx'
 
 
-const Chitietkhoahoc = () => {
+const ChiTietKhoaHoc = ({coursename, coursepic, teacher, price}) => {
     const [showCourseSelector, setShowCourseSelector] = useState(false);
 
     const handleCourseSelectorClick = () => {
@@ -26,31 +26,30 @@ const Chitietkhoahoc = () => {
       };  
 
     return (
-        <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
+        <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')] top-0">
             <div name="Header">
                 <Header />
             </div>
-            <div className='px-40 pb-16'>
 
-                <div className='flex flex-row pt-[64px]'>
-
-                    <div className='pr-[64px] '>
+            <div className='px-40 pb-16 max-sm:px-4 max-sm:pt-0'>
+                <div className='flex flex-row pt-[64px] max-sm:flex-col'>
+                    <div className='pr-[64px] max-sm:p-4 max-sm:pt-0'>
                         <img
-                            src={BA_course}
+                            src={coursepic}
                             alt=""
                             width={600}
                             height={300}
                         />
                     </div>
                     <div className='space-y-[16px]'>
-                        <div className='display-small text-text-primary '>
-                            IT Business Analysis
+                        <div className='display-small text-text-primary max-sm:text-xl'>
+                           {coursename}
                         </div>
-                        <div className='title-large text-text-primary space-y-[24px]'>
+                        <div className='title-large text-text-primary space-y-[24px] max-sm:text-base max-sm:font-semibold'>
                             Chuẩn bị sẵn sàng để thành công và tìm hiểu các khái niệm phân tích kinh doanh chính để phát triển mạnh trong sự nghiệp Chuyên viên phân tích kinh doanh của bạn!
                         </div>
                         <div className='title-medium'>
-                            Giảng viên: <span className='text-text-blue'>Ryan Nguyễn</span>
+                            Giảng viên: <span className='text-text-blue'>{teacher}</span>
                         </div>
                         <div className='flex flex-row gap-[36px] text-text-primary'>
                             <div className='flex flex-row body-large gap-[16px]'>
@@ -63,13 +62,9 @@ const Chitietkhoahoc = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
-                <div className='flex flex-row pt-16 gap-[24px]'>
-
-                    <div className='flex flex-col gap-[24px] w-2/3'>
+                <div className='flex flex-row pt-16 gap-[24px] max-sm:flex-col'>
+                    <div className='flex flex-col gap-[24px] w-3/4 max-sm:w-full'>
                         <div className=' bg-white p-[36px] rounded-lg shadow-md  flex flex-col gap-6	'>
                             <div className='headline-small'>
                                 Mô tả khóa học
@@ -82,7 +77,7 @@ const Chitietkhoahoc = () => {
                             <div className='headline-small'>
                                 Bình luận
                             </div>
-                            <div className='body-large flex flex-row gap-[24px]'>
+                            <div className='body-large flex flex-row gap-[24px] max-sm:flex-col'>
                                 <FeedbackCard
                                     cusname={"Nguyễn Văn An"}
                                     starrate={"5"}
@@ -98,10 +93,10 @@ const Chitietkhoahoc = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col gap-[24px] '>
+                    <div className='flex flex-col gap-[24px] w-1/4 max-sm:w-full '>
                         <div className='bg-white p-[24px] rounded-lg shadow-md  flex flex-col '>
                             <div className='headline-small text-brand-default'>
-                                4.000.000đ
+                                {price}đ
                             </div>
                             <div className='py-5'><hr /></div>
                             <div className='title-medium text-text-secondary mb-3'>
@@ -131,7 +126,7 @@ const Chitietkhoahoc = () => {
                             </div>
                         </div>
 
-                        <div className='bg-white p-[24px] rounded-lg shadow-md  flex flex-col '>
+                        <div className='bg-white p-[24px] rounded-lg shadow-md  flex flex-col max-sm:w-full'>
                             <div className='title-large pb-5'>
                                 Thông tin nhận tư vấn
                             </div>
@@ -175,4 +170,4 @@ const Chitietkhoahoc = () => {
     )
 }
 
-export default Chitietkhoahoc
+export default ChiTietKhoaHoc
