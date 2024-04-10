@@ -175,6 +175,7 @@ const DSLead_TaoLead = () => {
                 </div>
                 <div className='w-1/3 space-x-[24px]'>
                     <DropDown
+                        id='NguonLead'
                         title="Nguồn"
                         previewText="Chọn nguồn"
                         showRedAsterisk
