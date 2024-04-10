@@ -1,11 +1,9 @@
-// import './font.css'
-import DSLead_ChinhSuaChiTietLead from './pages/DSLead_ChinhSuaChiTietLead'
-import DSQDGG_ChinhSuaQuyDinhGiamGia from './pages/DSQDGG_ChinhSuaQuyDinhGiamGia';
-import DSQDGG_XemChiTietQuyDinhGiamGia from './pages/DSQDGG_XemChiTietQuyDinhGiamGia';
+import './font.css'
+import DSLead_BangLead from './pages/DSLead_BangLead';
+
 const App = () => (
   <main className="relative">
-    <DSLead_ChinhSuaChiTietLead/>
-    <DSQDGG_XemChiTietQuyDinhGiamGia/>
+    <DSLead_BangLead/>
   </main>
 )
 

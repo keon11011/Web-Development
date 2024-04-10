@@ -8,6 +8,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import TrangChu_DSKhoaHoc from './pages/TrangChu_DSKhoaHoc.jsx'
 import DangNhap from './pages/DangNhap.jsx'
+import Chitietkhoahoc from './pages/Chitietkhoahoc.jsx'
 
 import Dashboard from './pages/Dashboard.jsx'
 
@@ -39,6 +40,8 @@ import DSQDGG_ChinhSuaQuyDinhGiamGia from './pages/DSQDGG_ChinhSuaQuyDinhGiamGia
 
 import DSKhoaHoc from './pages/DSKhoaHoc.jsx'
 import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx'
+// import CTKhoaHocAdmin from '.pages/CTKhoaHocAdmin.jsx'
+// import CTKhoaHoc_Edit from './pages/CTKhoaHoc_Edit.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -80,6 +83,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
         <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
+        {/*        
+        <Route path='/khoahocAdmin/ctkhoahoc' element={<CTKhoaHocAdmin />}></Route>
+        <Route path='/khoahocAdmin/ctkhoahoc/chinhsua' element={<CTKhoaHocEdit/>}></Route>        
+        */}
 
       </Routes>
     </BrowserRouter>

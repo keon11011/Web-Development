@@ -27,7 +27,11 @@ const DropdownButtonWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(props) => (
+    props.variant === 'disabled' ? 'not-allowed' :
+    props.variant === 'readOnly' ? '' : 
+    'pointer'
+  )};
   &:focus-within {
     border-color: ${(props) =>
       props.variant === 'ReadOnly' ? '#F8F8F8' : '#DFDFDF'};
@@ -41,9 +45,14 @@ const DropdownButtonComponent = styled.button`
   border: none;
   width: 100%;
   font-size: 1rem;
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(props) => (
+    props.variant === 'disabled' ? 'not-allowed' :
+    props.variant === 'readOnly' ? '' : 
+    'pointer'
+  )};
   text-align: left;
   text-overflow: ellipsis;
+  color: ${(props) => (props.isPreviewText ? '#9CA3AF' : '#1A1F23')}; /* Set color based on prop */
 `;
 
 const OptionsList = styled.ul`
@@ -97,6 +106,7 @@ const DropDown = ({
   onHandleChange,
   readOnly,
   previewText,
+  value,
   showRedAsterisk,
   ...rest
 }) => {
@@ -132,13 +142,14 @@ const DropDown = ({
       <DropdownButtonWrapper variant={variant} onClick={toggleOptions} ref={buttonRef}>
         <DropdownButtonComponent
           type="button"
-          readOnly={variant === 'ReadOnly'}
+          ReadOnly={variant === 'readOnly'}
           {...rest}
-          disabled={variant === 'ReadOnly'}
+          disabled={variant === 'disabled'}
+          isPreviewText={!selectedOption && previewText}
         >
-          {selectedOption ? selectedOption : previewText}
+          {selectedOption ? selectedOption : (previewText || value)}
         </DropdownButtonComponent>
-        {!rest.disabled && variant !== 'ReadOnly' && <ChevronDown />}
+        {!rest.disabled && variant !== 'readOnly' && <ChevronDown />}
       </DropdownButtonWrapper>
       {isOpen && (
         <OptionsList top={buttonPosition.top} left={buttonPosition.left} width={buttonWidth} className='mt-24'>

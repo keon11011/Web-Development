@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom'
 
 
 const TrangChu_DSKhoaHoc = () => (
-    <main className="">
+    <main className="bg-no-repeat bg-cover bg-[url('./assets/logo/Background.svg')]">
         <div name="Header">
             <Header />
         </div>
@@ -29,7 +29,7 @@ const TrangChu_DSKhoaHoc = () => (
                         <ButtonFloat> <ArrowDownUp /> <div className='pl-2 '>Sắp xếp</div></ButtonFloat>
                     </div>
                 </div>
-                <div className='grid grid-cols-3 gap-10 justify-center self-center'>
+                <div className='grid grid-cols-3 gap-10 justify-center self-center max-sm:grid-cols-1'>
                     <ul>
                         <li>
                             <Link to='/ITBA_course' >

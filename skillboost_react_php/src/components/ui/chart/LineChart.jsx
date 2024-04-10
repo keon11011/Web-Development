@@ -29,11 +29,11 @@ const LineChart = () => {
                 },
         },
         scales: {
-            yAxes: [{
+            y: {
                 ticks: {
                     fontSize: 100
                 }
-            }],
+            },
         }
     }
 
