@@ -4,7 +4,7 @@ import SidebarQL from '../components/ui/sidebar/SidebarQL.jsx'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin.jsx'
 import ActionIcon from '../components/ui/button/ActionIcon.jsx'
 import ActionPersonDetail from '../components/ui/button/ActionPersonDetail.jsx'
-import TextArea from '../components/ui/placeholder/TextArea'
+import TextArea from '../components/ui/placeholder/TextArea.jsx'
 import AlertDanger from '../components/ui/inform/AlertDanger.jsx'
 import Button from '../components/ui/button/Button.jsx'
 
@@ -24,7 +24,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { Link } from "react-router-dom";
 
 
-const CTKhoaHocAdmin = () => {
+const DSKhoaHoc_XemChiTietKhoaHoc = () => {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   const handleDelete = () => {
@@ -36,7 +36,7 @@ const CTKhoaHocAdmin = () => {
   };
   
   return (
-  <main id='CTKhoaHocAdmin' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
+  <main id='DSKhoaHoc_XemChiTietKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7'>
     <div id='Sidebar'>
       <SidebarQL/>
     </div>
@@ -70,7 +70,7 @@ const CTKhoaHocAdmin = () => {
             Mô tả khóa học
           </div>
       
-          <div className='body-large text-text-secondary mt-6 inline'>
+          <div className='body-large text-text-secondary mt-6 text-justify'>
             Khóa học Bachelor of Arts (BA) trong lĩnh vực Công nghệ Thông tin (IT) cung cấp kiến thức và kỹ năng cơ bản về lập trình, quản lý dự án IT, thiết kế phần mềm, và hệ thống thông tin. Học viên sẽ được hướng dẫn trong việc ứng dụng công nghệ để giải quyết các thách thức trong doanh nghiệp và xã hội. Khóa học này không chỉ tập trung vào khía cạnh kỹ thuật, mà còn khuyến khích phát triển kỹ năng phân tích, tư duy logic, và giao tiếp, tạo điều kiện cho học viên trở thành chuyên gia IT đa năng và có sự hiểu biết độ sâu về thế giới số đang phát triển
           </div>
         </div>
@@ -178,4 +178,4 @@ const CTKhoaHocAdmin = () => {
 )
 }
 
-export default CTKhoaHocAdmin
+export default DSKhoaHoc_XemChiTietKhoaHoc

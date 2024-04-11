@@ -13,9 +13,9 @@ import avatar from '../assets/logo/avatar.svg'
 import ChervonRightMD from '../components/icons/Arrow/ChevronRightMd'
 import Pagination from '../components/ui/pagination/Pagination'
 
-const DSKhoaHoc = () => {
+const DSKhoaHoc_BangKhoaHoc = () => {
   return (
-<main id = "DSKhoaHoc">
+<main id = "DSKhoaHoc_BangKhoaHoc">
 <div className='bg-background-secondary relative grid grid-cols-7'>
   <div id='Sidebar'>
     <SidebarQL/>
@@ -115,4 +115,4 @@ const DSKhoaHoc = () => {
 </main>
   )
 }
-export default DSKhoaHoc
+export default DSKhoaHoc_BangKhoaHoc

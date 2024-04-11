@@ -39,10 +39,12 @@ import DSQDGG_TaoQuyDinhGiamGia from './pages/DSQDGG_TaoQuyDinhGiamGia.jsx'
 import DSQDGG_XemChiTietQuyDinhGiamGia from './pages/DSQDGG_XemChiTietQuyDinhGiamGia.jsx'
 import DSQDGG_ChinhSuaQuyDinhGiamGia from './pages/DSQDGG_ChinhSuaQuyDinhGiamGia.jsx'
 
-import DSKhoaHoc from './pages/DSKhoaHoc.jsx'
+import DSKhoaHoc_BangKhoaHoc from './pages/DSKhoaHoc_BangKhoaHoc.jsx'
+import DSKhoaHoc_ChinhSuaKhoaHoc from './pages/DSKhoaHoc_ChinhSuaKhoaHoc.jsx'
+
 import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx'
-import CTKhoaHocAdmin from './pages/CTKhoaHocAdmin.jsx'
-import CTKhoaHoc_Edit from './pages/CTKhoaHoc_Edit.jsx'
+import DSKhoaHoc_XemChiTietKhoaHoc from './pages/DSKhoaHoc_XemChiTietKhoaHoc.jsx'
+
 
 import ITBA_course from "./assets/img/ITBA_course.svg"
 import PO_course from './assets/img/PO_course.svg'
@@ -103,10 +105,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/dsqdgg/xemchitietdsqdgg' element={<DSQDGG_XemChiTietQuyDinhGiamGia />}></Route>
         <Route path='/dsqdgg/chinhsuadsqdgg' element={<DSQDGG_ChinhSuaQuyDinhGiamGia />}></Route>
 
-        <Route path='/khoahocAdmin' element={<DSKhoaHoc />}></Route>
+        <Route path='/khoahocAdmin' element={<DSKhoaHoc_BangKhoaHoc />}></Route>
         <Route path='/khoahocAdmin/taokhoahoc' element={<DSKhoaHoc_TaoKhoaHoc />}></Route>
-        <Route path='/khoahocAdmin/ctkhoahoc' element={<CTKhoaHocAdmin />}></Route>
-        <Route path='/khoahocAdmin/ctkhoahoc/chinhsua' element={<CTKhoaHoc_Edit/>}></Route>       
+        <Route path='/khoahocAdmin/ctkhoahoc' element={<DSKhoaHoc_XemChiTietKhoaHoc />}></Route>
+        <Route path='/khoahocAdmin/ctkhoahoc/chinhsua' element={<DSKhoaHoc_ChinhSuaKhoaHoc />}></Route>       
 
       </Routes>
     </BrowserRouter>

@@ -28,7 +28,7 @@ const DSBaoGia_EmptyState = () => (
 
         <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col items-start justify-between p-6">
           <div id='Header' className='flex justify-between'>
-            <div className='text-text-primary title-large'>Danh sách báo giá</div>
+            <div className='text-text-primary title-large flex items-center '>Danh sách báo giá</div>
               <Link to='/lead/dsbaogia/taobaogia'>
                 <Button 
                 variant='Neutral' 
