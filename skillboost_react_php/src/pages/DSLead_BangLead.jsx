@@ -102,7 +102,7 @@ const DSLead_BangLead = () => {
             <div className='sm:hidden'>            
             {showSearchBar && <SearchBar previewText='Tìm kiếm Lead'/>}                     
             </div>
-            <div id='Content' className='overflow-x-auto  table-auto w-full flex flex-col space-y-[32px] w-full h-auto'>
+            <div id='Content' className='overflow-x-auto  table-auto flex flex-col space-y-[32px] w-full h-auto'>
                 <div id='Table' className=" overflow-x-auto w-full rounded-lg border border-outline-table">
                     <table>
                         <thead className='title-small text-text-secondary text-left'> 

@@ -8,7 +8,7 @@ const LeadInfoTabContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 56px;
+  gap: 38px;
   padding: 0 24px;
   text-align: left; 
   font-size: 1rem;
@@ -57,17 +57,17 @@ const LeadInfoTab = () => {
   return (
     <LeadInfoTabContainer>
       <TabNavLink to="/lead/thongtin/xemchitietlead">
-        <div>
+        <div className='max-sm:text-sm text-nowrap'>
           Thông tin chung
         </div>
       </TabNavLink>
       <TabNavLink to="/lead/dsbaogia">
-        <div>
+        <div className='max-sm:text-sm text-nowrap'>
           Báo giá
         </div>
       </TabNavLink>
       <TabNavLink to="/lead/dshoatdong">
-        <div>
+        <div  className='max-sm:text-sm text-nowrap'>
           Hoạt động
         </div>
       </TabNavLink>
