@@ -1,17 +1,7 @@
 import React from 'react'
 import Filter from "../../icons/Interface/Filter"
 import { Doughnut } from 'react-chartjs-2'
-import {
-    Chart as ChartJS,
-    LineElement,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    Title,
-    Tooltip,
-    Legend
-} from "chart.js";
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
+import 'chart.js/auto'
 
 const PieChart = () => {
     const options = {
@@ -43,12 +33,12 @@ const PieChart = () => {
         ],
     };
     return (
-        <main className="w-full h-full">
+        <div className="w-full h-full">
             <div className="text-primary flex flex-row items-center pb-3">
                 <div className="font-bold">Tỉ lệ phần trăm các loại khách hàng theo nghề nghiệp</div>
             </div>
             <Doughnut options={options} data={PieChartData}></Doughnut>
-        </main>
+        </div>
     )
 }
 
