@@ -89,7 +89,7 @@ const DSQuyDinhGiamGia = () => {
             {showSearchBar && <SearchBar previewText='Tìm kiếm hoạt động'/>}                     
           </div>
           <div className='flex-auto block pb-1'>
-        <div className='overflow-x-auto  table-auto w-full flex flex-col space-y-[32px] w-full h-auto'>
+        <div className='overflow-x-auto  table-auto w-full flex flex-col space-y-[32px] h-auto'>
           <table id='Table' class="overflow-x-auto w-full rounded-lg border border-outline-table">
             <thead class="align-center"> 
             <tr class="title-small text-text-secondary text-center">

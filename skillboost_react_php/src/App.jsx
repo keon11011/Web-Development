@@ -1,11 +1,11 @@
 import './font.css'
 
-import DSBaoGia_BangBaoGia from './pages/DSBaoGia_BangBaoGia';
+import DSBaoGia_EmptyState from './pages/DSBaoGia_EmptyState';
 
 
 const App = () => (
   <main className="relative">
-    <DSBaoGia_BangBaoGia/>
+    <DSBaoGia_EmptyState/>
   </main>
 )
 

@@ -31,7 +31,7 @@ const DSBaoGia_BangBaoGia = () => {
                         <LeadProgressStatus variant="DangTuVan" />
                     </div>
                 </div>
-                <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[36px]">
+                <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-4 space-y-6">
                     <div id='Header' className='flex justify-between items-center'>
                         <div className='text-text-primary title-large'>Danh sách báo giá</div>
                         <div className='cursor-pointer block'>
@@ -41,7 +41,7 @@ const DSBaoGia_BangBaoGia = () => {
                         </div>
                     </div>
                     <div id='Content' className='flex flex-col space-y-[32px] w-full h-auto'>
-                        <div id='Table' className="flex w-full rounded-lg border border-outline-table">
+                        <div id='Table' className="flex w-full rounded-lg border border-outline-table overflow-x-auto">
                             <table className="table-auto w-full">
                                 <thead className='title-small text-text-secondary text-left'>
                                     <tr>

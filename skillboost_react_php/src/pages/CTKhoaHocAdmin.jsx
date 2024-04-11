@@ -4,6 +4,9 @@ import SidebarQL from '../components/ui/sidebar/SidebarQL.jsx'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin.jsx'
 import ActionIcon from '../components/ui/button/ActionIcon.jsx'
 import ActionPersonDetail from '../components/ui/button/ActionPersonDetail.jsx'
+import TextArea from '../components/ui/placeholder/TextArea'
+import AlertDanger from '../components/ui/inform/AlertDanger.jsx'
+import Button from '../components/ui/button/Button.jsx'
 
 import EditPencil01 from '../components/icons/Edit/EditPencil01.jsx'
 import TrashFull from '../components/icons/Interface/TrashFull.jsx'
@@ -14,13 +17,25 @@ import UserGroup from '../components/icons/User/UsersGroup.jsx'
 import CalendarCheck from '../components/icons/Calendar/CalendarCheck.jsx'
 import CalendarClose from '../components/icons/Calendar/CalendarClose.jsx'
 import Clock from '../components/icons/Calendar/Clock.jsx'
+import CloseMd from '../components/icons/Menu/CloseMd.jsx'
 
 import React, { useState } from "react"
 import 'react-datepicker/dist/react-datepicker.css'
 import { Link } from "react-router-dom";
 
 
-const CTKhoaHocAdmin = () => (
+const CTKhoaHocAdmin = () => {
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+
+  const handleDelete = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleCancelDelete = () => {
+    setShowDeleteConfirmation(false);
+  };
+  
+  return (
   <main id='CTKhoaHocAdmin' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
     <div id='Sidebar'>
       <SidebarQL/>
@@ -28,7 +43,7 @@ const CTKhoaHocAdmin = () => (
         
     <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 space-y-6'>
       <div id='Header'>
-        <HeaderAdmin>Khóa học</HeaderAdmin> {/*lụm header responsiv */}
+        <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
 
       <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col p-6 box-border gap-4 space-y-6 justify-between">
@@ -44,8 +59,7 @@ const CTKhoaHocAdmin = () => (
                 <ActionPersonDetail variant="Edit" icon={<EditPencil01 width="1.5rem" height="1.5rem"/>}/>
               </Link>
                 <ActionPersonDetail variant="Delete" icon={<TrashFull width="1.5rem" height="1.5rem"/>}
-                  onClick 
-                />
+                  onClick={handleDelete}/>
             </div>
         </div>
       </div>
@@ -56,7 +70,7 @@ const CTKhoaHocAdmin = () => (
             Mô tả khóa học
           </div>
       
-          <div className='body-large text-text-secondary mt-6 inline-block'>
+          <div className='body-large text-text-secondary mt-6 inline'>
             Khóa học Bachelor of Arts (BA) trong lĩnh vực Công nghệ Thông tin (IT) cung cấp kiến thức và kỹ năng cơ bản về lập trình, quản lý dự án IT, thiết kế phần mềm, và hệ thống thông tin. Học viên sẽ được hướng dẫn trong việc ứng dụng công nghệ để giải quyết các thách thức trong doanh nghiệp và xã hội. Khóa học này không chỉ tập trung vào khía cạnh kỹ thuật, mà còn khuyến khích phát triển kỹ năng phân tích, tư duy logic, và giao tiếp, tạo điều kiện cho học viên trở thành chuyên gia IT đa năng và có sự hiểu biết độ sâu về thế giới số đang phát triển
           </div>
         </div>
@@ -137,17 +151,31 @@ const CTKhoaHocAdmin = () => (
             <div className='w-full relative flex flex-row items-start justify-end text-right'>
               <p className='text-text-secondary pr-1 inline-block'>Thứ 6, 17h00 - 20h00</p> {/*gọi weekday, Timeend ra*/}              
             </div>
-
           </div>
-
         </div>
-        
+      </div>      
+    </div>  
+    {showDeleteConfirmation && (
+      <div className="fixed w-screen h-screen flex items-center justify-center bg-white bg-opacity-50">
+        <div className="relative flex flex-col space-y-6 bg-white rounded-lg shadow-lg p-8">
+          <div>
+            <div className='flex w-full justify-center title-large text-text-primary'>Xác nhận xóa khóa học</div>
+            <div className='absolute top-6 right-6'>
+              <ActionIcon size="Medium" icon={<CloseMd width="1.5rem" height="1.5rem" onClick={handleCancelDelete}/>} />
+            </div>
+          </div>
+          <div className='flex flex-col space-y-4'>
+            <div className='h-[316px]'>
+              <TextArea title='Lý do xóa' previewText='Điền lý do'/>
+            </div>
+              <AlertDanger>Khóa học đã xóa sẽ không thể khôi phục</AlertDanger>
+          </div>
+          <Button variant="Destructive" size='Big' onClick={handleDelete}>Xác nhận xóa</Button>
+        </div>
       </div>
-      
-      
-
-    </div>    
+    )}    
   </main>
 )
+}
 
 export default CTKhoaHocAdmin
