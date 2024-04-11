@@ -13,15 +13,15 @@ import avatar from '../assets/logo/avatar.svg'
 import ChervonRightMD from '../components/icons/Arrow/ChevronRightMd'
 import Pagination from '../components/ui/pagination/Pagination'
 
-const DSKhoaHoc = () => {
+const DSKhoaHoc_BangKhoaHoc = () => {
   return (
-<main id = "DSKhoaHoc">
-<div className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
+<main id = "DSKhoaHoc_BangKhoaHoc">
+<div className='bg-background-secondary relative grid grid-cols-7'>
   <div id='Sidebar'>
     <SidebarQL/>
   </div>
     
-  <div id="ContentContainer" className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 space-y-6' >
+  <div id="ContentContainer" className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 max-sm:h-screen space-y-6' >
     <div id="Header">
       <HeaderAdmin>Khóa học</HeaderAdmin>
     </div>
@@ -104,9 +104,9 @@ const DSKhoaHoc = () => {
             </tbody>
 
           </table>
+          </div>
           <div id='Pagination' className='flex w-full justify-end pt-9'>
             <Pagination />
-          </div>
         </div>
       </div>
     </div>
@@ -115,4 +115,4 @@ const DSKhoaHoc = () => {
 </main>
   )
 }
-export default DSKhoaHoc
+export default DSKhoaHoc_BangKhoaHoc

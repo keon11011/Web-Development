@@ -16,14 +16,15 @@ const DSBaoGia_BangBaoGia = () => {
 
     return (
         <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
-            <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
+            <div id='Sidebar'>
                 <SidebarQL />
             </div>
-            <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px] max-sm:px-4'>
-                <div id='Header' className='max-sm:pl-8'>
+            <div id='ContentContainer' className='w-full h-auto px-16 py-8 space-y-6 max-sm:px-4'>
+                <div id='Header' className='max-sm:ml-16'>
                     <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
                 </div>
-                <div id='LeadInfoNavigation' className='flex space-x-[24px] max-sm:flex-col max-sm:gap-5'>
+
+                <div id='LeadInfoNavigation' className='flex space-x-6 max-sm:flex-col max-sm:gap-5'>
                     <div className='grow'>
                         <LeadInfoTab />
                     </div>
@@ -31,7 +32,8 @@ const DSBaoGia_BangBaoGia = () => {
                         <LeadProgressStatus variant="DangTuVan" />
                     </div>
                 </div>
-                <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[36px]">
+
+                <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-6 box-border gap-4 space-y-6">
                     <div id='Header' className='flex justify-between items-center'>
                         <div className='text-text-primary title-large'>Danh sách báo giá</div>
                         <div className='cursor-pointer block'>
@@ -41,7 +43,7 @@ const DSBaoGia_BangBaoGia = () => {
                         </div>
                     </div>
                     <div id='Content' className='flex flex-col space-y-[32px] w-full h-auto'>
-                        <div id='Table' className="flex w-full rounded-lg border border-outline-table">
+                        <div id='Table' className="flex w-full rounded-lg border border-outline-table overflow-x-auto">
                             <table className="table-auto w-full">
                                 <thead className='title-small text-text-secondary text-left'>
                                     <tr>
@@ -50,7 +52,7 @@ const DSBaoGia_BangBaoGia = () => {
                                         <th className="px-[16px] py-[24px] text-center">Trạng thái</th>
                                         <th className="px-[16px] py-[24px] text-center">Thời gian chỉnh sửa lần cuối</th>
                                         <th className="px-[16px] py-[24px] text-center">Tổng tiền</th>
-                                        <th className="px-[16px] py-[24px] text-center">Người thực hiện</th>
+                                        <th className="px-[16px] py-[24px] text-center">Người tạo</th>
                                     </tr>
                                 </thead>
                                 <tbody className='body-medium text-text-primary'>
@@ -61,7 +63,7 @@ const DSBaoGia_BangBaoGia = () => {
                                         <td className="px-[16px] py-[24px] text-center">13:10 - 11/12/2023</td>
                                         <td className="px-[16px] py-[24px] text-center">4.000.000đ</td>
                                         <td className="px-[16px] py-[24px] text-center">PIC</td>
-                                        <td>
+                                        <td className="px-[16px] py-[24px]">
                                             <div className='cursor-pointer block'>
                                                 <Link to="/lead/dsbaogia/xemchitietbaogia">
                                                     <ActionIcon size='Small' icon={<ChevronRight width="1rem" height="1rem" />} />
