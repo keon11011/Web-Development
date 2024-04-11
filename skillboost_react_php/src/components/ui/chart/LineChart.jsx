@@ -2,21 +2,7 @@ import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 import Filter from "../../icons/Interface/Filter"
 import { subDays } from "date-fns";
-import {
-    Chart as ChartJS,
-    LineElement,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    Title,
-    Tooltip,
-    Legend
-} from "chart.js";
-
-
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
-
-
+import 'chart.js/auto'
 
 const LineChart = () => {
     const options = {
@@ -63,13 +49,13 @@ const LineChart = () => {
         ],
     };
     return (
-        <main className="w-full h-full ">
+        <div className="w-full h-full ">
             <div className="text-primary flex flex-row items-center pb-3">
                 <div className="font-bold">Số lượng Lead trong 7 ngày qua</div>
                 
             </div>
             <Line options={options} data={LineChartData} ></Line>
-        </main>
+        </div>
     )
 };
 

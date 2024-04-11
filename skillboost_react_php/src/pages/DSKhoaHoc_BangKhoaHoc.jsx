@@ -18,11 +18,11 @@ const DSKhoaHoc_BangKhoaHoc = () => {
 <main id = "DSKhoaHoc_BangKhoaHoc">
 <div className='bg-background-secondary relative grid grid-cols-7'>
   <div id='Sidebar'>
-    <SidebarQL/>
+    <SidebarQL />
   </div>
     
   <div id="ContentContainer" className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 max-sm:h-screen space-y-6' >
-    <div id="Header">
+    <div id="Header" className='max-sm:pl-20'>
       <HeaderAdmin>Khóa học</HeaderAdmin>
     </div>
       
