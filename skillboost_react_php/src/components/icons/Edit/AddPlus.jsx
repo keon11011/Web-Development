@@ -5,7 +5,6 @@ const SvgAddPlus = (props) => (
     width="1em"
     height="1em"
     fill="none"
-    strokeWidth={1.5}
     stroke="currentColor"
     viewBox="0 0 24 24"
     strokeWidth={1.5}

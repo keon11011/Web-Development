@@ -59,7 +59,6 @@ const BarChart = () => {
         <main className="w-full h-full ">
             <div className="text-primary flex flex-row items-center pb-5">
                 <div className="font-bold">Top khóa học được mua nhiều nhất</div>
-                <div className="ml-auto cursor-pointer"><Filter /></div>
             </div>
             <Bar options={options} data={BarChartData}></Bar>
         </main>

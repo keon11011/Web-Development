@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import axios from "axios"
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom'
 
 import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
@@ -25,11 +26,90 @@ const DSLead_ChinhSuaChiTietLead = () => {
   const [selectedGioiTinh, setselectedGioiTinh] = useState(null);
   const [selectedNgheNghiep, setselectedNgheNghiep] = useState(null);
   const [selectedNguon, setselectedNguon] = useState(null);
-  const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
 
-    const handleCourseSelectorClick = () => {
-        setShowCourseSelector(!showCourseSelector);
-      };
+  const handleCourseSelectorClick = () => {
+      setShowCourseSelector(!showCourseSelector);
+    };
+
+  //Hiển thị data dưới BE lên
+  const [inputs, setInputs] = useState([]);
+  const { id } = useParams();
+ 
+  useEffect(() => {
+    getLead();
+  }, []);
+
+  function getLead() {
+    axios.get(`http://localhost:80/SkillBoost-API/api/Lead/read_single.php?MaLead=${id}`).then(function (response) {
+      console.log(response.data);
+      setInputs(response.data);
+    });
+  }
+
+  console.log(inputs)
+
+  //Tất cả Text Inputs  
+  const handleTextChange = (event) => {
+    const id = event.target.id;
+    const value = event.target.value;
+    setInputs(values => ({...values, [id]: value}));
+  }
+
+  //Nghề nghiệp Dropdown
+  const [NgheNghieps, setNgheNghieps] = useState([]);
+  const [selectNgheNghiepOption, setselectNgheNghiepOption] = useState(null);
+
+  useEffect(() => {
+    getNgheNghieps();
+  }, []);
+
+  const handleNgheNghiepChange = (event) => {
+    const id = 'MaNgheNghiep';
+    //const label = 'TenNgheNghiep';
+    setInputs(values => ({...values, [id]: event.value}));
+  }
+  
+  function getNgheNghieps() {
+    axios.get('http://localhost:80/SkillBoost-API/api/NgheNghiep/read_all.php')
+      .then(function(response) {
+          setNgheNghieps(response.data);
+      })
+      .catch(function(error) {
+          console.error('Error fetching courses:', error);
+      });
+  }
+
+  //Nguồn Dropdown
+  const handleNguonChange = (event) => {
+    const id = 'NguonLead';
+    setInputs(values => ({...values, [id]: event.value}));
+  }
+
+  //Giới tính Dropdown
+  const handleGioiTinhChange = (event) => {
+    const id = 'GioiTinhLead';
+    setInputs(values => ({...values, [id]: event.value}));
+  }
+
+  //DatePicker
+  const [selectedNgaySinh, setselectedNgaySinh] = useState(null);
+  const formattedDate = selectedNgaySinh ? selectedNgaySinh.toLocaleDateString('en-CA') : undefined;
+
+  useEffect(() => {
+    const id = 'NgaySinhLead';
+    setInputs(values => ({...values, [id]: formattedDate}))
+  }, [formattedDate])
+
+  //Xử lý ấn nút button Submit
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios.put('http://localhost:80/SkillBoost-API/api/Lead/update.php', inputs).then(function(response){
+        console.log(response.data);
+        navigate('/');
+    });
+        
+    }
 
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
@@ -50,7 +130,7 @@ const DSLead_ChinhSuaChiTietLead = () => {
             <div id='Header' className='flex justify-between items-center'>
                 <div className='flex space-x-4 items-center'>
                   <div className='cursor-pointer block'>
-                    <Link to="/lead/thongtin/xemchitietlead">
+                    <Link to={`/lead/thongtin/xemchitietlead/${inputs.MaLead}`}>
                       <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
                     </Link>
                   </div>
@@ -59,57 +139,103 @@ const DSLead_ChinhSuaChiTietLead = () => {
             </div>
           
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
+            <form onSubmit={handleSubmit}>
             <div id='TextInputs' className='space-y-[24px]'>
                 <div className='flex space-x-[24px]'>
-                    <TextInput title='Lead ID' previewText='LEA9021' variant='ReadOnly' showRedAsterisk></TextInput>
-                    <TextInput title='Họ tên' showRedAsterisk></TextInput>
+                    <TextInput
+                      id='MaLead'
+                      title='Lead ID'
+                      previewText={inputs.MaLead}
+                      variant='ReadOnly'
+                      showRedAsterisk
+                      onChange={handleTextChange}
+                      >
+
+                      </TextInput>
+                    <TextInput
+                      id='HoTenLead'
+                      title='Họ tên'
+                      showRedAsterisk
+                      previewText={inputs.HoTenLead}
+                      onChange={handleTextChange}
+                      >
+
+                      </TextInput>
                     <DropDown
+                        id='GioiTinhLead'
                         title="Giới tính"
                         showRedAsterisk
-                        previewText='Nam'
-                        options={["Nam", "Nữ"]}
-                        selectedOption={selectedGioiTinh}
-                        setSelectedOption={setselectedGioiTinh}
+                        previewText={inputs.GioiTinhLead}
+                        options={["Nam", "Nữ"].map(i => ({
+                          value: i,label:i
+                        }))}
+                        onHandleChange={handleGioiTinhChange}
                     >
                     </DropDown>
                 </div>
                 <div className='flex space-x-[24px]'>
                     <CustomDatePicker 
+                      id='NgaySinhLead'
                       title='Ngày sinh'
-                      previewText='2003-12-07'
+                      previewText={inputs.NgaySinhLead}
                       showRedAsterisk={true}
                       selectedDate={selectedNgaySinh}
                       setSelectedDate={setselectedNgaySinh}
                     >
                     </CustomDatePicker>
-                    <TextInput title='Số điện thoại' previewText='09883454712' showRedAsterisk></TextInput>
-                    <TextInput title='Email' previewText='phanvantri0712@gmail.com' showRedAsterisk></TextInput> 
+                    <TextInput
+                      id='SoDienThoaiLead'
+                      title='Số điện thoại'
+                      previewText={inputs.SoDienThoaiLead}showRedAsterisk
+                      onChange={handleTextChange}
+                    >
+
+                    </TextInput>
+                    <TextInput
+                      id='EmailLead'
+                      title='Email'
+                      previewText={inputs.EmailLead}
+                      showRedAsterisk
+                      onChange={handleTextChange}
+                      >
+                      </TextInput> 
                 </div>
                 <div className='flex space-x-[24px]'>
                     <DropDown
+                        id="NgheNghiepLead"
                         title="Nghề nghiệp"
-                        previewText='Học sinh - Sinh viên' 
+                        previewText={inputs.TenNgheNghiep}
                         showRedAsterisk
-                        options={["Học sinh - Sinh viên", "Giảng viên", "Nhiếp ảnh", "Chuyên viên kinh doanh", "Khác"]}
-                        selectedOption={selectedNgheNghiep}
-                        setSelectedOption={setselectedNgheNghiep}
+                        options={NgheNghieps.map((NgheNghiep) => ({
+                          label: NgheNghiep.TenNgheNghiep,
+                          value: NgheNghiep.MaNgheNghiep,
+                        }))}
+                        onHandleChange={handleNgheNghiepChange}
                     >
                     </DropDown>
                     <DropDown
+                        id='NguonLead'
                         title="Nguồn Lead"
-                        previewText='Website' 
+                        previewText={inputs.NguonLead}
                         showRedAsterisk
-                        options={["Website", "Người thân", "Facebook", "Instagram", "Khác"]}
-                        selectedOption={selectedNguon}
-                        setSelectedOption={setselectedNguon}
+                        options={["Website", "Người thân", "Facebook", "Instagram", "Khác"].map(i => ({
+                          value: i,label:i
+                        }))}
+                        onHandleChange={handleNguonChange}
                     >
                     </DropDown>
-                    <TextInput title='PIC (Người tiếp nhận)' previewText='Lê Minh Quân' showRedAsterisk></TextInput>  
+                    <TextInput
+                      id='HoTenNV'
+                      title='PIC (Người tiếp nhận)' previewText={inputs.HoTenNV}showRedAsterisk
+                      onChange={handleTextChange}
+                    ></TextInput>  
                 </div>
                 <div className='space-x-[24px]'>
                     <TextArea
-                        title='Ghi chú'
-                        previewText='Ghi chú'
+                      id='GhiChuLead'
+                      title='Ghi chú'
+                      previewText={inputs.GhiChuLead}
+                      onChange={handleTextChange}
                     />
                 </div>
             </div>
@@ -140,8 +266,9 @@ const DSLead_ChinhSuaChiTietLead = () => {
                     <Button variant='Destructive-plain' size='Medium'>Hủy thay đổi</Button>
                   </Link>
                 </div>   
-                <Button variant='Primary' size='Medium'>Lưu thay đổi</Button>
+                <Button type='submit' variant='Primary' size='Medium'>Lưu thay đổi</Button>
             </div>
+            </form>
             </div>
         </div>
         </div>

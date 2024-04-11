@@ -75,9 +75,9 @@ const DSLead_BangLead = () => {
             <HeaderAdmin>Lead</HeaderAdmin>
         </div>
         <div className="relative w-full h-auto rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[36px]">
-            <div className='flex justify-between h-[30px] '>
-                <div className="flex items-center title-large">Danh sách Lead</div>
-                {showSearchBar && <SearchBar previewText='Tìm kiếm Lead'/>}
+            <div className='flex justify-between'>
+                <div className="flex items-center sm:title-large max-sm:title-medium">Danh sách Lead</div>
+                <div className="max-sm:hidden">{showSearchBar && <SearchBar previewText='Tìm kiếm Lead'/>}</div>
                 <div className='flex space-x-[16px] items-center'>
                     <div className='cursor-pointer block'>
                         <Link to="/lead/thongtin/taolead">
@@ -87,6 +87,7 @@ const DSLead_BangLead = () => {
                     <ActionIcon size='Small' icon={<SearchMagnifyingGlass width="1.25rem" height="1.25rem"/>} onClick={handleSearchIconClick}/>
                     <ActionIcon size='Small' icon={<Filter width="1.25rem" height="1.25rem"/>} onClick={handleFilterIconClick}/>
                     <ActionIcon size='Small' icon={<ArrowDownUp width="1.25rem" height="1.25rem"/>} onClick={handleOptionIconClick}/>
+                </div>
                     {showOptionList && (
                         <div className="absolute top-[56px] right-[16px] z-50 bg-background-primary shadow-md rounded-md p-[12px]">
                             <ul>
@@ -97,19 +98,21 @@ const DSLead_BangLead = () => {
                             </ul>
                         </div>
                     )}
-                </div>
             </div>
-            <div id='Content' className='flex flex-col space-y-[32px] w-full h-auto'>
-                <div id='Table' className="flex w-full rounded-lg border border-outline-table">
-                    <table className="table-auto w-full">
+            <div className='sm:hidden'>            
+            {showSearchBar && <SearchBar previewText='Tìm kiếm Lead'/>}                     
+            </div>
+            <div id='Content' className='overflow-x-auto  table-auto w-full flex flex-col space-y-[32px] w-full h-auto'>
+                <div id='Table' className=" overflow-x-auto w-full rounded-lg border border-outline-table">
+                    <table>
                         <thead className='title-small text-text-secondary text-left'> 
                             <tr>
-                                <th class="px-[16px] py-[24px]">Lead ID</th>
-                                <th class="px-[16px] py-[24px]">Tên Lead</th>
-                                <th class="px-[16px] py-[24px] text-center">Thời gian cập nhật gần nhất</th>
-                                <th class="px-[16px] py-[24px] text-center">Khóa học quan tâm</th>
-                                <th class="px-[16px] py-[24px] text-center">Trạng thái</th>
-                                <th class="px-[16px] py-[24px] text-center"></th>
+                                <th class="px-[16px] py-[24px] min-w-[100px] ">Lead ID</th>
+                                <th class="px-[16px] py-[24px] min-w-[250px] " >Tên Lead</th>
+                                <th class="px-[16px] py-[24px] text-center min-w-[150px] ">Thời gian cập nhật gần nhất</th>
+                                <th class="px-[16px] py-[24px] text-center min-w-[200px] ">Khóa học quan tâm</th>
+                                <th class="px-[16px] py-[24px] text-center min-w-[150px] ">Trạng thái</th>
+                                <th class="px-[16px] py-[24px] text-center min-w-[50px] "></th>
                             </tr>             
                         </thead>
                         <tbody className='body-medium text-text-primary'>

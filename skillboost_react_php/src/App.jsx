@@ -1,9 +1,12 @@
 import './font.css'
-import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx';
+import DSLead_XemChiTietLead from './pages/DSLead_XemChiTietLead';
+import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH'
+import DSKhachHang_XemChiTietKH from './pages/DSKhachHang_XemChiTietKH'
+import DSKhachHang_TaoKH from './pages/DSKhachHang_TaoKH'
 
 const App = () => (
   <main className="relative">
-    <DSKhoaHoc_TaoKhoaHoc/>
+    <DSLead_XemChiTietLead/>
   </main>
 )
 

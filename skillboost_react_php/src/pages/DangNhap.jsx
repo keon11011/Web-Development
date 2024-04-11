@@ -25,7 +25,7 @@ const DangNhap = () => {
           />
         </Link>
       </div>
-      <div className="relative z-10 bg-background-primary w-[540px] p-[36px] rounded-2xl shadow-md flex flex-col items-center justify-center space-y-[36px]">
+      <div className="relative z-10 bg-background-primary w-[540px] p-[36px] max-sm:w-[350px] rounded-2xl shadow-md flex flex-col items-center justify-center space-y-[36px]">
         <div className="flex flex-col space-y-8 w-full">
           <div className="flex w-full justify-center headline-small text-text-primary">
             Đăng nhập

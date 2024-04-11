@@ -44,6 +44,7 @@ const DSLead_XemChiTietLead = () => {
     setShowDeleteConfirmation(false);
   };
 
+  //Hiển thị data dưới BE lên
   const [inputs, setInputs] = useState([]);
   const { id } = useParams();
  
@@ -58,16 +59,18 @@ const DSLead_XemChiTietLead = () => {
     });
   }
 
+  console.log(inputs)
+
   return (
     <main id='TaoKH' className='w-full bg-background-secondary flex'>
       <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
         <SidebarQL/>
       </div>
-      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+      <div id='ContentContainer' className='w-full h-full sm:px-[64px] max-sm:px-[30px] py-[32px] space-y-[24px]'>
         <div id='Header'>
           <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
         </div>
-        <div id="LeadInfoNavigation" className="flex space-x-[24px]">
+        <div id="LeadInfoNavigation" className="flex sm:space-x-[24px] max-sm:flex-col max-sm:space-y-[24px]">
           <div className="grow">
             <LeadInfoTab />
           </div>
@@ -81,11 +84,11 @@ const DSLead_XemChiTietLead = () => {
                   <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem" />} />
                 </Link>
               </div>
-              <div className='text-text-primary title-large'>Thông tin Lead</div>
+              <div className='text-text-primary sm:title-large max-sm:title-medium'>Thông tin Lead</div>
             </div>
             <div className="flex space-x-[12px]">
               <div className='cursor-pointer block'>
-                <Link to="/lead/thongtin/chinhsuachitietlead">
+                <Link to={`/lead/thongtin/chinhsuachitietlead/${inputs.MaLead}`}>
                   <ActionPersonDetail variant="Edit" />
                 </Link>
               </div>
@@ -94,9 +97,9 @@ const DSLead_XemChiTietLead = () => {
             </div>
           </div>
 
-          <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
+          <div id='Content' className='flex flex-col  space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
-              <div className='flex space-x-[24px]'>
+              <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                 <TextInput variant='ReadOnly' title='Lead ID' showRedAsterisk value={inputs.MaLead} type="text" />
                 <TextInput variant='ReadOnly' title='Họ tên' showRedAsterisk value={inputs.HoTenLead} type="text" />
                 <DropDown
@@ -107,7 +110,7 @@ const DSLead_XemChiTietLead = () => {
                 >
                 </DropDown>
               </div>
-              <div className='flex space-x-[24px]'>
+              <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                 <CustomDatePicker
                   variant='readOnly'
                   title='Ngày sinh'
@@ -129,12 +132,12 @@ const DSLead_XemChiTietLead = () => {
                   type="text"
                 />
               </div>
-              <div className='flex space-x-[24px]'>
+              <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                 <DropDown
                   variant='readOnly'
                   title="Nghề nghiệp"
                   showRedAsterisk
-                  previewText={inputs.TenNgheNgiep}
+                  value={inputs.TenNgheNghiep}
                 >
                   
                 </DropDown>
@@ -150,8 +153,8 @@ const DSLead_XemChiTietLead = () => {
                   variant='readOnly'
                   title='PIC (Người tiếp nhận)'
                   showRedAsterisk
+                  value={inputs.HoTenNV}
                 >
-                  Lê Minh Quân
                 </TextInput>
               </div>
               <div className='space-x-[24px]'>
@@ -207,14 +210,14 @@ const DSLead_XemChiTietLead = () => {
         )}
         {showUnfollowConfirmation && (
           <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white bg-opacity-50">
-            <div className="relative flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
+            <div className="relative max-sm:w-[450px] flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
               <div>
                 <div className='flex w-full justify-center title-large text-text-primary'>Xác nhận hủy theo dõi</div>
                 <div className='absolute top-[36px] right-[36px]'>
                   <ActionIcon size="Medium" icon={<CloseMd width="1.5rem" height="1.5rem" onClick={handleCancelUnfollow} />} />
                 </div>
               </div>
-              <div className='flex flex-col space-y-[16px] w-[auto]'>
+              <div className='flex flex-col space-y-[16px] sm:w-[463px] max-sm:w-[390px]'>
                 <div className='h-[316px]'>
                   <TextArea title='Lý do hủy theo dõi' previewText='Điền lý do' />
                 </div>

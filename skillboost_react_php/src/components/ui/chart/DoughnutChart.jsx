@@ -46,7 +46,6 @@ const PieChart = () => {
         <main className="w-full h-full">
             <div className="text-primary flex flex-row items-center pb-3">
                 <div className="font-bold">Tỉ lệ phần trăm các loại khách hàng theo nghề nghiệp</div>
-                <div className="ml-auto cursor-pointer"><Filter/></div>
             </div>
             <Doughnut options={options} data={PieChartData}></Doughnut>
         </main>
