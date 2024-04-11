@@ -1,5 +1,4 @@
 import './font.css'
-
 import DSLead_XemChiTietLead from './pages/DSLead_XemChiTietLead';
 import DSKhachHang_BangKH from './pages/DSKhachHang_BangKH'
 import DSKhachHang_XemChiTietKH from './pages/DSKhachHang_XemChiTietKH'
