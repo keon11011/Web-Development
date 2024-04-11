@@ -18,7 +18,7 @@ const DSBaoGia_EmptyState = () => (
       </div>
 
       <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 h-auto space-y-6'>
-        <div id='Header'>
+        <div id='Header' className='max-sm:pl-16'>
           <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
         </div>
 

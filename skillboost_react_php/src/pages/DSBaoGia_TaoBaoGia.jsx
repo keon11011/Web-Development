@@ -38,26 +38,32 @@ const DSBaoGia_TaoBaoGia = () => {
   };
 
   return (
-    <main id='DSBaoGia' className='w-full bg-background-secondary flex'>
-      <div id='Sidebar' className='sticky top-0 h-screen  max-sm:relative'>
+    <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
+      <div id='Sidebar'>
         <SidebarQL/>
       </div>
-      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
-        <div id='Header'>
+      <div id='ContentContainer' className='w-full h-auto px-16 py-8 space-y-6 max-sm:px-4'>
+        <div id='Header' className='max-sm:pl-16'>
           <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
         </div>
-        <div id='LeadInfoNavigation' className='flex space-x-[24px]'>
-          <div className='grow'><LeadInfoTab/></div>
-          <LeadProgressStatus variant='DangTuVan' />
+
+        <div id='LeadInfoNavigation' className='flex space-x-6 max-sm:flex-col max-sm:gap-5'>
+          <div className='grow'>
+            <LeadInfoTab/>
+          </div>
+          <div className='max-sm:flex'>
+            <LeadProgressStatus variant='DangTuVan' />
+          </div>
         </div>
-        <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
-          <div id='Header' className='flex items-center space-x-[16px]'>
+
+        <div id='ContentInside' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-6 box-border gap-4 space-y-6">
+          <div id='Header' className='flex justify-left items-center'>
             <div className='cursor-pointer block'>
                 <Link to="/lead/dsbaogia">
                   <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
                 </Link>
             </div>
-            <div className='text-text-primary title-large'>Tạo báo giá</div>
+            <div className='text-text-primary title-large ml-4'>Tạo báo giá</div>
           </div>
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div>

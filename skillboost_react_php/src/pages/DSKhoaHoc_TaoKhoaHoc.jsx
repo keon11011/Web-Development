@@ -43,7 +43,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
   };
 
   return (
-  <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
+  <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7'>
     <div id='Sidebar'>
       <SidebarQL/>
     </div>
