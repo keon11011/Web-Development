@@ -48,7 +48,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
       <SidebarQL/>
     </div>
     <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 py-8 space-y-6 max-sm:px-4'>
-      <div id='Header' >
+      <div id='Header' className='max-sm:pl-20'>
         <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
 
