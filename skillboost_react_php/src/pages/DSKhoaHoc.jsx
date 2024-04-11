@@ -17,11 +17,11 @@ const DSKhoaHoc = () => {
   return (
 <main id = "DSKhoaHoc">
 <div className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-  <div id='Sidebar' className='col-span-1'>
+  <div id='Sidebar'>
     <SidebarQL/>
   </div>
     
-  <div id="ContentContainer" className='col-span-6 bg-background-secondary px-16 py-8 space-y-6' >
+  <div id="ContentContainer" className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 space-y-6' >
     <div id="Header">
       <HeaderAdmin>Khóa học</HeaderAdmin>
     </div>
@@ -72,7 +72,9 @@ const DSKhoaHoc = () => {
                   <CourseTableStatus />
                 </td>
                 <td>
+                  <Link to="/khoahocAdmin/ctkhoahoc">
                 <ActionIcon icon={<ChervonRightMD width="1.5rem" height="1.5rem"/>}/>
+                  </Link>
                 </td>
               </tr>
 

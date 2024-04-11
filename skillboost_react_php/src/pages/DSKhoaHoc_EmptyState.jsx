@@ -1,4 +1,4 @@
-import SidebarNV from '../components/ui/sidebar/SidebarNV'
+import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import Button from '../components/ui/button/Button'
 import AddPlus from '../components/icons/Edit/AddPlus'
@@ -7,7 +7,7 @@ import EmptyState from '../assets/state/EmptyState.svg'
 const DSKhoaHoc_EmptyState = () => (
     <main id='DSKhoaHoc' className='w-full bg-background-secondary relative flex'>
         <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
-          <SidebarNV/>
+          <SidebarQL/>
         </div>
         <div id='ContentContainer' className='w-full px-16 py-8 space-y-6'>
           <div id='Header'>

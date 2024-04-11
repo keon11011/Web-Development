@@ -48,7 +48,7 @@ const DSLead_ChinhSuaChiTietLead = () => {
         </div>
         <div id='ContentInside' className="w-full h-full rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border gap-[1rem] space-y-[24px]">
             <div id='Header' className='flex justify-between items-center'>
-                <div className='flex space-x-[16px] items-center'>
+                <div className='flex space-x-4 items-center'>
                   <div className='cursor-pointer block'>
                     <Link to="/lead/thongtin/xemchitietlead">
                       <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>

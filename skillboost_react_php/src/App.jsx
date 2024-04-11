@@ -1,5 +1,5 @@
 import './font.css'
-import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc';
+import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx';
 
 const App = () => (
   <main className="relative">
