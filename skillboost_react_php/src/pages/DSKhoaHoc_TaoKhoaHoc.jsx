@@ -4,6 +4,7 @@ import SidebarQL from '../components/ui/sidebar/SidebarQL'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin'
 import ActionIcon from '../components/ui/button/ActionIcon'
 import Button from '../components/ui/button/Button'
+
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import TextInput from '../components/ui/placeholder/TextInput'
 import TextArea from '../components/ui/placeholder/TextArea'
@@ -17,47 +18,45 @@ import { useEffect, useState } from 'react'
 
 const DSKhoaHoc_TaoKhoaHoc = () => {
 
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState([{}]);
   const [counter, setCounter] = useState({});
 
-  const handleWeekdayChange = (event) => {
+  const handleWeekdayChange = (event, index) => {
     const id = "Weekday";
-    setInputs(values => ({...values, [id]: event.value}));
+    const updatedInputs = [...inputs]
+    updatedInputs[index] = {...updatedInputs[index], [id]: event.value}
+    setInputs(updatedInputs);
   }
 
-  const handleTimeStartChange = (event) => {
+  const handleTimeStartChange = (event, index) => {
     const id = "TimeStart";
-    setInputs(values => ({...values, [id]: event.value}));
+    const updatedInputs = [...inputs]
+    updatedInputs[index] = {...updatedInputs[index], [id]: event.value}
+    setInputs(updatedInputs);
   }
 
-  const handleTimeEndChange = () => {
+  const handleTimeEndChange = (event, index) => {
     const id = "TimeEnd";
-    setInputs(values => ({...values, [id]: event.value}));
-  }
-
-  const handleDuplicate = () => {
-    const id ="Duplucator"
-    const originalElement = document.getElementById('Duplicated');
-    const clone = originalElement.cloneNode(true);
-    clone.id = `Duplicator${counter + 1}`;
-    setCounter(counter + 1);
-    originalElement.parentNode.appendChild(clone);
+    const updatedInputs = [...inputs]
+    updatedInputs[index] = {...updatedInputs[index], [id]: event.value}
+    setInputs(updatedInputs);
   };
 
   return (
   <main id='DSKhoaHoc_TaoKhoaHoc' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-    <div id='Sidebar' className='col-span-1 max-2xl:hidden'>
+    <div id='Sidebar'>
       <SidebarQL/>
     </div>
-        
-    <div id='ContentContainer' className='col-span-6 max-2xl:col-span-7 bg-background-secondary px-16 max-2xl:px-10 max-lg:px-4 py-8 space-y-6'>
+    <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 py-8 space-y-6 max-sm:px-4'>
       <div id='Header' >
         <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
 
       <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] max-lg:flex-auto flex-col p-6 box-border gap-4 space-y-6">
         <div id='Header' className='flex items-center space-x-4'>
+          <Link to="/khoahocAdmin">
             <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+          </Link>
         <div className='text-text-primary title-large relative flex items-center mr-6'>Tạo khóa học</div>
             </div>
 
@@ -90,9 +89,6 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                     </div> 
                 </div>
 
-                
-
-
             <div className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
               <div>
                 <DatePicker  title='Ngày khai giảng' previewText='Chọn ngày khai giảng'></DatePicker>
@@ -109,55 +105,64 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
               <div>
                 <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng tối đa'></TextInput>
               </div>
+
             </div>
+              {inputs.map((input, index) => (
+               <div className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
+                <div className='flex'>
+                  <DropDown    
+                    title='Thứ' 
+                    previewText='Chọn thứ' 
+                    options={["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ Nhật"
+                  ].map(i => ({value: i, label: i
+                  }))}
+                    onHandleChange={(e) => handleWeekdayChange(e, index)}
+                    className='flex'
+                  />
+                </div>
+  
+                <div className='flex'>
+                  <DropDown  
+                    title='Thời gian bắt đầu' 
+                    previewText='Chọn giờ' 
+                    options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
+                  ].map(i => ({value: i, label: i
+                  }))}
+                    onHandleChange={(e) => handleTimeStartChange(e, index)}
+                  />
+                </div>
+    
+                <div className='flex'>
+                  <DropDown 
+                    title='Thời gian kết thúc' 
+                    previewText='Chọn giờ'
+                    options={["09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00", "23h30"
+                  ].map(i => ({value: i, label: i
+                  }))}
+                    onHandleChange={(e) => handleTimeEndChange(e, index)}
+                  />
+                </div>
+              </div>     
+              ))}
 
-            <div id="Duplicated" className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
-              <div className='flex'>
-                <DropDown  
-                  title='Thứ' 
-                  previewText='Chọn thứ' 
-                  options={["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"
-                ].map(i => ({value: i, label: i
-                }))}
-                  onHandleChange={handleWeekdayChange}
-                  className='flex'
-                />
+            <div className='flex w-full space-x-3 items-center justify-end'>
+              <div className='cursor-pointer block'>
+                <Button 
+                  variant='Neutral' 
+                  size='Medium' 
+                  leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
+                  onClick={() => setInputs([...inputs, {}])}
+                >Thêm buổi học</Button>
               </div>
 
-              <div className='flex'>
-                <DropDown  
-                  title='Thời gian bắt đầu' 
-                  previewText='Chọn giờ' 
-                  options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
-                ].map(i => ({value: i, label: i
-                }))}
-                  onHandleChange={handleTimeStartChange}
-
-                />
+              <div>
+                <Button 
+                  size="Medium" 
+                  variant="Destructive" 
+                  // leftIcon={<ArrowCircleDown width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
+                  onClick={() => setInputs([{}])}
+                >Khởi tạo lại</Button>
               </div>
-
-
-              <div className='flex'>
-                <DropDown 
-                  title='Thời gian kết thúc' 
-                  previewText='Chọn giờ'
-                  options={["09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00", "23h30"
-                ].map(i => ({value: i, label: i
-                }))}
-                  onHandleChange={handleTimeEndChange}
-                  
-                />
-              </div>
-            </div>     
-
-            <div id='Duplicator' className=''>
-              <Button 
-                variant='Neutral' 
-                size='Medium' 
-                leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}
-                onClick={handleDuplicate}
-                  
-              >Thêm buổi học</Button>
             </div>
 
             <div>
@@ -171,7 +176,9 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                   <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
                 </Link>
               </div>
-                <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
+                <Link to="/khoahocAdmin/ctkhoahoc"> {/* phải đổ dữ liệu sang trang ctkhoahoc, full page refresh */}
+                  <Button variant='Primary' size='Medium'>Xác nhận tạo</Button> {/*nhảy noti thành công */}
+                </Link>
               </div>
             </div>
           </div>

@@ -1,127 +1,153 @@
-import SidebarNV from '../components/ui/sidebar/SidebarNV.jsx'
+import './../font.css'
+
+import SidebarQL from '../components/ui/sidebar/SidebarQL.jsx'
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin.jsx'
 import ActionIcon from '../components/ui/button/ActionIcon.jsx'
-import Button from '../components/ui/button/Button.jsx'
+import ActionPersonDetail from '../components/ui/button/ActionPersonDetail.jsx'
+
+import EditPencil01 from '../components/icons/Edit/EditPencil01.jsx'
+import TrashFull from '../components/icons/Interface/TrashFull.jsx'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft.jsx'
-import TextInput from '../components/ui/placeholder/TextInput.jsx'
-import TextArea from '../components/ui/placeholder/TextArea.jsx'
-import Image_01 from '../components/icons/Media/Image01.jsx'
+import Star from '../components/icons/Interface/Star.jsx'
+import UserCheck from '../components/icons/User/UserCheck.jsx'
+import UserGroup from '../components/icons/User/UsersGroup.jsx'
+import CalendarCheck from '../components/icons/Calendar/CalendarCheck.jsx'
+import CalendarClose from '../components/icons/Calendar/CalendarClose.jsx'
+import Clock from '../components/icons/Calendar/Clock.jsx'
+
 import React, { useState } from "react"
 import 'react-datepicker/dist/react-datepicker.css'
-import DatePicker from '../components/ui/placeholder/DatePicker.jsx'
-import DropDown from '../components/ui/placeholder/DropDown.jsx'
 import { Link } from "react-router-dom";
+
 
 const CTKhoaHocAdmin = () => (
   <main id='CTKhoaHocAdmin' className='w-full bg-background-secondary relative grid grid-cols-7 gap-4'>
-    <div id='Sidebar' className='col-span-1'>
-      <SidebarNV/>
+    <div id='Sidebar'>
+      <SidebarQL/>
     </div>
         
-    <div id='ContentContainer' className='col-span-6 bg-background-secondary px-16 py-8 space-y-6'>
-      <div id='Header' >
-        <HeaderAdmin>Khóa học</HeaderAdmin>
+    <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 space-y-6'>
+      <div id='Header'>
+        <HeaderAdmin>Khóa học</HeaderAdmin> {/*lụm header responsiv */}
       </div>
 
-      <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col p-6 box-border gap-4 space-y-6">
+      <div id='CourseInfo' className="w-full h-auto relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col p-6 box-border gap-4 space-y-6 justify-between">
         <div id='Header' className='flex items-center space-x-4'>
+          <Link to="/khoahocAdmin">
             <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
-        <div className='text-text-primary title-large relative flex items-center mr-6'>Tạo khóa học</div>
+          </Link>
+            <div className='text-text-primary headline-small relative flex items-center mr-6 w-[90%]'>
+              IT Business Analysis
             </div>
-
-            <div id='Content' className='flex flex-col space-y-9 w-full h-full'>
-                <div className='flex justify-between space-x-6'>
-                    <div className='space-y-6 flex-auto '>
-                        <div>
-                            <TextInput  title='Tên khóa học' previewText='Nhập tên khóa học'></TextInput>
-                        </div>
-                        
-                        <div>
-                            <TextInput  title='Giá tiền hiển thị' previewText='Nhập giá tiền hiển thị'></TextInput>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-center w-[40%]">
-                        <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                            <div className="flex flex-col items-center justify-center pt-5 pb-6 text-[#BEBEBE]">
-                                <Image_01
-                                    alt="upload image"
-                                    height={36}
-                                    width={36}
-                                    onClick={() => console.log("Choose image")}
-                                />
-                                <p class="mb-2 pt-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Chọn từ máy</span> hoặc kéo thả ảnh</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG hoặc GIF</p>
-                            </div>
-                            <input id="dropzone-file" type="file" class="hidden" />
-                        </label>
-                    </div> 
-                </div>
-
-                
-
-
-            <div className='justify-between flex flex-wrap space-x-6'>
-              <div>
-                <DatePicker  title='Ngày khai giảng' previewText='Chọn ngày khai giảng'></DatePicker>
-              </div>
-
-              <div>
-                <DatePicker title='Ngày bế giảng' previewText='Chọn ngày bế giảng'></DatePicker>
-              </div>
-
-              <div>
-                <TextInput  title='Số buổi học' previewText='Nhập số buổi'></TextInput>
-              </div>
-
-             
-
-            </div>
-
-            <div className='justify-between flex space-x-6'>
-              <div>
-                <DropDown  
-                  title='Thời gian bắt đầu' 
-                  previewText='Chọn giờ' 
-                  options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
-                ]}
-                  selectedOption={selectedTime}
-                  setSelectedOption={setselectedTime}
+            <div className='space-x-4 flex max-sm:w-fit'>
+              <Link to='/khoahocAdmin/ctkhoahoc/chinhsua'>
+                <ActionPersonDetail variant="Edit" icon={<EditPencil01 width="1.5rem" height="1.5rem"/>}/>
+              </Link>
+                <ActionPersonDetail variant="Delete" icon={<TrashFull width="1.5rem" height="1.5rem"/>}
+                  onClick 
                 />
-              </div>
-
-
-              <div>
-                <DropDown 
-                  title='Thời gian kết thúc' 
-                  previewText='Chọn giờ'
-                  options={["09h00", "09h30", "10h00", "10h30", "11h00", "11h30", "12h00", "12h30", "13h00", "13h30", "14h00", "14h30", "15h00", "15h30", "16h00", "16h30", "17h00", "17h30", "18h00", "18h30", "19h00", "19h30", "20h00", "20h30", "21h00", "21h30", "22h00", "22h30", "23h00"
-                ]}
-                  selectedOption={selectedTime}
-                  setSelectedOption={setselectedTime}
-                />
-              </div>
-              
-              <div>
-                <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng'></TextInput>
-              </div>
-            </div>     
-
-              <div>
-                <TextArea title='Mô tả khóa học' previewText='Nhập mô tả' className="block" variant="Editable">
-                  </TextArea>
-              </div>
-
-              <div className='flex w-full space-x-[12px] items-center justify-end'>
-                <Button variant='Destructive-plain' size='Medium'>Hủy tạo</Button>
-                <Button variant='Primary' size='Medium'>Xác nhận tạo</Button>
-              </div>
             </div>
+        </div>
+      </div>
+  
+      <div id='Content' className='flex max-sm:flex-col gap-6 col-span-6 max-sm:col-span-7'>        
+        <div className='flex flex-col w-full h-fit relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-6 max-sm:w-full max-sm:flex-none max-sm:mb-6 max-sm:order-2'>
+          <div className='headline-small text-text-primary'>
+            Mô tả khóa học
+          </div>
+      
+          <div className='body-large text-text-secondary mt-6 inline-block'>
+            Khóa học Bachelor of Arts (BA) trong lĩnh vực Công nghệ Thông tin (IT) cung cấp kiến thức và kỹ năng cơ bản về lập trình, quản lý dự án IT, thiết kế phần mềm, và hệ thống thông tin. Học viên sẽ được hướng dẫn trong việc ứng dụng công nghệ để giải quyết các thách thức trong doanh nghiệp và xã hội. Khóa học này không chỉ tập trung vào khía cạnh kỹ thuật, mà còn khuyến khích phát triển kỹ năng phân tích, tư duy logic, và giao tiếp, tạo điều kiện cho học viên trở thành chuyên gia IT đa năng và có sự hiểu biết độ sâu về thế giới số đang phát triển
           </div>
         </div>
 
-    
-    </main>
+        <div className='max-sm:order-1'>
+          <div>
+            <img
+              className="w-[424px] max-sm:w-auto h-auto rounded-lg object-cover object-center relative flex"
+              src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+              alt="course image"
+            />
+          </div>
+
+          <div className='w-[418px] max-sm:w-auto h-auto relative bg-background-primary mt-6 rounded-lg p-6'>
+            <div className='headline-small text-brand-default'>
+              6.400.000đ
+            </div>
+            <div className='w-full relative border-t-[0.5px] border-[#e6e6e6] h-[0.5px] my-7'>
+            </div>
+
+            <div className='flex relative flex-row flex-start justify-between text-left mb-6'>
+              <div className='flex'>
+                <Star className='w-[20px] h-[20px] mr-3 text-text-secondary'/>
+                <p className='body-large text-text-secondary'>Đánh giá</p>
+              </div>
+
+              <div className='flex'>
+                <p className='text-text-secondary pr-1'>5.0</p>
+                <Star className='text-sematic-yellow fill-sematic-yellow w-[20px] h-[20px] relative'/>
+              </div>
+            </div>
+
+            <div className='flex relative flex-row flex-start justify-between text-left mb-6'>
+              <div className='flex'>
+                <UserCheck className='w-[20px] h-[20px] mr-3 text-text-secondary'/>
+                <p className='body-large text-text-secondary'>Lượt đánh giá</p>
+              </div>
+
+                <p className='text-text-secondary pr-1'>18 lượt</p> {/*truyền phần số sau */}
+            </div>
+
+            <div className='flex relative flex-row flex-start justify-between text-left mb-6'>
+              <div className='flex'>
+                <UserGroup className='w-[20px] h-[20px] mr-3 text-text-secondary'/>
+                <p className='body-large text-text-secondary'>Học viên tối đa</p>
+              </div>
+
+                <p className='text-text-secondary pr-1'>5.0</p>
+            </div>
+
+            <div className='flex relative flex-row flex-start justify-between text-left mb-6'>
+              <div className='flex'>
+                <CalendarCheck className='w-[20px] h-[20px] mr-3 text-text-secondary'/>
+                <p className='body-large text-text-secondary'>Ngày khai giảng</p>
+              </div>
+
+                <p className='text-text-secondary pr-1'>11/04/2024</p> {/*gọi ngày ra*/}
+            </div>
+
+            <div className='flex relative flex-row flex-start justify-between text-left mb-6'>
+              <div className='flex'>
+                <CalendarClose className='w-[20px] h-[20px] mr-3 text-text-secondary'/>
+                <p className='body-large text-text-secondary'>Ngày bế giảng</p>
+              </div>
+
+                <p className='text-text-secondary pr-1'>11/09/2024</p>{/*gọi ngày ra*/}
+            </div>
+
+            <div className='flex relative flex-row flex-start justify-between text-left mb-6'>
+              <div className='flex'>
+                <Clock className='w-[20px] h-[20px] mr-3 text-text-secondary'/>
+                <p className='body-large text-text-secondary'>Thời gian</p>
+              </div>
+
+                <p className='text-text-secondary pr-1'>Thứ 2, 17h00 - 20h00</p> {/*gọi weekday, Timestart ra*/}
+            </div>
+
+            <div className='w-full relative flex flex-row items-start justify-end text-right'>
+              <p className='text-text-secondary pr-1 inline-block'>Thứ 6, 17h00 - 20h00</p> {/*gọi weekday, Timeend ra*/}              
+            </div>
+
+          </div>
+
+        </div>
+        
+      </div>
+      
+      
+
+    </div>    
+  </main>
 )
 
 export default CTKhoaHocAdmin
