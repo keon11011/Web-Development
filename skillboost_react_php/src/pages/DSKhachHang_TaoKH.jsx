@@ -80,7 +80,7 @@ const DSKhachHang_TaoKH = () => {
       <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
         <SidebarQL/>
       </div>
-      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+      <div id='ContentContainer' className='w-full h-full sm:px-[64px] max-sm:px-[30px] py-[32px] space-y-[24px]'>
         <div id='Header'>
           <HeaderAdmin>Khách hàng</HeaderAdmin>
         </div>
@@ -91,11 +91,11 @@ const DSKhachHang_TaoKH = () => {
                   <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
                 </Link>
             </div>
-            <div className='text-text-primary title-large'>Tạo khách hàng mới</div>
+            <div className='text-text-primary sm:title-large max-sm:title-medium'>Tạo khách hàng mới</div>
           </div>
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                     <TextInput
                       id='HoTenKH'
                       title='Họ tên'
@@ -124,7 +124,7 @@ const DSKhachHang_TaoKH = () => {
                       setSelectedDate={setselectedNgaySinh}
                     />
                 </div>
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                     <TextInput
                       id='SoDienThoaiKH'
                       title='Số điện thoại'
@@ -203,7 +203,7 @@ const DSKhachHang_TaoKH = () => {
         </div>
         </div>
         {showCourseSelector && 
-            <div className="absolute top-[396px] left-[500px] z-50">
+            <div className="absolute max-sm:w-[450px] top-[1290px] left-[10px] z-50">
                 <CourseSelector/>
             </div>
         }

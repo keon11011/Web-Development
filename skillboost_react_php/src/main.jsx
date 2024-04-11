@@ -8,7 +8,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import TrangChu_DSKhoaHoc from './pages/TrangChu_DSKhoaHoc.jsx'
 import DangNhap from './pages/DangNhap.jsx'
-import Chitietkhoahoc from './pages/Chitietkhoahoc.jsx'
+import ChiTietKhoaHoc from './pages/ChiTietKhoaHoc.jsx'
+import ThanhToan2 from './pages/ThanhToan2.jsx'
 
 import Dashboard from './pages/Dashboard.jsx'
 
@@ -43,23 +44,44 @@ import DSKhoaHoc_TaoKhoaHoc from './pages/DSKhoaHoc_TaoKhoaHoc.jsx'
 // import CTKhoaHocAdmin from '.pages/CTKhoaHocAdmin.jsx'
 // import CTKhoaHoc_Edit from './pages/CTKhoaHoc_Edit.jsx'
 
+import ITBA_course from "./assets/img/ITBA_course.svg"
+import PO_course from './assets/img/PO_course.svg'
+import SQLAdvanced_course from './assets/img/SQLAdvanced_course.svg'
+import DA_course from './assets/img/DA_course.svg'
+import BI_course from './assets/img/BI_course.svg'
+import ExcelAdvanced_course from './assets/img/ExcelAdvanced_course.svg'
+import Desktop_course from './assets/img/Desktop_course.svg'
+import Python_course from './assets/img/Python_course.svg'
+import BDE_course from './assets/img/BDE_course.svg'
+
+import ScrollToTop from "./components/ui/location/ScrollToTop.jsx"
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<App />}></Route>
+        <Route path='/paid' element={<ThanhToan2/>}></Route>
         <Route path='/trangchu' element={<TrangChu />}></Route>
-        <Route path='/khoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
-        <Route path='/ITBA_course' element={<Chitietkhoahoc />}></Route>
         <Route path='/dangnhap' element={<DangNhap />}></Route>
-
+        <Route path='/khoahoc' element={<TrangChu_DSKhoaHoc />}></Route>
+        <Route path='/khoahoc/ITBA' element={<ChiTietKhoaHoc coursename={"IT Business Analyst"} coursepic={ITBA_course} teacher={"Ryan Nguyễn"} price={"4.000.000"} />}></Route>
+        <Route path='/khoahoc/PO' element={<ChiTietKhoaHoc coursename={"Product Owner Master Class"} coursepic={PO_course} teacher={"Harry Phạm"} price={"5.400.000"}/>}></Route>
+        <Route path='/khoahoc/SQLAdvanced' element={<ChiTietKhoaHoc coursename={"SQL Advanced Class"} coursepic={SQLAdvanced_course} teacher={"Jerry Bùi"} price={"4.914.000"}/>}></Route>
+        <Route path='/khoahoc/DA' element={<ChiTietKhoaHoc coursename={"Data Analysis"} coursepic={DA_course} teacher={"Phil Phan"} price={"4.429.000"}/>}></Route>
+        <Route path='/khoahoc/BI' element={<ChiTietKhoaHoc coursename={"Bussiness Intelligence"} coursepic={BI_course} teacher={"Anh Tú"} price={"5.482.000"}/>}></Route>
+        <Route path='/khoahoc/ExcelAdvanced' element={<ChiTietKhoaHoc coursename={"Excel Advanced Class"} coursepic={ExcelAdvanced_course} teacher={"Ngọc Thu"} price={"4.704.000"}/>}></Route>
+        <Route path='/khoahoc/Desktop' element={<ChiTietKhoaHoc coursename={"Desktop Coding Class"} coursepic={Desktop_course} teacher={"Jennie Huỳnh"} price={"4.370.000"} />}></Route>
+        <Route path='/khoahoc/Python' element={<ChiTietKhoaHoc coursename={"Python Advance Coding Class"} coursepic={Python_course} teacher={"Johnny Đặng"} price={"4.333.000"}/>}></Route>
+        <Route path='/khoahoc/BDE' element={<ChiTietKhoaHoc coursename={"Bussiness Data Engineer"} coursepic={BDE_course} teacher={"Tuấn Vũ"} price={"5.265.000"} />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
 
         <Route path='/lead/thongtin' element={<DSLead_BangLead />}></Route>
         <Route path='/lead/thongtin/xemchitietlead/:id' element={<DSLead_XemChiTietLead />}></Route>
         <Route path='/lead/thongtin/taolead' element={<DSLead_TaoLead />}></Route>
-        <Route path='/lead/thongtin/chinhsuachitietlead' element={<DSLead_ChinhSuaChiTietLead />}></Route>
-        <Route path='/lead/thongtin/huytheodoilead' element={<DSLead_HuyTheoDoiLead />}></Route>
+        <Route path='/lead/thongtin/chinhsuachitietlead/:id' element={<DSLead_ChinhSuaChiTietLead />}></Route>
+        <Route path='/lead/thongtin/huytheodoilead/:id' element={<DSLead_HuyTheoDoiLead />}></Route>
 
         <Route path='/lead/dsbaogia' element={<DSBaoGia_BangBaoGia />}></Route>
         <Route path='/lead/dsbaogia/xemchitietbaogia' element={<DSBaoGia_XemChiTietBaoGia />}></Route>

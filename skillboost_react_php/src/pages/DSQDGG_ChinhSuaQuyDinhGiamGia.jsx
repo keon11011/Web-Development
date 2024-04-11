@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom'
-// import { useHistory } from 'react-router-dom';
 
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
@@ -11,9 +10,7 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import Check from '../components/icons/Interface/Check'
 import TextInput from '../components/ui/placeholder/TextInput';
 import Button from '../components/ui/button/Button'
-import ActionPersonDetail from '../components/ui/button/ActionPersonDetail'
-import EditPencil01 from '../components/icons/Edit/EditPencil01'; 
-import TrashFull from '../components/icons/Interface/TrashFull';
+
 
 
 const DSQDGG_ChinhSuaQuyDinhGiamGia = () => {
@@ -21,16 +18,13 @@ const DSQDGG_ChinhSuaQuyDinhGiamGia = () => {
 
   const [startDate, setStartDate] = useState(null);
   const [fromDate, setFromDate] = useState(null);
-  const history = useHistory();
 
     const showDialog = () => {
-      setShowDialog(true);
       let dialog = document.getElementById('dialog');
       dialog.classList.remove('hidden');
       dialog.classList.add('flex');
       setTimeout(()=>{
         dialog.classList.add('opacity-100');
-        <NavLink to="/dsqdgg"></NavLink>
       },500);
     };
 
@@ -53,8 +47,10 @@ const DSQDGG_ChinhSuaQuyDinhGiamGia = () => {
       </div>
 
       {/* mobile responsive */}
-      <div className="sm:hidden max-sm:headline-medium max-sm:flex max-sm:justify-between max-sm:pr-28 ">
+      <div className="sm:hidden max-sm:headline-medium max-sm:flex max-sm:space-x-[40px] ">
+        <Link to="/dsqdgg/xemchitietdsqdgg/">
         <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+        </Link>
         <div className="max-sm:font-bold max-sm:text-center max-sm:pt-1">Thông tin quy định giảm giá</div>
       </div>
 
@@ -103,7 +99,7 @@ const DSQDGG_ChinhSuaQuyDinhGiamGia = () => {
               </div>
               <div className='sm:w-1/4 flex-col pb-2 '>
                 <div className='pb-2 title-medium text-text-secondary'>Phần trăm giảm giá tối đa <text className='text-red-600'>*</text></div>
-                <TextInput previewText="Phần trăm giảm giá mặc định" />
+                <TextInput previewText="Phần trăm giảm giá tối đa" />
               </div>
               <div className='sm:w-1/4 flex-col pb-2 '>
                 <CustomDatePicker 

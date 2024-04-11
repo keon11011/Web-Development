@@ -59,8 +59,10 @@ const DSQDGG_XemChiTietQuyDinhGiamGia = () => {
       <div className="max-sm:hidden">
         <HeaderAdmin>Quy định giảm giá</HeaderAdmin>
       </div>
-      <div className="sm:hidden max-sm:headline-medium max-sm:flex max-sm:justify-between max-sm:pr-28 ">
+      <div className="sm:hidden max-sm:headline-medium max-sm:flex max-sm:space-x-[40px]">
+        <Link to = "/dsqdgg">
         <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
+        </Link>
         <div className="max-sm:font-bold max-sm:text-center max-sm:pt-1">Thông tin quy định giảm giá</div>
       </div>
       <div className='w-full h-full relative rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] flex-col items-start justify-between p-6 gap-[24px] '>

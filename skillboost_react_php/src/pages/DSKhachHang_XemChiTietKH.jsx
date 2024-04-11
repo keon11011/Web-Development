@@ -33,7 +33,7 @@ const DSKhachHang_XemChiTietKH = () => {
       <div id='Sidebar' className='sticky top-0 h-screen  max-sm:relative'>
         <SidebarQL/>
       </div>
-      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+      <div id='ContentContainer' className='w-full h-full sm:px-[64px] max-sm:px-[30px] py-[32px] space-y-[24px]'>
         <div id='Header'>
           <HeaderAdmin>Nguyễn Anh Thư</HeaderAdmin>
         </div>
@@ -45,7 +45,7 @@ const DSKhachHang_XemChiTietKH = () => {
                           <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
                         </Link>
                     </div>
-                    <div className='text-text-primary title-large'>Thông tin khách hàng</div>
+                    <div className='text-text-primary sm:title-large max-sm:title-medium'>Thông tin khách hàng</div>
                 </div>
                 <div className="flex space-x-[12px]">
                     <div className='cursor-pointer block'>
@@ -59,12 +59,12 @@ const DSKhachHang_XemChiTietKH = () => {
           
           <div id='Content' className='flex flex-col space-y-[24px] w-full h-full'>
             <div id='TextInputs' className='space-y-[24px]'>
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                     <TextInput variant='ReadOnly' title='ID khách hàng' showRedAsterisk>CUS4013</TextInput>
                     <TextInput variant='ReadOnly' title='ID chuyển đổi từ Lead'></TextInput>
                     <TextInput variant='ReadOnly' title='Họ tên' showRedAsterisk>Nguyễn Anh Thư</TextInput>
                 </div>
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                     <DropDown
                         variant='ReadOnly'
                         title="Giới tính"
@@ -81,7 +81,7 @@ const DSKhachHang_XemChiTietKH = () => {
                     </CustomDatePicker>
                     <TextInput variant='ReadOnly' title='Số điện thoại' showRedAsterisk>09883451213</TextInput>
                 </div>
-                <div className='flex space-x-[24px]'>
+                <div className='flex max-sm:flex-col sm:space-x-[24px] max-sm:space-y-[24px]'>
                     <TextInput variant='ReadOnly' title='Email' showRedAsterisk>lamthukim2222@gmail.com</TextInput>  
                     <DropDown
                         variant='ReadOnly'
@@ -98,7 +98,7 @@ const DSKhachHang_XemChiTietKH = () => {
                         Website
                     </DropDown>
                 </div>
-                <div className='w-1/3 space-x-[24px]'>
+                <div className='sm:w-1/2 space-x-[24px]'>
                     <TextInput variant='ReadOnly' title='PIC (Người tiếp nhận)' showRedAsterisk>Lê Minh Quân</TextInput>  
                 </div>
                 <div className='space-x-[24px]'>
@@ -134,14 +134,14 @@ const DSKhachHang_XemChiTietKH = () => {
         </div>
         {showDeleteConfirmation && (
           <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white bg-opacity-50">
-            <div className="relative flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
+            <div className="relative max-sm:w-[450px] flex flex-col space-y-[24px] bg-white rounded-lg shadow-lg p-8">
               <div>
               <div className='flex w-full justify-center title-large text-text-primary'>Xác nhận xóa khách hàng</div>
               <div className='absolute top-[36px] right-[36px]'>
               <ActionIcon size="Medium" icon={<CloseMd width="1.5rem" height="1.5rem" onClick={handleCancelDelete}/>} />
               </div>
               </div>
-              <div className='flex flex-col space-y-[16px] w-[463px]'>
+              <div className='flex flex-col space-y-[16px] sm:w-[463px] max-sm:w-[390px]'>
                 <div className='h-[316px]'>
                   <TextArea title='Lý do xóa' previewText='Điền lý do'/>
                 </div>

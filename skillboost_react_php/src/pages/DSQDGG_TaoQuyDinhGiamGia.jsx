@@ -1,6 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import SidebarQL from '../components/ui/sidebar/SidebarQL';
 import HeaderAdmin from '../components/ui/header_footer/admin/headerad/HeaderAdmin';
@@ -11,9 +11,8 @@ import ChevronLeft from '../components/icons/Arrow/ChevronLeft'
 import Check from '../components/icons/Interface/Check'
 import TextInput from '../components/ui/placeholder/TextInput';
 import Button from '../components/ui/button/Button'
-import ActionPersonDetail from '../components/ui/button/ActionPersonDetail'
-import EditPencil01 from '../components/icons/Edit/EditPencil01'; 
-import TrashFull from '../components/icons/Interface/TrashFull';
+
+import DSQuyDinhGiamGia from "./DSQuyDinhGiamGia";
 
 
 const DSQDGG_TaoQuyDinhGiamGia = () => {
@@ -77,10 +76,9 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
     }); 
     }
 
-
   const [selectedNgheNghiep, setselectedNgheNghiep] = useState(null);
 
-
+  const [showDSQuyDinhGiamGia, setShowDSQuyDinhGiamGia] = useState(false);
 
     const showDialog = () => {
       let dialog = document.getElementById('dialog');
@@ -88,7 +86,14 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
       dialog.classList.add('flex');
       setTimeout(()=>{
         dialog.classList.add('opacity-100');
+        setShowDSQuyDinhGiamGia(true);
       },500);
+      // useEffect(() => {
+      //   const timer = setTimeout(() => {
+          
+      //   }, 600);
+      //   return () => clearTimeout(timer);
+      // }, []);
     };
 
     const hideDialog = () => {
@@ -105,11 +110,11 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
     <div className='max-sm:hidden col-span-1'>
       <SidebarQL/>
     </div>
-    <div id ="ContentContainer" className='flex flex-col h-fit sm:col-span-6 max-sm:col-span-7 bg-background-secondary px-[64px] py-[32px] space-y-[24px]' >
+    <div id ="ContentContainer" className='flex flex-col h-fit sm:col-span-6 max-sm:col-span-7 bg-background-secondary px-[64px] max-sm:py-[15px] sm:py-[32px] space-y-[24px]' >
       <div className="max-sm:hidden">
         <HeaderAdmin>Quy định giảm giá</HeaderAdmin>
       </div>
-      <div className="sm:hidden max-sm:headline-medium max-sm:flex max-sm:justify-between max-sm:pr-28 ">
+      <div className="sm:hidden max-sm:headline-medium max-sm:flex  max-sm:space-x-[65px]">
         <ActionIcon size='Medium' icon={<ChevronLeft width="1.5rem" height="1.5rem"/>}/>
         <div className="max-sm:font-bold max-sm:text-center max-sm:pt-1">Tạo quy định giảm giá</div>
       </div>
@@ -200,6 +205,7 @@ const DSQDGG_TaoQuyDinhGiamGia = () => {
       <div className="  display:flex text-right  w-full place-items-right rounded-lg p-3 lg:overflow-visible">
               <div className=' relative bg-background-primary space-x-4 p-2 float-right'  >
                 <Button size="Medium" variant="Primary" onClick={showDialog} type='submit'>Xác nhận tạo</Button>
+                
               </div>
               <div className='relative bg-background-primary space-x-4 p-2 float-right'>
                 <div className='cursor-pointer block'>
