@@ -72,9 +72,10 @@ const DSKhoaHoc_BangKhoaHoc = () => {
         <div className="max-sm:hidden">{showSearchBar && <SearchBar previewText='Tìm kiếm khóa học'/>}</div>
 
           <div className='gap-4 cursor-pointer block'>
-            <Link to='khoahocAdmin/taokhoahoc'>
+            <Link to='/khoahocAdmin/taokhoahoc'>
             <ActionIcon icon={<AddPlus width="1.5rem" height="1.5rem"/>}/>
             </Link>
+
             <ActionIcon icon={<SearchMagnifyingGlass width="1.5rem" height="1.5rem"/>} onClick={handleSearchIconClick}/>
             <ActionIcon icon={<Filter width="1.5rem" height="1.5rem"/>} onClick={handleCourseListFilterClick}/>
             <ActionIcon icon={<ArrowDownUp width="1.5rem" height="1.5rem"/>} onClick={handleOptionIconClick}/>
@@ -101,21 +102,21 @@ const DSKhoaHoc_BangKhoaHoc = () => {
         <div id="Table" className='overflow-x-auto'>
           <table className="table-auto w-full my-0 align-middle text-middle text-dark border border-collapse border-neutral-200 rounded-2xl">
             <thead className="align-bottom"> 
-            <tr className="title-small text-text-secondary">
-                  <th className="pb-3 pl-4 py-3 text-start min-w-[50px] ">ID</th>
-                  <th className="pb-3 text-middle min-w-[150px] text-start px-4">Tên khóa học</th>
-                  <th className="pb-3 text-middle min-w-[125px]">Giảng viên</th>
-                  <th className="pb-3 text-middle min-w-[125px]">Ngày khai giảng</th>
-                  <th className="pb-3 text-middle min-w-[125px]">Học phí</th>
-                  <th className="pb-3 text-middle min-w-[150px]">Trạng thái</th>
-                  <th className="pb-3 text-middle min-w-[25px]"> </th>
+            <tr className="title-small text-text-secondary max-sm:items-center">
+                  <th className="py-3 align-middle pl-4 text-start min-w-[50px] ">ID</th>
+                  <th className="py-3 align-middle min-w-[150px] text-start px-4">Tên khóa học</th>
+                  <th className="py-3 align-middle min-w-[125px]">Giảng viên</th>
+                  <th className="py-3 align-middle min-w-[125px]">Ngày khai giảng</th>
+                  <th className="py-3 align-middle min-w-[125px]">Học phí</th>
+                  <th className="py-3 align-middle min-w-[150px]">Trạng thái</th>
+                  <th className="py-3 align-middle min-w-[25px]"> </th>
                 </tr>             
             </thead>
 
             <tbody>
               <tr className="body-medium text-text-primary border-t border-solid last:border-b-0 align-middle text-middle">
                 <td className="px-4 py-3 body-medium">CRS001</td>
-                <td className="text-middle mb-1 text-center px-4 py-[11px] items-center">
+                <td className="align-middle mb-1 text-center px-4 py-[11px] items-center">
                 <div className=" text-text-primary flex items-center">
                           <div className="relative inline-block shrink-0 pr-3">
                             <img src={avatar} alt="course image" className='h-7 w-7 rounded'></img>
@@ -132,8 +133,8 @@ const DSKhoaHoc_BangKhoaHoc = () => {
                   <CourseTableStatus />
                 </td>
                 <td>
-                  <Link to="/khoahocAdmin/ctkhoahoc">
-                <ActionIcon icon={<ChervonRightMD width="1.5rem" height="1.5rem"/>}/>
+                  <Link to='/khoahocAdmin/ctkhoahoc'>
+                    <ActionIcon icon={<ChervonRightMD width="1.5rem" height="1.5rem"/>}/>
                   </Link>
                 </td>
               </tr>
