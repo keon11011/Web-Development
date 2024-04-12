@@ -48,7 +48,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
       <SidebarQL/>
     </div>
     <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 py-8 space-y-6 max-sm:px-4'>
-      <div id='Header' >
+      <div id='Header' className='max-sm:pl-20'>
         <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
 
@@ -89,27 +89,23 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                     </div> 
                 </div>
 
-            <div className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
-              <div>
+            <div className='flex max-sm:flex-col overflow-x-auto w-full space-x-4 max-sm:space-x-0 max-sm:space-y-6'>
                 <DatePicker  title='Ngày khai giảng' previewText='Chọn ngày khai giảng'></DatePicker>
-              </div>
 
-              <div>
                 <DatePicker title='Ngày bế giảng' previewText='Chọn ngày bế giảng'></DatePicker>
-              </div>
 
-              <div>
                 <TextInput  title='Số buổi học' previewText='Nhập số buổi học'></TextInput>
-              </div>
-
-              <div>
-                <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng tối đa'></TextInput>
-              </div>
-
             </div>
+
+            <div className='flex w-1/3 pr-4 max-sm:w-full max-sm:pr-0'>
+              <TextInput  title='Số lượng học viên tối đa' previewText='Nhập số lượng tối đa'></TextInput>
+            </div>
+
+            
+
               {inputs.map((input, index) => (
-               <div className='justify-between flex flex-wrap space-x-6 max-2xl:space-x-1 flex-auto'>
-                <div className='flex'>
+               <div className='flex max-sm:flex-col overflow-x-auto w-full space-x-4 max-sm:space-x-0 max-sm:space-y-6'>
+
                   <DropDown    
                     title='Thứ' 
                     previewText='Chọn thứ' 
@@ -119,9 +115,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                     onHandleChange={(e) => handleWeekdayChange(e, index)}
                     className='flex'
                   />
-                </div>
-  
-                <div className='flex'>
+
                   <DropDown  
                     title='Thời gian bắt đầu' 
                     previewText='Chọn giờ' 
@@ -130,9 +124,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                   }))}
                     onHandleChange={(e) => handleTimeStartChange(e, index)}
                   />
-                </div>
-    
-                <div className='flex'>
+
                   <DropDown 
                     title='Thời gian kết thúc' 
                     previewText='Chọn giờ'
@@ -141,7 +133,7 @@ const DSKhoaHoc_TaoKhoaHoc = () => {
                   }))}
                     onHandleChange={(e) => handleTimeEndChange(e, index)}
                   />
-                </div>
+                  
               </div>     
               ))}
 

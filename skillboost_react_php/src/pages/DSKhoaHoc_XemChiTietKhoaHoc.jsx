@@ -8,6 +8,8 @@ import TextArea from '../components/ui/placeholder/TextArea.jsx'
 import AlertDanger from '../components/ui/inform/AlertDanger.jsx'
 import Button from '../components/ui/button/Button.jsx'
 
+import ITBA_course from '../assets/img/ITBA_course.svg'
+
 import EditPencil01 from '../components/icons/Edit/EditPencil01.jsx'
 import TrashFull from '../components/icons/Interface/TrashFull.jsx'
 import ChevronLeft from '../components/icons/Arrow/ChevronLeft.jsx'
@@ -42,7 +44,7 @@ const DSKhoaHoc_XemChiTietKhoaHoc = () => {
     </div>
         
     <div id='ContentContainer' className='col-span-6 max-sm:col-span-7 bg-background-secondary px-16 max-sm:px-4 py-8 space-y-6'>
-      <div id='Header'>
+      <div id='Header' className='max-sm:pl-20'>
         <HeaderAdmin>Khóa học</HeaderAdmin>
       </div>
 
@@ -79,7 +81,7 @@ const DSKhoaHoc_XemChiTietKhoaHoc = () => {
           <div>
             <img
               className="w-[424px] max-sm:w-auto h-auto rounded-lg object-cover object-center relative flex"
-              src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+              src={ITBA_course}
               alt="course image"
             />
           </div>

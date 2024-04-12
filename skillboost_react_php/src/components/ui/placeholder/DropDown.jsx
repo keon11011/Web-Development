@@ -57,8 +57,8 @@ const DropdownButtonComponent = styled.button`
 
 const OptionsList = styled.ul`
   position: absolute;
-  overflow-y: auto; //the list can scroll
-  max-height: 10rem; //scroll
+  overflow-y: auto;
+  max-height: 10rem;
   width: ${(props) => props.width}px;
   background-color: #FFFFFF;
   border: 1px solid #DFDFDF;

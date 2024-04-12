@@ -102,7 +102,7 @@ const DSBaoGia_TaoBaoGia = () => {
             {showPromotionInputs ? (
               <>
                 <div className='title-medium text-text-primary'>Khuyến mãi</div>
-                <div className='flex overflow-x-auto w-full space-x-[16px] '>
+                <div className='flex max-sm:flex-col overflow-x-auto w-full space-x-4 max-sm:space-x-0 max-sm:space-y-6'>
                   <TextInput title="Số khóa học mua chung" previewText="Nhập số khóa học" />
                   <DropDown
                     title="Đối tượng ưu tiên"
@@ -119,7 +119,7 @@ const DSBaoGia_TaoBaoGia = () => {
                     setSelectedOption={setSelectedDipDacBiet}
                   />
                 </div>
-                <div className='flex w-1/3 pr-[16px]'>
+                <div className='flex w-1/3 pr-4 max-sm:w-full max-sm:pr-0'>
                   <TextInput title="Phần trăm giảm giá (%)" previewText="Nhập phần trăm giảm giá" />
                 </div>
                 <div className='flex'>
