@@ -35,11 +35,11 @@ const DSBaoGia_XemChiTietBaoGia = () => {
       <div id="Sidebar" className="sticky top-0 h-screen max-sm:relative">
         <SidebarQL />
       </div>
-      <div id="ContentContainer" className="w-full h-full px-[64px] py-[32px] space-y-[24px]">
+      <div id="ContentContainer" className="w-full h-full px-[64px] py-[32px] space-y-[24px] max-sm:px-3">
         <div id="Header">
           <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
         </div>
-        <div id="LeadInfoNavigation" className="flex space-x-[24px]">
+        <div id="LeadInfoNavigation" className="flex space-x-[24px] max-sm:flex-col gap-5">
           <div className="grow">
             <LeadInfoTab />
           </div>

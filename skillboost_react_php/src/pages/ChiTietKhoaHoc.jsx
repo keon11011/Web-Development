@@ -162,7 +162,7 @@ const ChiTietKhoaHoc = ({coursename, coursepic, teacher, price}) => {
                 <Footer />
             </div>
             {showCourseSelector && 
-            <div className="absolute top-[942px] right-[150px] z-50">
+            <div className="absolute top-[942px] right-[150px] z-50 max-sm:top-[2405px] max-sm:left-3 max-sm:w-max">
                 <CourseSelector/>
             </div>
             }

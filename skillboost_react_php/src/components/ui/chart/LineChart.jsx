@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import Filter from "../../icons/Interface/Filter"
 import { subDays } from "date-fns";
-import 'chart.js/auto'
+import {
+    Chart as ChartJS,
+    LineElement,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    Title,
+    Tooltip,
+    Legend
+} from "chart.js/auto";
+
+
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
+
+
 
 const LineChart = () => {
     const options = {
