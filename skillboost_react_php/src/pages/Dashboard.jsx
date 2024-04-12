@@ -38,8 +38,8 @@ const Dashboard = () => {
           </div>
           <div className="flex w-full justify-center items-center rounded-lg bg-background-primary shadow-[0px_4px_12px_rgba(0,_0,_0,_0.04)] p-[1.5rem] box-border">
             <DashboardOverviewCardNone
-              namecard={"Số lượng Lead"}
-              percentchange={"3.1%"}
+              namecard={"Số lượng Khóa học bán ra"}
+              percentchange={"1.3%"}
               total={"5.861"}
             />
           </div>
