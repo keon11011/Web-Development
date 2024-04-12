@@ -4,7 +4,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import styled from 'styled-components';
 import Calendar from '../../icons/Calendar/Calendar'
 
-// Styled components for the date picker
 const DatePickerContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,7 +16,6 @@ const DatePickerContainer = styled.div`
 const DatePickerWrapper = styled.div`
   position: flex;
   width: 100%;
-  max-width: 100%;
   min-width: 350px;
   height: auto;
   border-radius: 0.5rem;
@@ -28,16 +26,15 @@ const DatePickerWrapper = styled.div`
     props.variant === 'Error' ? '#FF4141' : '#F8F8F8'};
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: left;
   &:focus-within {
     border-color: ${(props) =>
       props.variant === 'ReadOnly' ? '#F8F8F8' : '#DFDFDF'};
   }
 `;
-//fix span
+
 const DatePickerComponent = styled(DatePicker)`
-  
   background: #FAFAFA;
   outline: none;
   border: none;
@@ -73,7 +70,7 @@ const CustomDatePicker = ({ variant, title, note, previewText, selectedDate, onC
       <DatePickerWrapper>
         <DatePickerComponent
           type="date"
-          className="w-72"
+          className='w-72'
           placeholderText={previewText}
           selected={startDate}
           onChange={(date) => {
