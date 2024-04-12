@@ -29,15 +29,15 @@ const DSBaoGia_ChinhSuaBaoGia = () => {
   };
 
   return (
-    <main id='DSBaoGia' className='w-full bg-background-secondary flex'>
+    <main id='DSBaoGia' className='w-full bg-background-secondary relative flex'>
       <div id='Sidebar' className='sticky top-0 h-screen max-sm:relative'>
         <SidebarQL/>
       </div>
-      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px]'>
+      <div id='ContentContainer' className='w-full h-full px-[64px] py-[32px] space-y-[24px] max-sm:px-3'>
         <div id='Header'>
           <HeaderAdmin progressBar={<Nhantuvan />}>Phan Văn Trị</HeaderAdmin>
         </div>
-        <div id='LeadInfoNavigation' className='flex space-x-[24px]'>
+        <div id='LeadInfoNavigation' className='flex space-x-[24px] max-sm:flex-col gap-5'>
           <div className='grow'><LeadInfoTab/></div>
           <LeadProgressStatus variant='DangTuVan' />
         </div>
@@ -55,7 +55,7 @@ const DSBaoGia_ChinhSuaBaoGia = () => {
               <TextInput title='Tên báo giá' previewText='Nhập tên báo giá'>Báo giá khóa học IT Business Analyst</TextInput>
             </div>
             <div className='space-y-[16px]'>
-              <div className='title-medium text-text-primary'>Khóa học</div>
+              <div className='title-medium text-text-primary font-bold'>Khóa học</div>
               <div id='Table' className="overflow-x-auto rounded-lg border border-outline-table">
                 <table className="table-auto w-full">
                   <thead className='title-small text-text-secondary text-left'>
@@ -86,8 +86,8 @@ const DSBaoGia_ChinhSuaBaoGia = () => {
             </div>
             {showPromotionInputs ? (
               <>
-                <div className='title-medium text-text-primary'>Khuyến mãi</div>
-                <div className='flex overflow-x-auto w-full space-x-[16px] '>
+                <div className='title-medium text-text-primary font-bold'>Khuyến mãi</div>
+                <div className='flex overflow-x-auto w-full space-x-[16px] max-sm:flex-col gap-5 max-sm:space-x-0'>
                   <TextInput title="Số khóa học mua chung" previewText="Nhập số khóa học" />
                   <DropDown
                     title="Đối tượng ưu tiên"
@@ -102,7 +102,7 @@ const DSBaoGia_ChinhSuaBaoGia = () => {
                     options={["Ngày lễ", "Không có"]}
                   />
                 </div>
-                <div className='flex w-1/3 pr-[16px]'>
+                <div className='flex w-1/3 pr-[16px] max-sm:text-nowrap'>
                   <TextInput title="Phần trăm giảm giá (%)" previewText="Nhập phần trăm giảm giá" />
                 </div>
                 <div className='flex'>
@@ -111,12 +111,12 @@ const DSBaoGia_ChinhSuaBaoGia = () => {
               </>
             ) : (
               <div className='space-y-[16px]'>
-                <div className='title-medium text-text-primary'>Khuyến mãi</div>
+                <div className='title-medium text-text-primary font-bold'>Khuyến mãi</div>
                 <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5} />} onClick={handleAddPromotionClick}>Thêm khuyến mãi</Button>
               </div>
             )}
             <div className='space-y-[16px]'>
-              <div className='title-medium text-text-primary'>Email báo giá</div>
+              <div className='title-medium text-text-primary font-bold'>Email báo giá</div>
               <Button variant='Neutral' size='Medium' leftIcon={<AddPlus width="1.25rem" height="1.25rem" strokeWidth={1.5}/>}>Tạo email</Button>
             </div>
             <div className='flex w-full space-x-[12px] items-center justify-end'>
@@ -131,7 +131,7 @@ const DSBaoGia_ChinhSuaBaoGia = () => {
         </div>
       </div>
       {showCourseSelector && 
-          <div className="absolute top-[240px] left-[500px] z-50">
+          <div className="absolute top-[240px] left-[500px] z-50 max-sm:top-[450px] max-sm:left-3">
               <CourseSelector/>
           </div>
       }

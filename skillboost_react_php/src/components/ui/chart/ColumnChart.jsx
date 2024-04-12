@@ -1,7 +1,17 @@
 import React from 'react'
 import Filter from "../../icons/Interface/Filter"
 import { Bar } from 'react-chartjs-2'
-import 'chart.js/auto'
+import {
+    Chart as ChartJS,
+    LineElement,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    Title,
+    Tooltip,
+    Legend
+} from "chart.js/auto";
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
 
 const BarChart = () => {
     const options = {

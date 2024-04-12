@@ -85,7 +85,7 @@ const SidebarQL = () => {
       <div name="desktop" className='max-sm:hidden'>
         <SidebarContainer isOpen={isOpen} >
           <LogoContainer>
-            <img src={SkillboostLogo} alt="Logo" />
+            <img src={SkillboostLogo} alt="Logo" width={200} height={200}/>
           </LogoContainer>
           <nav>
             <StyledNavLink to="/dashboard" activeClassName="active" className="flex space-x-[16px]">
